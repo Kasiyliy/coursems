@@ -10,8 +10,9 @@ class Lesson extends Model
     use SoftDeletes;
 
     public static $validatesAll = [
-        'name' =>'required|max:255',
-        'description'=> 'required',
+        'name' => 'required|max:255',
+        'description' => 'required',
+        'course_id' => 'required|numeric',
         'video_path' => 'required|mimes:jpg,jpeg,png',
     ];
 
@@ -20,15 +21,21 @@ class Lesson extends Model
     ];
 
     public static $validatesWithoutVideo = [
-        'name' =>'required|max:255',
-        'description'=> 'required',
-        'price' => 'required|numeric',
+        'name' => 'required|max:255',
+        'description' => 'required',
+        'course_id' => 'required|numeric',
     ];
 
     protected $fillable = [
         'name',
         'description',
         'video_path',
+        'course_id',
     ];
 
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }

@@ -34,5 +34,8 @@ class Course extends Model
         'price'
     ];
 
+    public function lessons(){
+        return $this->hasMany(Lesson::class);
+    }
 
 }

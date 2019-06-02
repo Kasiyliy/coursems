@@ -6,7 +6,7 @@
             <div class="col-sm-12">
                 <div class="panel"  style="padding: 10px;">
                     <div class="panel-header">
-                        <h2>Уроки шаблона <span class="text-muted">{{$course->name}}</span></h2>
+                        <h2>Задачи шаблона <span class="text-muted">{{$course->name}}</span></h2>
                         {{--<a class="btn btn-success btn-sm" href="{{route('course.create')}}">Добавить</a>--}}
                         <a class="btn btn-info btn-sm" href="{{route('course.index')}}">Назад</a>
                     </div>
