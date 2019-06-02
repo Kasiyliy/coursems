@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Order;
 use App\User;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Validator;
 use Session;
 
@@ -14,12 +16,24 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
+
+        foreach ($orders as $order) {
+            $date1 = new DateTime($order->deadline);
+            $date2 = new DateTime(date('Y-m-d H:i:s'));
+
+
+            if ($date2 > $date1) {
+                $order->status = false;
+                $order->save();
+            }
+        }
+
         return view('admin.orders.index', compact("orders"));
     }
 
     public function create()
     {
-        $courses = Course::all();
+        $courses = DB::table('courses')->where('visible', true)->get();
         $users = User::all();
         return view('admin.orders.create', compact("courses", "users"));
     }

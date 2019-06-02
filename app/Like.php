@@ -3,23 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Order extends Model
+class Like extends Model
 {
     use SoftDeletes;
 
     public static $validatesAll = [];
 
     protected $fillable = [
-        'course_id',
         'user_id',
-        'deadline'
     ];
 
-    public function course()
+    public function homeworks()
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Homework::class);
     }
 
     public function user()

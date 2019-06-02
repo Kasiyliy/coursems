@@ -101,28 +101,9 @@
                         <i class="fa fa-home"></i> <span>Главная</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="<?php echo e(route('course.index')); ?>">
+                    <a href="<?php echo e(route('client.course.index')); ?>">
                         <i class="fa fa-file-text"></i> <span>Курсы</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="<?php echo e(route('order.index')); ?>">
-                        <i class="fa fa-first-order"></i> <span>Заявки</span>
-                    </a>
-                </li>
-
-                <li class="header">Настройки</li>
-                <li>
-                    <a href="<?php echo e(route('role.index')); ?>">
-                        <i class="fa fa-gears"></i> <span>Роли</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo e(route('user.index')); ?>">
-                        <i class="fa fa-id-card"></i> <span>Пользователи</span>
                     </a>
                 </li>
             </ul>

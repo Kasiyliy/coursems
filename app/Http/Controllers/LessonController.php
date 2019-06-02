@@ -27,7 +27,13 @@ class LessonController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         } else {
-            $lesson = Lesson::create($request->all());
+//            $lesson = Lesson::create($request->all());
+
+            $lesson = new Lesson();
+            $lesson->fill($request->all());
+            $lesson->video_path = 'https://www.youtube.com/embed/'.substr($lesson->video_path, 32);
+            $lesson->save();
+
             Session::flash('success', 'Элемент успешно добавлен!');
             return redirect()->back();
         }

@@ -3,9 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Order extends Model
+class Comment extends Model
 {
     use SoftDeletes;
 
@@ -14,7 +13,7 @@ class Order extends Model
     protected $fillable = [
         'course_id',
         'user_id',
-        'deadline'
+        'content'
     ];
 
     public function course()
