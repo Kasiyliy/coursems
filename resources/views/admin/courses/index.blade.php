@@ -57,6 +57,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                         <a href="{{route('course.edit' ,['id'=>$course->id ])}}" class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>
                                         <a href="{{route('course.details' ,['id'=>$course->id ])}}" class="btn-xs btn btn-info"><span class="fa fa-book"></span> Уроки</a>
                                         <form action="{{route('course.toggle.visible' ,['id'=>$course->id ])}}" method="post">

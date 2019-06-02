@@ -32,4 +32,48 @@ class LessonController extends Controller
             return redirect()->back();
         }
     }
+    
+    public function delete($id)
+    {
+        $lesson = Lesson::find($id);
+        if ($lesson) {
+            $lesson->delete();
+            Session::flash('error', ' Элемент удален!');
+        } else {
+            Session::flash('error', ' Элемент не существует!');
+        }
+        return redirect()->back();
+    }
+    
+    public function edit($id)
+    {
+        $lesson = Lesson::find($id);
+        if (!$lesson) {
+            Session::flash('error', ' Элемент не существует!');
+            return redirect()->back();
+        }
+
+        return view('admin.lessons.edit', compact('lesson'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $lesson = Lesson::find($id);
+        if (!$lesson) {
+            Session::flash('error', ' Элемент не существует!');
+            return redirect()->back();
+        }
+
+        $validator = Validator::make($request->all(), Lesson::$validatesAll);
+
+        if ($validator->fails()) {
+            Session::flash('error', 'Ошибка!');
+            return redirect()->back()->withErrors($validator);
+        } else {
+            $lesson->fill($request->all());
+            $lesson->save();
+            Session::flash('success', 'Элемент успешно обновлен!');
+            return redirect()->back();
+        }
+    }
 }

@@ -46,15 +46,18 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/lessons/create/{id}', ['as' => 'lesson.create', 'uses' => 'LessonController@create'])->where('id', '[0-9]+');
         Route::post('/lessons/store', ['as' => 'lesson.store', 'uses' => 'LessonController@store']);
-//        Route::get('/lessons', ['as' => 'lesson.index', 'uses' => 'LessonController@index']);
-//        Route::get('/lessons/edit/{id}', ['as' => 'lesson.edit', 'uses' => 'LessonController@edit'])->where('id', '[0-9]+');
-//        Route::get('/lessons/{id}', ['as' => 'lesson.details', 'uses' => 'LessonController@details'])->where('id', '[0-9]+');
-//        Route::post('/lessons/update/{id}', ['as' => 'lesson.update', 'uses' => 'LessonController@update'])->where('id', '[0-9]+');
-//        Route::post('/lessons/toggle/visible/{id}', ['as' => 'lesson.toggle.visible', 'uses' => 'LessonController@toggleVisibility'])->where('id', '[0-9]+');
-//        Route::post('/lessons/update/image/{id}', ['as' => 'lesson.update.image', 'uses' => 'LessonController@updateImage'])->where('id', '[0-9]+');
-//        Route::post('/lessons/delete/{id}', ['as' => 'lesson.delete', 'uses' => 'LessonController@delete'])->where('id', '[0-9]+');
+        Route::get('/lessons/edit/{id}', ['as' => 'lesson.edit', 'uses' => 'LessonController@edit'])->where('id', '[0-9]+');
+        Route::post('/lessons/update/{id}', ['as' => 'lesson.update', 'uses' => 'LessonController@update'])->where('id', '[0-9]+');
+        Route::post('/lessons/delete/{id}', ['as' => 'lesson.delete', 'uses' => 'LessonController@delete'])->where('id', '[0-9]+');
 
-
+        Route::get('/orders/create', ['as' => 'order.create', 'uses' => 'orderController@create']);
+        Route::post('/orders/store', ['as' => 'order.store', 'uses' => 'orderController@store']);
+        Route::get('/orders', ['as' => 'order.index', 'uses' => 'orderController@index']);
+        Route::get('/orders/edit/{id}', ['as' => 'order.edit', 'uses' => 'orderController@edit'])->where('id', '[0-9]+');
+        Route::get('/orders/{id}', ['as' => 'order.details', 'uses' => 'orderController@details'])->where('id', '[0-9]+');
+        Route::post('/orders/update/{id}', ['as' => 'order.update', 'uses' => 'orderController@update'])->where('id', '[0-9]+');
+        Route::post('/orders/toggle/status/{id}', ['as' => 'order.toggle.status', 'uses' => 'orderController@toggleStatus'])->where('id', '[0-9]+');
+        Route::post('/orders/delete/{id}', ['as' => 'order.delete', 'uses' => 'orderController@delete'])->where('id', '[0-9]+');
     });
 
     Route::get('/user/edit', ['as' => 'self.user.edit', 'uses' => 'UserController@selfEdit']);

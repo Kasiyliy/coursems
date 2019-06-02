@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Aygul-MakeUp</title>
+    <title>GlamBlog.kz</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
@@ -39,7 +39,7 @@
     <header class="main-header">
         <a href="/" class="logo">
             <span class="logo-mini"><b>A</b>KZ</span>
-            <span class="logo-lg"><b>Aygul</b>MakeUp</span>
+            <span class="logo-lg">glamblog.kz</span>
         </a>
 
         <nav class="navbar navbar-static-top">
@@ -101,26 +101,38 @@
                         <i class="fa fa-home"></i> <span>Главная</span>
                     </a>
                 </li>
-                @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
+                <?php if(!\Illuminate\Support\Facades\Auth::user()->isAdmin()): ?>
+                <li>
+                    <a href="<?php echo e(route('course.index')); ?>">
+                        <i class="fa fa-file-text"></i> <span>Курсы</span>
+                    </a>
+                </li>
+                <?php else: ?>
 
-                    <li>
-                        <a href="{{route('course.index')}}">
-                            <i class="fa fa-file-text"></i> <span>Курсы</span>
-                        </a>
-                    </li>
+                <li>
+                    <a href="<?php echo e(route('course.index')); ?>">
+                        <i class="fa fa-file-text"></i> <span>Курсы</span>
+                    </a>
+                </li>
 
-                    <li class="header">Настройки</li>
-                    <li>
-                        <a href="{{route('role.index')}}">
-                            <i class="fa fa-gears"></i> <span>Роли</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('user.index')}}">
-                            <i class="fa fa-id-card"></i> <span>Пользователи</span>
-                        </a>
-                    </li>
-                @endif
+                <li>
+                    <a href="<?php echo e(route('order.index')); ?>">
+                        <i class="fa fa-first-order"></i> <span>Заявки</span>
+                    </a>
+                </li>
+
+                <li class="header">Настройки</li>
+                <li>
+                    <a href="<?php echo e(route('role.index')); ?>">
+                        <i class="fa fa-gears"></i> <span>Роли</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo e(route('user.index')); ?>">
+                        <i class="fa fa-id-card"></i> <span>Пользователи</span>
+                    </a>
+                </li>
+                <?php endif; ?>
             </ul>
         </section>
     </aside>
