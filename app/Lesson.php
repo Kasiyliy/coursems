@@ -13,11 +13,11 @@ class Lesson extends Model
         'name' => 'required|max:255',
         'description' => 'required',
         'course_id' => 'required|numeric',
-        'video_path' => 'required|mimes:jpg,jpeg,png',
+        'video_path' => 'required',
     ];
 
     public static $validatesOnlyVideo = [
-        'video_path' => 'required|mimes:jpg,jpeg,png',
+        'video_path' => 'required',
     ];
 
     public static $validatesWithoutVideo = [

@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 Route::get('/', function () {
     return redirect()->route('login');
@@ -42,11 +38,21 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/courses/store', ['as' => 'course.store', 'uses' => 'CourseController@store']);
         Route::get('/courses', ['as' => 'course.index', 'uses' => 'CourseController@index']);
         Route::get('/courses/edit/{id}', ['as' => 'course.edit', 'uses' => 'CourseController@edit'])->where('id', '[0-9]+');
-        Route::get('/courses/course/{id}', ['as' => 'course.details', 'uses' => 'CourseController@details'])->where('id', '[0-9]+');
+        Route::get('/courses/{id}', ['as' => 'course.details', 'uses' => 'CourseController@details'])->where('id', '[0-9]+');
         Route::post('/courses/update/{id}', ['as' => 'course.update', 'uses' => 'CourseController@update'])->where('id', '[0-9]+');
         Route::post('/courses/toggle/visible/{id}', ['as' => 'course.toggle.visible', 'uses' => 'CourseController@toggleVisibility'])->where('id', '[0-9]+');
         Route::post('/courses/update/image/{id}', ['as' => 'course.update.image', 'uses' => 'CourseController@updateImage'])->where('id', '[0-9]+');
         Route::post('/courses/delete/{id}', ['as' => 'course.delete', 'uses' => 'CourseController@delete'])->where('id', '[0-9]+');
+
+        Route::get('/lessons/create/{id}', ['as' => 'lesson.create', 'uses' => 'LessonController@create'])->where('id', '[0-9]+');
+        Route::post('/lessons/store', ['as' => 'lesson.store', 'uses' => 'LessonController@store']);
+//        Route::get('/lessons', ['as' => 'lesson.index', 'uses' => 'LessonController@index']);
+//        Route::get('/lessons/edit/{id}', ['as' => 'lesson.edit', 'uses' => 'LessonController@edit'])->where('id', '[0-9]+');
+//        Route::get('/lessons/{id}', ['as' => 'lesson.details', 'uses' => 'LessonController@details'])->where('id', '[0-9]+');
+//        Route::post('/lessons/update/{id}', ['as' => 'lesson.update', 'uses' => 'LessonController@update'])->where('id', '[0-9]+');
+//        Route::post('/lessons/toggle/visible/{id}', ['as' => 'lesson.toggle.visible', 'uses' => 'LessonController@toggleVisibility'])->where('id', '[0-9]+');
+//        Route::post('/lessons/update/image/{id}', ['as' => 'lesson.update.image', 'uses' => 'LessonController@updateImage'])->where('id', '[0-9]+');
+//        Route::post('/lessons/delete/{id}', ['as' => 'lesson.delete', 'uses' => 'LessonController@delete'])->where('id', '[0-9]+');
 
 
     });

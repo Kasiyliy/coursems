@@ -22,8 +22,7 @@ class CreateLessonsTable extends Migration
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')
                 ->references('id')
-                ->on('courses')
-                ->onDelete('cascade');
+                ->on('courses');
 
             $table->softDeletes();
             $table->timestamps();
