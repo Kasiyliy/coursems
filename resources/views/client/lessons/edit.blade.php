@@ -12,20 +12,22 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <form action="{{route('course.update' ,['id'=>$course->id])}}" method="post">
+                                <form action="{{route('lesson.update' ,['id'=>$lesson->id])}}" method="post">
                                     <div class="form-group">
                                         <label for="name">Имя</label>
-                                        <input type="text" value="{{$course->name}}" name="name" class="form-control" placeholder="Наименование" required>
+                                        <input type="text" value="{{$lesson->name}}" name="name" class="form-control" placeholder="Наименование" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="name">Описание</label>
-                                        <textarea name="description"  class="form-control" placeholder="Описание" required>{{$course->description}}</textarea>
+                                        <textarea name="description"  class="form-control" placeholder="Описание" required>{{$lesson->description}}</textarea>
                                     </div>
 
+                                    <input type="hidden" value="{{$lesson->course_id}}" name="course_id">
+
                                     <div class="form-group">
-                                        <label for="name">Цена</label>
-                                        <input type="number" value="{{$course->price}}" min="0" name="price" class="form-control" placeholder="Цена" required>
+                                        <label for="name">Ссылка на видео</label>
+                                        <input type="text" value="{{$lesson->video_path}}" min="0" name="video_path" class="form-control" placeholder="Ссылка" required>
                                     </div>
 
                                     {{csrf_field()}}
@@ -33,25 +35,6 @@
                                         <input type="submit" class="btn btn-primary btn-block" value="Изменить">
                                     </div>
                                 </form>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-img">
-                                        <img src="{{asset($course->image_path)}}" alt="{{$course->name}}" class="img-thumbnail">
-                                    </div>
-                                    <div class="card-body">
-                                        <form action="{{route('course.update.image' ,['id'=>$course->id])}}" method="post" enctype="multipart/form-data">
-                                            <div class="form-group">
-                                                <label for="name">Фото</label>
-                                                <input type="file" name="image_path" class="form-control" placeholder="Фото" required>
-                                            </div>
-                                            {{csrf_field()}}
-                                            <div class="form-group">
-                                                <input type="submit" class="btn btn-primary btn-block" value="Изменить фото">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -31,6 +31,7 @@
                                             {{csrf_field()}}
                                             <button type="submit" class="btn-xs btn btn-warning"><span class="fa fa-money"></span> {{$order->status ? 'Не оплатил' : 'Оплатил'}}</button>
                                         </form>
+                                        <a href="{{route('order.edit' ,['id'=>$order->id ])}}" class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>
                                     </td>
                                 </tr>
                             @endforeach

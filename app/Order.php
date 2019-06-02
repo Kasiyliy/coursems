@@ -14,7 +14,8 @@ class Order extends Model
 
     protected $fillable = [
         'course_id',
-        'user_id'
+        'user_id',
+        'deadline'
     ];
 
     public function course()

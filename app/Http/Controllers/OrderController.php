@@ -39,6 +39,39 @@ class OrderController extends Controller
         }
     }
 
+    public function edit($id)
+    {
+        $order = Order::find($id);
+        $courses = Course::all();
+        $users = User::all();
+        if (!$order) {
+            Session::flash('error', ' Элемент не существует!');
+            return redirect()->back();
+        }
+        return view('admin.orders.edit', compact('order', 'courses', 'users'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $order = Order::find($id);
+        if (!$order) {
+            Session::flash('error', ' Элемент не существует!');
+            return redirect()->back();
+        }
+
+        $validator = Validator::make($request->all(), Order::$validatesAll);
+
+        if ($validator->fails()) {
+            Session::flash('error', 'Ошибка!');
+            return redirect()->back()->withErrors($validator);
+        } else {
+            $order->fill($request->all());
+            $order->save();
+            Session::flash('success', 'Элемент успешно обновлен!');
+            return redirect()->back();
+        }
+    }
+
     public function toggleStatus($id)
     {
         $order = Order::find($id);

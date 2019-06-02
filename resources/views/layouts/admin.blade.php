@@ -103,7 +103,7 @@
                 </li>
                 <?php if(!\Illuminate\Support\Facades\Auth::user()->isAdmin()): ?>
                 <li>
-                    <a href="<?php echo e(route('course.index')); ?>">
+                    <a href="<?php echo e(route('client.course.index')); ?>">
                         <i class="fa fa-file-text"></i> <span>Курсы</span>
                     </a>
                 </li>

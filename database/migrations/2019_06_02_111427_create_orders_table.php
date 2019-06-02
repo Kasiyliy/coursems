@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
+            $table->dateTime('deadline');
             $table->boolean('status')->default(true);
             $table->softDeletes();
             $table->timestamps();
