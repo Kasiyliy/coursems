@@ -102,29 +102,38 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="<?php echo e(route('course.index')); ?>">
-                        <i class="fa fa-file-text"></i> <span>Курсы</span>
-                    </a>
-                </li>
 
-                <li>
-                    <a href="<?php echo e(route('order.index')); ?>">
-                        <i class="fa fa-first-order"></i> <span>Заявки</span>
-                    </a>
-                </li>
+                @if(Auth::user()->isClient())
+                    <li>
+                        <a href="{{(route('client.course.index'))}}">
+                            <i class="fa fa-file-text"></i> <span>Курсы</span>
+                        </a>
+                    </li>
+                @elseif(Auth::user()->isAdmin())
+                    <li>
+                        <a href="{{(route('course.index'))}}">
+                            <i class="fa fa-file-text"></i> <span>Курсы</span>
+                        </a>
+                    </li>
 
-                <li class="header">Настройки</li>
-                <li>
-                    <a href="<?php echo e(route('role.index')); ?>">
-                        <i class="fa fa-gears"></i> <span>Роли</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo e(route('user.index')); ?>">
-                        <i class="fa fa-id-card"></i> <span>Пользователи</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{{(route('order.index'))}}">
+                            <i class="fa fa-first-order"></i> <span>Заявки</span>
+                        </a>
+                    </li>
+
+                    <li class="header">Настройки</li>
+                    <li>
+                        <a href="{{e(route('role.index'))}}">
+                            <i class="fa fa-gears"></i> <span>Роли</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{(route('user.index'))}}">
+                            <i class="fa fa-id-card"></i> <span>Пользователи</span>
+                        </a>
+                    </li>
+                @endif
             </ul>
         </section>
     </aside>
@@ -135,9 +144,8 @@
 
         </section>
     </div>
-    <footer class="main-footer">
-        All rights
-        reserved {{date('Y')}}. Nur-Partners
+    <footer class="main-footer text-center">
+        Все права защищены {{date('Y')}}.
     </footer>
 </div>
 

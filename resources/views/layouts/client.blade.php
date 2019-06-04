@@ -116,9 +116,8 @@
 
         </section>
     </div>
-    <footer class="main-footer">
-        All rights
-        reserved {{date('Y')}}. Nur-Partners
+    <footer class="main-footer text-center">
+        Все права защищены {{date('Y')}}.
     </footer>
 </div>
 

@@ -10,8 +10,7 @@ class Role extends Model
     protected $table = 'roles';
 
     public const ADMIN_ID = 1;
-    public const EMPLOYEE_ID = 2;
-    public const CLIENT_ID = 3;
+    public const CLIENT_ID = 2;
 
     public function users(){
         return $this->hasMany(User::class);

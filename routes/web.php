@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
+
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
     Route::get('/client/courses', ['as' => 'client.course.index', 'uses' => 'ClientController@courses']);
