@@ -62,6 +62,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/orders/update/{id}', ['as' => 'order.update', 'uses' => 'orderController@update'])->where('id', '[0-9]+');
         Route::post('/orders/toggle/status/{id}', ['as' => 'order.toggle.status', 'uses' => 'orderController@toggleStatus'])->where('id', '[0-9]+');
         Route::post('/orders/delete/{id}', ['as' => 'order.delete', 'uses' => 'orderController@delete'])->where('id', '[0-9]+');
+
+        Route::get('/streams/create', ['as' => 'stream.create', 'uses' => 'streamController@create']);
+        Route::post('/streams/store', ['as' => 'stream.store', 'uses' => 'streamController@store']);
+        Route::get('/streams', ['as' => 'stream.index', 'uses' => 'streamController@index']);
+        Route::get('/streams/edit/{id}', ['as' => 'stream.edit', 'uses' => 'streamController@edit'])->where('id', '[0-9]+');
+        Route::get('/streams/{id}', ['as' => 'stream.details', 'uses' => 'streamController@details'])->where('id', '[0-9]+');
+        Route::post('/streams/update/{id}', ['as' => 'stream.update', 'uses' => 'streamController@update'])->where('id', '[0-9]+');
+        Route::post('/streams/toggle/status/{id}', ['as' => 'stream.toggle.status', 'uses' => 'streamController@toggleStatus'])->where('id', '[0-9]+');
+        Route::post('/streams/delete/{id}', ['as' => 'stream.delete', 'uses' => 'streamController@delete'])->where('id', '[0-9]+');
     });
 
     Route::get('/user/edit', ['as' => 'self.user.edit', 'uses' => 'UserController@selfEdit']);

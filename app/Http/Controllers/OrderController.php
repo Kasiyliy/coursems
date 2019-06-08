@@ -33,9 +33,9 @@ class OrderController extends Controller
 
     public function create()
     {
-        $courses = DB::table('courses')->where('visible', true)->get();
+        $streams = DB::table('streams')->get();
         $users = User::all();
-        return view('admin.orders.create', compact("courses", "users"));
+        return view('admin.orders.create', compact("streams", "users"));
     }
 
     public function store(Request $request)
@@ -56,13 +56,13 @@ class OrderController extends Controller
     public function edit($id)
     {
         $order = Order::find($id);
-        $courses = Course::all();
+        $streams = Stream::all();
         $users = User::all();
         if (!$order) {
             Session::flash('error', ' Элемент не существует!');
             return redirect()->back();
         }
-        return view('admin.orders.edit', compact('order', 'courses', 'users'));
+        return view('admin.orders.edit', compact('order', 'streams', 'users'));
     }
 
     public function update(Request $request, $id)

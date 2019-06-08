@@ -14,7 +14,7 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Курс</th>
+                                <th>Поток</th>
                                 <th>Пользователь</th>
                                 <th>Статус</th>
                             </tr>
@@ -23,7 +23,7 @@
                             @foreach($orders as $order)
                                 <tr>
                                     <td>{{$order->id}}</td>
-                                    <td>{{$order->course->name}}</td>
+                                    <td>{{$order->stream->name}}</td>
                                     <td>{{$order->user->email}}</td>
                                     <td>{{$order->status ? 'Оплачено' : 'Не оплачено'}}</td>
                                     <td class="d-flex">

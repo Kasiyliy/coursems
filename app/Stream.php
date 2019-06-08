@@ -5,25 +5,20 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Order extends Model
+class Stream extends Model
 {
     use SoftDeletes;
 
     public static $validatesAll = [];
 
     protected $fillable = [
-        'stream_id',
-        'user_id',
+        'name',
+        'course_id',
         'deadline'
     ];
 
-    public function stream()
+    public function course()
     {
-        return $this->belongsTo(Stream::class);
-    }
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Course::class);
     }
 }

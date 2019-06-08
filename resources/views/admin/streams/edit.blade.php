@@ -16,12 +16,12 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="course_id">Курс</label>
-                                        <select class="form-control" name="stream_id" required>
-                                            @foreach($streams as $stream)
-                                                @if($stream->id != $stream->course_id)
+                                        <select class="form-control" name="course_id" required>
+                                            @foreach($courses as $course)
+                                                @if($course->id != $order->course_id)
                                                     <option selected value="{{$course->id}}">{{$course->name}}</option>
                                                 @else
-                                                    <option value="{{$stream->id}}">{{$stream->name}}</option>
+                                                    <option value="{{$course->id}}">{{$course->name}}</option>
                                                 @endif
                                             @endforeach
                                         </select>

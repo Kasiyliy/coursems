@@ -122,6 +122,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="{{(route('stream.index'))}}">
+                            <i class="fa fa-first-order"></i> <span>Потоки</span>
+                        </a>
+                    </li>
+
                     <li class="header">Настройки</li>
                     <li>
                         <a href="{{e(route('role.index'))}}">
