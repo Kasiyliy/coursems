@@ -12,9 +12,7 @@
 */
 
 Auth::routes();
-Route::get('/', function () {
-    return redirect()->route('login');
-});
+Route::get('/', ['as' => 'front' , 'uses' => 'HomeController@front']);
 
 Route::group(['middleware' => 'auth'], function () {
 

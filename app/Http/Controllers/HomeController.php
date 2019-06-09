@@ -16,4 +16,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function front(Request $request)
+    {
+        return view('front.index');
+    }
 }

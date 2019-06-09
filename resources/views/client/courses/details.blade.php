@@ -19,8 +19,6 @@
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
                                     <br>
-                                    <a href="{{route('lesson.edit' ,['id'=>$lesson->id ])}}"
-                                       class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>
                                 </div>
                             </div>
                         @endforeach
