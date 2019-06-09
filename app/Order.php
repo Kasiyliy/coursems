@@ -14,7 +14,6 @@ class Order extends Model
     protected $fillable = [
         'stream_id',
         'user_id',
-        'deadline'
     ];
 
     public function stream()

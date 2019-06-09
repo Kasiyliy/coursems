@@ -25,6 +25,10 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="started_at">Начало</label>
+                                        <input type="date" class="form-control" name="started_at" required>
+                                    </div>
                                 </div>
 
                                 {{csrf_field()}}

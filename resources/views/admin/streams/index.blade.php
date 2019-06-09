@@ -16,6 +16,10 @@
                                 <th>ID</th>
                                 <th>Название</th>
                                 <th>Курс</th>
+                                <th>Начало</th>
+                                <th>Конец</th>
+                                <th>Статус</th>
+                                <th>Действия</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -24,6 +28,13 @@
                                     <td>{{$stream->id}}</td>
                                     <td>{{$stream->name}}</td>
                                     <td>{{$stream->course->name}}</td>
+                                    <td>{{substr($stream->started_at,0,10)}}</td>
+                                    <td>{{substr($stream->deadline,0,10)}}</td>
+                                    <td><?= $stream->started ? "Открыт" : "Закрыт"?></td>
+                                    <td>
+                                        <a href="{{route('stream.edit' ,['id'=>$stream->id ])}}" class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>
+                                        <a href="{{route('stream.details' ,['id'=>$stream->id ])}}" class="btn-xs btn btn-info"><span class="fa fa-book"></span> Участники</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

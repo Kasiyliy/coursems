@@ -19,6 +19,20 @@ class StreamController extends Controller
         return view('admin.streams.index' , compact("streams"));
     }
 
+    public function details($id)
+    {
+        $stream = Stream::find($id);
+//        $orders = DB::table('orders')->where('stream_id', $id)->get();
+        $orders = DB::table('orders')->leftJoin('users', 'orders.user_id', '=', 'users.id')->where('stream_id', $id)->get();
+
+        if ($stream) {
+            return view('admin.streams.details', compact("orders", "stream"));
+        } else {
+            Session::flash('error', ' Элемент не существует!');
+            return redirect()->back();
+        }
+    }
+
     public function create()
     {
         $courses = DB::table('courses')->where('visible', true)->get();
@@ -34,6 +48,7 @@ class StreamController extends Controller
         } else {
             $stream = new Stream();
             $stream->fill($request->all());
+            $stream->deadline = date('Y-m-d', strtotime($stream->started_date . ' +30 day'));
             $stream->save();
             Session::flash('success', 'Элемент успешно добавлен!');
             return redirect()->back();
@@ -49,7 +64,7 @@ class StreamController extends Controller
             Session::flash('error', ' Элемент не существует!');
             return redirect()->back();
         }
-        return view('admin.stream.edit', compact('stream', 'courses', 'users'));
+        return view('admin.streams.edit', compact('stream', 'courses', 'users'));
     }
 
     public function update(Request $request, $id)

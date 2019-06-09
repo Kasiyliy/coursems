@@ -15,11 +15,11 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="course_id">Курс</label>
+                                        <label for="course_id">Поток</label>
                                         <select class="form-control" name="stream_id" required>
                                             @foreach($streams as $stream)
-                                                @if($stream->id != $stream->course_id)
-                                                    <option selected value="{{$course->id}}">{{$course->name}}</option>
+                                                @if($stream->id != $order->stream_id)
+                                                    <option selected value="{{$stream->id}}">{{$stream->name}}</option>
                                                 @else
                                                     <option value="{{$stream->id}}">{{$stream->name}}</option>
                                                 @endif

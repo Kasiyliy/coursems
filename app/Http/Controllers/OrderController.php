@@ -16,18 +16,6 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-
-        foreach ($orders as $order) {
-            $date1 = new DateTime($order->deadline);
-            $date2 = new DateTime(date('Y-m-d H:i:s'));
-
-
-            if ($date2 > $date1) {
-                $order->status = false;
-                $order->save();
-            }
-        }
-
         return view('admin.orders.index', compact("orders"));
     }
 

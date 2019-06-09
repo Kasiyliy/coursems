@@ -14,6 +14,7 @@ class Stream extends Model
     protected $fillable = [
         'name',
         'course_id',
+        'started_at',
         'deadline'
     ];
 

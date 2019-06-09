@@ -7,18 +7,21 @@
                 <div class="panel">
                     <div class="panel-header">
                         <h2>Добавить</h2>
-                        <a class="btn btn-primary btn-sm" href="{{route('order.index')}}">Назад</a>
+                        <a class="btn btn-primary btn-sm" href="{{route('stream.index')}}">Назад</a>
                     </div>
                     <div class="panel-body">
-                        <form enctype="multipart/form-data" action="{{route('order.update', ['id' => $order->id])}}"
-                              method="post">
+                        <form enctype="multipart/form-data" action="{{route('stream.update', ['id' => $stream->id])}}" method="post">
                             <div class="row">
                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Название</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Название" required value="{{$stream->name}}">
+                                    </div>
                                     <div class="form-group">
                                         <label for="course_id">Курс</label>
                                         <select class="form-control" name="course_id" required>
                                             @foreach($courses as $course)
-                                                @if($course->id != $order->course_id)
+                                                @if($course->id != $stream->course_id)
                                                     <option selected value="{{$course->id}}">{{$course->name}}</option>
                                                 @else
                                                     <option value="{{$course->id}}">{{$course->name}}</option>
@@ -27,20 +30,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="course_id">Пользователь</label>
-                                        <select class="form-control" name="user_id" required>
-                                            @foreach($users as $user)
-                                                @if($user->id != $order->user_id)
-                                                    <option value="{{$user->id}}">{{$user->email}}</option>
-                                                @else
-                                                    <option selected value="{{$user->id}}">{{$user->email}}</option>
-                                                @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="deadline">Доступен до</label>
-                                        <input name="deadline" class="form-control" type="date" value="{{substr($order->deadline ,0,10)}}">
+                                        <label for="started_at">Начало</label>
+                                        <input type="date" class="form-control" name="started_at" required value="{{substr($stream->started_at ,0,10)}}">
                                     </div>
                                 </div>
 

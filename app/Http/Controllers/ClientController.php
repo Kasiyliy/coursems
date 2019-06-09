@@ -6,28 +6,20 @@ use App\Course;
 use App\Order;
 use DateTime;
 use Session;
+use Auth;
 use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
     public function courses()
     {
-        $orders = Order::all();
-        foreach ($orders as $order) {
-            $date1 = new DateTime($order->deadline);
-            $date2 = new DateTime(date('Y-m-d H:i:s'));
-
-
-            if ($date2 > $date1) {
-                $order->status = false;
-                $order->save();
-            }
-        }
-
         $courses = DB::table('courses')
-            ->select('courses.id as id', 'name', 'description')
-            ->leftJoin('orders', 'courses.id', '=', 'orders.course_id')
-            ->where('status', true)
+            ->select('courses.id as id', 'courses.name', 'courses.description')
+            ->leftJoin('streams', 'courses.id', '=', 'streams.course_id')
+            ->leftJoin('orders', 'streams.id', '=', 'orders.stream_id')
+            ->leftJoin('users', 'orders.user_id', '=', 'users.id')
+            ->where('users.id', Auth::id())
+            ->where('started', true)
             ->where('visible', true)
             ->get();
         return view('client.courses.index', compact("courses"));

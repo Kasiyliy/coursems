@@ -13,6 +13,8 @@ class OrderTableCorrection extends Migration
      */
     public function up()
     {
+        DB::unprepared('DROP TRIGGER `deadline_trigger`');
+
         Schema::table('orders', function (Blueprint $table) {
             $table->dropColumn('deadline');
             $table->dropForeign('orders_course_id_foreign');
@@ -24,7 +26,6 @@ class OrderTableCorrection extends Migration
                 ->on('streams');
         });
 
-        DB::unprepared('DROP TRIGGER `deadline_trigger`');
     }
 
     /**

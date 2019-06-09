@@ -14,8 +14,8 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="stream_id">Курс</label>
-                                        <select class="form-group" name="course_id" required>
+                                        <label for="stream_id">Поток</label>
+                                        <select class="form-control" name="stream_id" required>
                                             @foreach($streams as $stream)
                                                 <option value="{{$stream->id}}">{{$stream->name}}</option>
                                             @endforeach
@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="course_id">Пользователь</label>
-                                        <select class="form-group" name="user_id" required>
+                                        <select class="form-control" name="user_id" required>
                                             @foreach($users as $user)
                                                 <option value="{{$user->id}}">{{$user->email}}</option>
                                             @endforeach
