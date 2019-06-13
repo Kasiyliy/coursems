@@ -2592,6 +2592,8 @@ p.demo_store {
 }
 .commerce ul.products li.product figure .product-wrap .product-images .shop-loop-thumbnail.shop-loop-back-thumbnail {
   position: absolute;
+
+
 }
 .commerce ul.products li.product figure:hover .product-wrap .product-images .shop-loop-front-thumbnail img {
   opacity: 0;
