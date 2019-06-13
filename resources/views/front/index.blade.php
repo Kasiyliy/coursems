@@ -109,555 +109,555 @@
                     </div>
                 </div>
                 {{--<div class="container">--}}
-                    {{--<div class="row row-fluid mb-6 pt-6">--}}
-                        {{--<div class="col-sm-4">--}}
-                            {{--<div class="caroufredsel product-slider box_border nav-position-right"--}}
-                                 {{--data-height="variable" data-visible-min="1" data-responsive="1" data-infinite="1"--}}
-                                 {{--data-autoplay="0">--}}
-                                {{--<div class="product-slider-title">--}}
-                                    {{--<h3 class="el-heading">Feature</h3>--}}
-                                {{--</div>--}}
-                                {{--<div class="caroufredsel-wrap">--}}
-                                    {{--<div class="commerce columns-1">--}}
-                                        {{--<ul class="products columns-1">--}}
-                                            {{--<li class="product">--}}
-                                                {{--<div class="product-container">--}}
-                                                    {{--<figure>--}}
-                                                        {{--<div class="product-wrap">--}}
-                                                            {{--<div class="product-images">--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442alt.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="loop-action">--}}
-                                                                    {{--<div class="shop-loop-quickview">--}}
-                                                                        {{--<a title="Quick view" href="#">--}}
-                                                                            {{--Quick view--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-cart">--}}
-                                                                        {{--<a href="#" class="add_to_cart_button">--}}
-                                                                            {{--Add to cart--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</div>--}}
-                                                        {{--<figcaption>--}}
-                                                            {{--<div class="shop-loop-product-info">--}}
-                                                                {{--<div class="info-meta clearfix">--}}
-                                                                    {{--<div class="star-rating">--}}
-                                                                        {{--<span style="width:80%"></span>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-wishlist">--}}
-                                                                        {{--<div class="yith-wcwl-add-to-wishlist">--}}
-                                                                            {{--<div class="yith-wcwl-add-button">--}}
-                                                                                {{--<a href="#" class="add_to_wishlist">--}}
-                                                                                    {{--Add to Wishlist--}}
-                                                                                {{--</a>--}}
-                                                                            {{--</div>--}}
-                                                                        {{--</div>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="info-content-wrap">--}}
-                                                                    {{--<h3 class="product_title">--}}
-                                                                        {{--<a href="shop-detail-1.html">Cras rhoncus duis--}}
-                                                                            {{--viverra</a>--}}
-                                                                    {{--</h3>--}}
-                                                                    {{--<div class="info-price">--}}
-																				{{--<span class="price">--}}
-																					{{--<span class="amount">--}}
-																						{{--&pound;12.00--}}
-																					{{--</span>--}}
-																					{{--&ndash;--}}
-																					{{--<span class="amount">--}}
-																						{{--&pound;20.00--}}
-																					{{--</span>--}}
-																				{{--</span>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</figcaption>--}}
-                                                    {{--</figure>--}}
-                                                {{--</div>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="product">--}}
-                                                {{--<div class="product-container">--}}
-                                                    {{--<figure>--}}
-                                                        {{--<div class="product-wrap">--}}
-                                                            {{--<div class="product-images">--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442alt.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="loop-action">--}}
-                                                                    {{--<div class="shop-loop-quickview">--}}
-                                                                        {{--<a title="Quick view" href="#">--}}
-                                                                            {{--Quick view--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-cart">--}}
-                                                                        {{--<a href="#" class="add_to_cart_button">--}}
-                                                                            {{--Add to cart--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</div>--}}
-                                                        {{--<figcaption>--}}
-                                                            {{--<div class="shop-loop-product-info">--}}
-                                                                {{--<div class="info-meta clearfix">--}}
-                                                                    {{--<div class="star-rating">--}}
-                                                                        {{--<span style="width:60%"></span>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-wishlist">--}}
-                                                                        {{--<div class="yith-wcwl-add-to-wishlist">--}}
-                                                                            {{--<div class="yith-wcwl-add-button">--}}
-                                                                                {{--<a href="#" class="add_to_wishlist">--}}
-                                                                                    {{--Add to Wishlist--}}
-                                                                                {{--</a>--}}
-                                                                            {{--</div>--}}
-                                                                        {{--</div>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="info-content-wrap">--}}
-                                                                    {{--<h3 class="product_title">--}}
-                                                                        {{--<a href="shop-detail-1.html">Creamy Spring--}}
-                                                                            {{--Pasta</a>--}}
-                                                                    {{--</h3>--}}
-                                                                    {{--<div class="info-price">--}}
-																				{{--<span class="price">--}}
-																					{{--<span class="amount">--}}
-																						{{--&pound;321.00--}}
-																					{{--</span>--}}
-																				{{--</span>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</figcaption>--}}
-                                                    {{--</figure>--}}
-                                                {{--</div>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="product">--}}
-                                                {{--<div class="product-container">--}}
-                                                    {{--<figure>--}}
-                                                        {{--<div class="product-wrap">--}}
-                                                            {{--<div class="product-images">--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442alt.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="loop-action">--}}
-                                                                    {{--<div class="shop-loop-quickview">--}}
-                                                                        {{--<a title="Quick view" href="#">--}}
-                                                                            {{--Quick view--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-cart">--}}
-                                                                        {{--<a href="#" class="add_to_cart_button">--}}
-                                                                            {{--Add to cart--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</div>--}}
-                                                        {{--<figcaption>--}}
-                                                            {{--<div class="shop-loop-product-info">--}}
-                                                                {{--<div class="info-meta clearfix">--}}
-                                                                    {{--<div class="star-rating">--}}
-                                                                        {{--<span style="width:60%"></span>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-wishlist">--}}
-                                                                        {{--<div class="yith-wcwl-add-to-wishlist">--}}
-                                                                            {{--<div class="yith-wcwl-add-button">--}}
-                                                                                {{--<a href="#" class="add_to_wishlist">--}}
-                                                                                    {{--Add to Wishlist--}}
-                                                                                {{--</a>--}}
-                                                                            {{--</div>--}}
-                                                                        {{--</div>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="info-content-wrap">--}}
-                                                                    {{--<h3 class="product_title">--}}
-                                                                        {{--<a href="shop-detail-1.html">Jalapeno Dressing--}}
-                                                                            {{--Salad</a>--}}
-                                                                    {{--</h3>--}}
-                                                                    {{--<div class="info-price">--}}
-																				{{--<span class="price">--}}
-																					{{--<span class="amount">--}}
-																						{{--&pound;17.75--}}
-																					{{--</span>--}}
-																				{{--</span>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</figcaption>--}}
-                                                    {{--</figure>--}}
-                                                {{--</div>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
-                                    {{--</div>--}}
-                                    {{--<a href="#" class="caroufredsel-prev"></a>--}}
-                                    {{--<a href="#" class="caroufredsel-next"></a>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-sm-4">--}}
-                            {{--<div class="caroufredsel product-slider box_border nav-position-right"--}}
-                                 {{--data-height="variable" data-visible-min="1" data-responsive="1" data-infinite="1"--}}
-                                 {{--data-autoplay="0">--}}
-                                {{--<div class="product-slider-title">--}}
-                                    {{--<h3 class="el-heading">Top rate</h3>--}}
-                                {{--</div>--}}
-                                {{--<div class="caroufredsel-wrap">--}}
-                                    {{--<div class="commerce columns-1">--}}
-                                        {{--<ul class="products columns-1">--}}
-                                            {{--<li class="product">--}}
-                                                {{--<div class="product-container">--}}
-                                                    {{--<figure>--}}
-                                                        {{--<div class="product-wrap">--}}
-                                                            {{--<div class="product-images">--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442alt.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="loop-action">--}}
-                                                                    {{--<div class="shop-loop-quickview">--}}
-                                                                        {{--<a title="Quick view" href="#">--}}
-                                                                            {{--Quick view--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-cart">--}}
-                                                                        {{--<a href="#" class="add_to_cart_button">--}}
-                                                                            {{--Add to cart--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</div>--}}
-                                                        {{--<figcaption>--}}
-                                                            {{--<div class="shop-loop-product-info">--}}
-                                                                {{--<div class="info-meta clearfix">--}}
-                                                                    {{--<div class="star-rating">--}}
-                                                                        {{--<span style="width:100%"></span>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-wishlist">--}}
-                                                                        {{--<div class="yith-wcwl-add-to-wishlist">--}}
-                                                                            {{--<div class="yith-wcwl-add-button">--}}
-                                                                                {{--<a href="#" class="add_to_wishlist">--}}
-                                                                                    {{--Add to Wishlist--}}
-                                                                                {{--</a>--}}
-                                                                            {{--</div>--}}
-                                                                        {{--</div>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="info-content-wrap">--}}
-                                                                    {{--<h3 class="product_title">--}}
-                                                                        {{--<a href="shop-detail-1.html">Quisque libero--}}
-                                                                            {{--sagittis</a>--}}
-                                                                    {{--</h3>--}}
-                                                                    {{--<div class="info-price">--}}
-																				{{--<span class="price">--}}
-																					{{--<span class="amount">--}}
-																						{{--&pound;17.50--}}
-																					{{--</span>--}}
-																				{{--</span>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</figcaption>--}}
-                                                    {{--</figure>--}}
-                                                {{--</div>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="product">--}}
-                                                {{--<div class="product-container">--}}
-                                                    {{--<figure>--}}
-                                                        {{--<div class="product-wrap">--}}
-                                                            {{--<div class="product-images">--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442alt.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="loop-action">--}}
-                                                                    {{--<div class="shop-loop-quickview">--}}
-                                                                        {{--<a title="Quick view" href="#">--}}
-                                                                            {{--Quick view--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-cart">--}}
-                                                                        {{--<a href="#" class="add_to_cart_button">--}}
-                                                                            {{--Add to cart--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</div>--}}
-                                                        {{--<figcaption>--}}
-                                                            {{--<div class="shop-loop-product-info">--}}
-                                                                {{--<div class="info-meta clearfix">--}}
-                                                                    {{--<div class="star-rating">--}}
-                                                                        {{--<span style="width:100%"></span>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-wishlist">--}}
-                                                                        {{--<div class="yith-wcwl-add-to-wishlist">--}}
-                                                                            {{--<div class="yith-wcwl-add-button">--}}
-                                                                                {{--<a href="#" class="add_to_wishlist">--}}
-                                                                                    {{--Add to Wishlist--}}
-                                                                                {{--</a>--}}
-                                                                            {{--</div>--}}
-                                                                        {{--</div>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="info-content-wrap">--}}
-                                                                    {{--<h3 class="product_title">--}}
-                                                                        {{--<a href="shop-detail-1.html">Cras rhoncus duis--}}
-                                                                            {{--viverra</a>--}}
-                                                                    {{--</h3>--}}
-                                                                    {{--<div class="info-price">--}}
-																				{{--<span class="price">--}}
-																					{{--<span class="amount">--}}
-																						{{--&pound;12.00--}}
-																					{{--</span>--}}
-																					{{--&ndash;--}}
-																					{{--<span class="amount">--}}
-																						{{--&pound;20.00--}}
-																					{{--</span>--}}
-																				{{--</span>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</figcaption>--}}
-                                                    {{--</figure>--}}
-                                                {{--</div>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
-                                    {{--</div>--}}
-                                    {{--<a href="#" class="caroufredsel-prev"></a>--}}
-                                    {{--<a href="#" class="caroufredsel-next"></a>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-sm-4">--}}
-                            {{--<div class="caroufredsel product-slider box_border nav-position-right"--}}
-                                 {{--data-height="variable" data-visible-min="1" data-responsive="1" data-infinite="1"--}}
-                                 {{--data-autoplay="0">--}}
-                                {{--<div class="product-slider-title">--}}
-                                    {{--<h3 class="el-heading">Sale</h3>--}}
-                                {{--</div>--}}
-                                {{--<div class="caroufredsel-wrap">--}}
-                                    {{--<div class="commerce columns-1">--}}
-                                        {{--<ul class="products columns-1" data-columns="1">--}}
-                                            {{--<li class="product">--}}
-                                                {{--<div class="product-container">--}}
-                                                    {{--<figure>--}}
-                                                        {{--<div class="product-wrap">--}}
-                                                            {{--<div class="product-images">--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442alt.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="loop-action">--}}
-                                                                    {{--<div class="shop-loop-quickview">--}}
-                                                                        {{--<a title="Quick view" href="#">--}}
-                                                                            {{--Quick view--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-cart">--}}
-                                                                        {{--<a href="#" class="add_to_cart_button">--}}
-                                                                            {{--Add to cart--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</div>--}}
-                                                        {{--<figcaption>--}}
-                                                            {{--<div class="shop-loop-product-info">--}}
-                                                                {{--<div class="info-meta clearfix">--}}
-                                                                    {{--<div class="star-rating">--}}
-                                                                        {{--<span style="width:100%"></span>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-wishlist">--}}
-                                                                        {{--<div class="yith-wcwl-add-to-wishlist">--}}
-                                                                            {{--<div class="yith-wcwl-add-button">--}}
-                                                                                {{--<a href="#" class="add_to_wishlist">--}}
-                                                                                    {{--Add to Wishlist--}}
-                                                                                {{--</a>--}}
-                                                                            {{--</div>--}}
-                                                                        {{--</div>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="info-content-wrap">--}}
-                                                                    {{--<h3 class="product_title">--}}
-                                                                        {{--<a href="shop-detail-1.html">Donec tincidunt--}}
-                                                                            {{--justo</a>--}}
-                                                                    {{--</h3>--}}
-                                                                    {{--<div class="info-price">--}}
-																				{{--<span class="price">--}}
-																					{{--<del>--}}
-																						{{--<span class="amount">--}}
-																							{{--&pound;20.50--}}
-																						{{--</span>--}}
-																					{{--</del>--}}
-																					{{--<ins>--}}
-																						{{--<span class="amount">--}}
-																							{{--&pound;19.00--}}
-																						{{--</span>--}}
-																					{{--</ins>--}}
-																				{{--</span>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</figcaption>--}}
-                                                    {{--</figure>--}}
-                                                {{--</div>--}}
-                                            {{--</li>--}}
-                                            {{--<li class="product">--}}
-                                                {{--<div class="product-container">--}}
-                                                    {{--<figure>--}}
-                                                        {{--<div class="product-wrap">--}}
-                                                            {{--<div class="product-images">--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
-                                                                    {{--<img width="375" height="505"--}}
-                                                                         {{--src="front/images/products/product_328x442alt.jpg"--}}
-                                                                         {{--alt=""/>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="loop-action">--}}
-                                                                    {{--<div class="shop-loop-quickview">--}}
-                                                                        {{--<a title="Quick view" href="#">--}}
-                                                                            {{--Quick view--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-cart">--}}
-                                                                        {{--<a href="#" class="add_to_cart_button">--}}
-                                                                            {{--Add to cart--}}
-                                                                        {{--</a>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</div>--}}
-                                                        {{--<figcaption>--}}
-                                                            {{--<div class="shop-loop-product-info">--}}
-                                                                {{--<div class="info-meta clearfix">--}}
-                                                                    {{--<div class="star-rating">--}}
-                                                                        {{--<span style="width:100%"></span>--}}
-                                                                    {{--</div>--}}
-                                                                    {{--<div class="loop-add-to-wishlist">--}}
-                                                                        {{--<div class="yith-wcwl-add-to-wishlist">--}}
-                                                                            {{--<div class="yith-wcwl-add-button">--}}
-                                                                                {{--<a href="#" class="add_to_wishlist">--}}
-                                                                                    {{--Add to Wishlist--}}
-                                                                                {{--</a>--}}
-                                                                            {{--</div>--}}
-                                                                        {{--</div>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                                {{--<div class="info-content-wrap">--}}
-                                                                    {{--<h3 class="product_title">--}}
-                                                                        {{--<a href="shop-detail-1.html">Morbi fermentum</a>--}}
-                                                                    {{--</h3>--}}
-                                                                    {{--<div class="info-price">--}}
-																				{{--<span class="price">--}}
-																					{{--<del>--}}
-																						{{--<span class="amount">--}}
-																							{{--&pound;23.00--}}
-																						{{--</span>--}}
-																					{{--</del>--}}
-																					{{--<ins>--}}
-																						{{--<span class="amount">--}}
-																							{{--&pound;20.00--}}
-																						{{--</span>--}}
-																					{{--</ins>--}}
-																				{{--</span>--}}
-                                                                    {{--</div>--}}
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-                                                        {{--</figcaption>--}}
-                                                    {{--</figure>--}}
-                                                {{--</div>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
-                                    {{--</div>--}}
-                                    {{--<a href="#" class="caroufredsel-prev"></a>--}}
-                                    {{--<a href="#" class="caroufredsel-next"></a>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
+                {{--<div class="row row-fluid mb-6 pt-6">--}}
+                {{--<div class="col-sm-4">--}}
+                {{--<div class="caroufredsel product-slider box_border nav-position-right"--}}
+                {{--data-height="variable" data-visible-min="1" data-responsive="1" data-infinite="1"--}}
+                {{--data-autoplay="0">--}}
+                {{--<div class="product-slider-title">--}}
+                {{--<h3 class="el-heading">Feature</h3>--}}
+                {{--</div>--}}
+                {{--<div class="caroufredsel-wrap">--}}
+                {{--<div class="commerce columns-1">--}}
+                {{--<ul class="products columns-1">--}}
+                {{--<li class="product">--}}
+                {{--<div class="product-container">--}}
+                {{--<figure>--}}
+                {{--<div class="product-wrap">--}}
+                {{--<div class="product-images">--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442alt.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="loop-action">--}}
+                {{--<div class="shop-loop-quickview">--}}
+                {{--<a title="Quick view" href="#">--}}
+                {{--Quick view--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-cart">--}}
+                {{--<a href="#" class="add_to_cart_button">--}}
+                {{--Add to cart--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<figcaption>--}}
+                {{--<div class="shop-loop-product-info">--}}
+                {{--<div class="info-meta clearfix">--}}
+                {{--<div class="star-rating">--}}
+                {{--<span style="width:80%"></span>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-button">--}}
+                {{--<a href="#" class="add_to_wishlist">--}}
+                {{--Add to Wishlist--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="info-content-wrap">--}}
+                {{--<h3 class="product_title">--}}
+                {{--<a href="shop-detail-1.html">Cras rhoncus duis--}}
+                {{--viverra</a>--}}
+                {{--</h3>--}}
+                {{--<div class="info-price">--}}
+                {{--<span class="price">--}}
+                {{--<span class="amount">--}}
+                {{--&pound;12.00--}}
+                {{--</span>--}}
+                {{--&ndash;--}}
+                {{--<span class="amount">--}}
+                {{--&pound;20.00--}}
+                {{--</span>--}}
+                {{--</span>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</figcaption>--}}
+                {{--</figure>--}}
+                {{--</div>--}}
+                {{--</li>--}}
+                {{--<li class="product">--}}
+                {{--<div class="product-container">--}}
+                {{--<figure>--}}
+                {{--<div class="product-wrap">--}}
+                {{--<div class="product-images">--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442alt.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="loop-action">--}}
+                {{--<div class="shop-loop-quickview">--}}
+                {{--<a title="Quick view" href="#">--}}
+                {{--Quick view--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-cart">--}}
+                {{--<a href="#" class="add_to_cart_button">--}}
+                {{--Add to cart--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<figcaption>--}}
+                {{--<div class="shop-loop-product-info">--}}
+                {{--<div class="info-meta clearfix">--}}
+                {{--<div class="star-rating">--}}
+                {{--<span style="width:60%"></span>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-button">--}}
+                {{--<a href="#" class="add_to_wishlist">--}}
+                {{--Add to Wishlist--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="info-content-wrap">--}}
+                {{--<h3 class="product_title">--}}
+                {{--<a href="shop-detail-1.html">Creamy Spring--}}
+                {{--Pasta</a>--}}
+                {{--</h3>--}}
+                {{--<div class="info-price">--}}
+                {{--<span class="price">--}}
+                {{--<span class="amount">--}}
+                {{--&pound;321.00--}}
+                {{--</span>--}}
+                {{--</span>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</figcaption>--}}
+                {{--</figure>--}}
+                {{--</div>--}}
+                {{--</li>--}}
+                {{--<li class="product">--}}
+                {{--<div class="product-container">--}}
+                {{--<figure>--}}
+                {{--<div class="product-wrap">--}}
+                {{--<div class="product-images">--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442alt.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="loop-action">--}}
+                {{--<div class="shop-loop-quickview">--}}
+                {{--<a title="Quick view" href="#">--}}
+                {{--Quick view--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-cart">--}}
+                {{--<a href="#" class="add_to_cart_button">--}}
+                {{--Add to cart--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<figcaption>--}}
+                {{--<div class="shop-loop-product-info">--}}
+                {{--<div class="info-meta clearfix">--}}
+                {{--<div class="star-rating">--}}
+                {{--<span style="width:60%"></span>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-button">--}}
+                {{--<a href="#" class="add_to_wishlist">--}}
+                {{--Add to Wishlist--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="info-content-wrap">--}}
+                {{--<h3 class="product_title">--}}
+                {{--<a href="shop-detail-1.html">Jalapeno Dressing--}}
+                {{--Salad</a>--}}
+                {{--</h3>--}}
+                {{--<div class="info-price">--}}
+                {{--<span class="price">--}}
+                {{--<span class="amount">--}}
+                {{--&pound;17.75--}}
+                {{--</span>--}}
+                {{--</span>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</figcaption>--}}
+                {{--</figure>--}}
+                {{--</div>--}}
+                {{--</li>--}}
+                {{--</ul>--}}
+                {{--</div>--}}
+                {{--<a href="#" class="caroufredsel-prev"></a>--}}
+                {{--<a href="#" class="caroufredsel-next"></a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-sm-4">--}}
+                {{--<div class="caroufredsel product-slider box_border nav-position-right"--}}
+                {{--data-height="variable" data-visible-min="1" data-responsive="1" data-infinite="1"--}}
+                {{--data-autoplay="0">--}}
+                {{--<div class="product-slider-title">--}}
+                {{--<h3 class="el-heading">Top rate</h3>--}}
+                {{--</div>--}}
+                {{--<div class="caroufredsel-wrap">--}}
+                {{--<div class="commerce columns-1">--}}
+                {{--<ul class="products columns-1">--}}
+                {{--<li class="product">--}}
+                {{--<div class="product-container">--}}
+                {{--<figure>--}}
+                {{--<div class="product-wrap">--}}
+                {{--<div class="product-images">--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442alt.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="loop-action">--}}
+                {{--<div class="shop-loop-quickview">--}}
+                {{--<a title="Quick view" href="#">--}}
+                {{--Quick view--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-cart">--}}
+                {{--<a href="#" class="add_to_cart_button">--}}
+                {{--Add to cart--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<figcaption>--}}
+                {{--<div class="shop-loop-product-info">--}}
+                {{--<div class="info-meta clearfix">--}}
+                {{--<div class="star-rating">--}}
+                {{--<span style="width:100%"></span>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-button">--}}
+                {{--<a href="#" class="add_to_wishlist">--}}
+                {{--Add to Wishlist--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="info-content-wrap">--}}
+                {{--<h3 class="product_title">--}}
+                {{--<a href="shop-detail-1.html">Quisque libero--}}
+                {{--sagittis</a>--}}
+                {{--</h3>--}}
+                {{--<div class="info-price">--}}
+                {{--<span class="price">--}}
+                {{--<span class="amount">--}}
+                {{--&pound;17.50--}}
+                {{--</span>--}}
+                {{--</span>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</figcaption>--}}
+                {{--</figure>--}}
+                {{--</div>--}}
+                {{--</li>--}}
+                {{--<li class="product">--}}
+                {{--<div class="product-container">--}}
+                {{--<figure>--}}
+                {{--<div class="product-wrap">--}}
+                {{--<div class="product-images">--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442alt.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="loop-action">--}}
+                {{--<div class="shop-loop-quickview">--}}
+                {{--<a title="Quick view" href="#">--}}
+                {{--Quick view--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-cart">--}}
+                {{--<a href="#" class="add_to_cart_button">--}}
+                {{--Add to cart--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<figcaption>--}}
+                {{--<div class="shop-loop-product-info">--}}
+                {{--<div class="info-meta clearfix">--}}
+                {{--<div class="star-rating">--}}
+                {{--<span style="width:100%"></span>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-button">--}}
+                {{--<a href="#" class="add_to_wishlist">--}}
+                {{--Add to Wishlist--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="info-content-wrap">--}}
+                {{--<h3 class="product_title">--}}
+                {{--<a href="shop-detail-1.html">Cras rhoncus duis--}}
+                {{--viverra</a>--}}
+                {{--</h3>--}}
+                {{--<div class="info-price">--}}
+                {{--<span class="price">--}}
+                {{--<span class="amount">--}}
+                {{--&pound;12.00--}}
+                {{--</span>--}}
+                {{--&ndash;--}}
+                {{--<span class="amount">--}}
+                {{--&pound;20.00--}}
+                {{--</span>--}}
+                {{--</span>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</figcaption>--}}
+                {{--</figure>--}}
+                {{--</div>--}}
+                {{--</li>--}}
+                {{--</ul>--}}
+                {{--</div>--}}
+                {{--<a href="#" class="caroufredsel-prev"></a>--}}
+                {{--<a href="#" class="caroufredsel-next"></a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-sm-4">--}}
+                {{--<div class="caroufredsel product-slider box_border nav-position-right"--}}
+                {{--data-height="variable" data-visible-min="1" data-responsive="1" data-infinite="1"--}}
+                {{--data-autoplay="0">--}}
+                {{--<div class="product-slider-title">--}}
+                {{--<h3 class="el-heading">Sale</h3>--}}
+                {{--</div>--}}
+                {{--<div class="caroufredsel-wrap">--}}
+                {{--<div class="commerce columns-1">--}}
+                {{--<ul class="products columns-1" data-columns="1">--}}
+                {{--<li class="product">--}}
+                {{--<div class="product-container">--}}
+                {{--<figure>--}}
+                {{--<div class="product-wrap">--}}
+                {{--<div class="product-images">--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442alt.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="loop-action">--}}
+                {{--<div class="shop-loop-quickview">--}}
+                {{--<a title="Quick view" href="#">--}}
+                {{--Quick view--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-cart">--}}
+                {{--<a href="#" class="add_to_cart_button">--}}
+                {{--Add to cart--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<figcaption>--}}
+                {{--<div class="shop-loop-product-info">--}}
+                {{--<div class="info-meta clearfix">--}}
+                {{--<div class="star-rating">--}}
+                {{--<span style="width:100%"></span>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-button">--}}
+                {{--<a href="#" class="add_to_wishlist">--}}
+                {{--Add to Wishlist--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="info-content-wrap">--}}
+                {{--<h3 class="product_title">--}}
+                {{--<a href="shop-detail-1.html">Donec tincidunt--}}
+                {{--justo</a>--}}
+                {{--</h3>--}}
+                {{--<div class="info-price">--}}
+                {{--<span class="price">--}}
+                {{--<del>--}}
+                {{--<span class="amount">--}}
+                {{--&pound;20.50--}}
+                {{--</span>--}}
+                {{--</del>--}}
+                {{--<ins>--}}
+                {{--<span class="amount">--}}
+                {{--&pound;19.00--}}
+                {{--</span>--}}
+                {{--</ins>--}}
+                {{--</span>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</figcaption>--}}
+                {{--</figure>--}}
+                {{--</div>--}}
+                {{--</li>--}}
+                {{--<li class="product">--}}
+                {{--<div class="product-container">--}}
+                {{--<figure>--}}
+                {{--<div class="product-wrap">--}}
+                {{--<div class="product-images">--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-front-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="shop-loop-thumbnail shop-loop-back-thumbnail">--}}
+                {{--<img width="375" height="505"--}}
+                {{--src="front/images/products/product_328x442alt.jpg"--}}
+                {{--alt=""/>--}}
+                {{--</div>--}}
+                {{--<div class="loop-action">--}}
+                {{--<div class="shop-loop-quickview">--}}
+                {{--<a title="Quick view" href="#">--}}
+                {{--Quick view--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-cart">--}}
+                {{--<a href="#" class="add_to_cart_button">--}}
+                {{--Add to cart--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<figcaption>--}}
+                {{--<div class="shop-loop-product-info">--}}
+                {{--<div class="info-meta clearfix">--}}
+                {{--<div class="star-rating">--}}
+                {{--<span style="width:100%"></span>--}}
+                {{--</div>--}}
+                {{--<div class="loop-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-to-wishlist">--}}
+                {{--<div class="yith-wcwl-add-button">--}}
+                {{--<a href="#" class="add_to_wishlist">--}}
+                {{--Add to Wishlist--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="info-content-wrap">--}}
+                {{--<h3 class="product_title">--}}
+                {{--<a href="shop-detail-1.html">Morbi fermentum</a>--}}
+                {{--</h3>--}}
+                {{--<div class="info-price">--}}
+                {{--<span class="price">--}}
+                {{--<del>--}}
+                {{--<span class="amount">--}}
+                {{--&pound;23.00--}}
+                {{--</span>--}}
+                {{--</del>--}}
+                {{--<ins>--}}
+                {{--<span class="amount">--}}
+                {{--&pound;20.00--}}
+                {{--</span>--}}
+                {{--</ins>--}}
+                {{--</span>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</figcaption>--}}
+                {{--</figure>--}}
+                {{--</div>--}}
+                {{--</li>--}}
+                {{--</ul>--}}
+                {{--</div>--}}
+                {{--<a href="#" class="caroufredsel-prev"></a>--}}
+                {{--<a href="#" class="caroufredsel-next"></a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
                 {{--</div>--}}
                 {{--<div class="container">--}}
-                    {{--<div class="row row-fluid mb-7">--}}
-                        {{--<div class="col-sm-6">--}}
-                            {{--<div class="box-ft box-ft-1">--}}
-                                {{--<img src="front/images/thumb_569x341.jpg" alt="">--}}
-                                {{--<a href="#">--}}
-											{{--<span class="bof-tf-title-wrap">--}}
-												{{--<span class="bof-tf-title-wrap-2">--}}
-													{{--<span class="bof-tf-sub-title">New Comming</span>--}}
-													{{--<span class="bof-tf-title">AUTUMN 2015</span>--}}
-												{{--</span>--}}
-											{{--</span>--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-sm-6">--}}
-                            {{--<div class="video-embed-shortcode">--}}
-                                {{--<img src="front/images/thumb_569x341.jpg" alt=""/>--}}
-                                {{--<div class="video-embed-shortcode mfp-hide">--}}
-                                    {{--<div id="video-1" class="embed-wrap">--}}
-                                        {{--<iframe width="1200" height="675"--}}
-                                                {{--src="https://www.youtube.com/embed/M4z90wlwYs8?feature=oembed"--}}
-                                                {{--allowfullscreen></iframe>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<a class="video-embed-action"--}}
-                                   {{--data-video-inline="&lt;div class=&quot;video-embed-shortcode mfp-hide &quot;&gt;&lt;div id=&quot;video-1&quot; class=&quot;embed-wrap&quot;&gt;&lt;iframe width=&quot;1200&quot; height=&quot;675&quot; src=&quot;https://www.youtube.com/embed/M4z90wlwYs8?feature=oembed&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;"--}}
-                                   {{--href="#video-1" data-rel="magnific-popup-video">--}}
-                                    {{--<i class="elegant_arrow_triangle-right_alt2"></i>--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
+                {{--<div class="row row-fluid mb-7">--}}
+                {{--<div class="col-sm-6">--}}
+                {{--<div class="box-ft box-ft-1">--}}
+                {{--<img src="front/images/thumb_569x341.jpg" alt="">--}}
+                {{--<a href="#">--}}
+                {{--<span class="bof-tf-title-wrap">--}}
+                {{--<span class="bof-tf-title-wrap-2">--}}
+                {{--<span class="bof-tf-sub-title">New Comming</span>--}}
+                {{--<span class="bof-tf-title">AUTUMN 2015</span>--}}
+                {{--</span>--}}
+                {{--</span>--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-sm-6">--}}
+                {{--<div class="video-embed-shortcode">--}}
+                {{--<img src="front/images/thumb_569x341.jpg" alt=""/>--}}
+                {{--<div class="video-embed-shortcode mfp-hide">--}}
+                {{--<div id="video-1" class="embed-wrap">--}}
+                {{--<iframe width="1200" height="675"--}}
+                {{--src="https://www.youtube.com/embed/M4z90wlwYs8?feature=oembed"--}}
+                {{--allowfullscreen></iframe>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<a class="video-embed-action"--}}
+                {{--data-video-inline="&lt;div class=&quot;video-embed-shortcode mfp-hide &quot;&gt;&lt;div id=&quot;video-1&quot; class=&quot;embed-wrap&quot;&gt;&lt;iframe width=&quot;1200&quot; height=&quot;675&quot; src=&quot;https://www.youtube.com/embed/M4z90wlwYs8?feature=oembed&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;"--}}
+                {{--href="#video-1" data-rel="magnific-popup-video">--}}
+                {{--<i class="elegant_arrow_triangle-right_alt2"></i>--}}
+                {{--</a>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
                 {{--</div>--}}
                 <div class="container">
                     <div class="row row-fluid mb-10">
@@ -671,61 +671,63 @@
                                     <div class="commerce columns-4">
                                         <ul class="products columns-4" data-columns="4">
                                             @foreach($courses as $course)
-                                            <li class="product">
-                                                <div class="product-container">
-                                                    <figure>
-                                                        <div class="product-wrap">
-                                                            <div class="product-images">
-                                                                <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-                                                                    <img width="100%" height="50%" src="{{asset($course->image_path)}}"  alt=""/>
-                                                                </div>
-                                                                <div class="loop-action">
-                                                                    <div class="shop-loop-quickview">
-                                                                        <a title="Quick view" href="#">
-                                                                            Посмотреть
-                                                                        </a>
+                                                <li class="product">
+                                                    <div class="product-container">
+                                                        <figure>
+                                                            <div class="product-wrap">
+                                                                <div class="product-images">
+                                                                    <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
+                                                                        <img width="100%" height="50%"
+                                                                             src="{{asset($course->image_path)}}"
+                                                                             alt=""/>
                                                                     </div>
-                                                                    <div class="loop-add-to-cart">
-                                                                        <a href="#" class="add_to_cart_button">
-                                                                            Записаться
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <figcaption>
-                                                            <div class="shop-loop-product-info">
-                                                                <div class="info-meta clearfix">
-                                                                    <div class="star-rating">
-                                                                        <span style="width:100%"></span>
-                                                                    </div>
-                                                                    <div class="loop-add-to-wishlist">
-                                                                        <div class="yith-wcwl-add-to-wishlist">
-                                                                            <div class="yith-wcwl-add-button">
-                                                                                <a href="#" class="add_to_wishlist">
-                                                                                    Add to Wishlist
-                                                                                </a>
-                                                                            </div>
+                                                                    <div class="loop-action">
+                                                                        <div class="shop-loop-quickview">
+                                                                            <a title="Quick view" href="#">
+                                                                                Посмотреть
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="loop-add-to-cart">
+                                                                            <a href="#" class="add_to_cart_button">
+                                                                                Записаться
+                                                                            </a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="info-content-wrap">
-                                                                    <h3 class="product_title">
-                                                                        <a href="shop-detail-1.html">{{$course->name}}</a>
-                                                                    </h3>
-                                                                    <div class="info-price">
+                                                            </div>
+                                                            <figcaption>
+                                                                <div class="shop-loop-product-info">
+                                                                    <div class="info-meta clearfix">
+                                                                        <div class="star-rating">
+                                                                            <span style="width:100%"></span>
+                                                                        </div>
+                                                                        <div class="loop-add-to-wishlist">
+                                                                            <div class="yith-wcwl-add-to-wishlist">
+                                                                                <div class="yith-wcwl-add-button">
+                                                                                    <a href="#" class="add_to_wishlist">
+                                                                                        Add to Wishlist
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="info-content-wrap">
+                                                                        <h3 class="product_title">
+                                                                            <a href="{{route('single.course', ['id' => $course->id])}}">{{$course->name}}</a>
+                                                                        </h3>
+                                                                        <div class="info-price">
 																				<span class="price">
 																					<span class="amount">
 																						{{$course->price}} тенге
 																					</span>
 																				</span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                            </li>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                </li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -741,55 +743,68 @@
                         <div class="col-sm-12 p-0">
                             <div class="post-grid-wrap">
                                 <ul class="row list">
-
-                                @foreach($streams as $stream)
-                                    <li class="col-sm-12">
-                                        <article class="hentry">
-                                            <div class="hentry-wrap">
-                                                <div class="entry-featured">
-                                                    <a href="blog-detail.html">
-                                                        <img width="700" height="450"
-                                                             src="{{asset($stream->course->image_path)}}" alt=""/>
-                                                    </a>
-                                                </div>
-                                                <div class="entry-info">
-                                                    <div class="entry-header">
-                                                        <h3 class="entry-title">
-                                                            <a href="blog-detail.html">
-                                                                {{$stream->name}}
-                                                            </a>
-                                                        </h3>
+                                    @foreach($streams as $stream)
+                                        <li class="col-sm-12">
+                                            <article class="hentry">
+                                                <div class="hentry-wrap">
+                                                    <div class="entry-featured">
+                                                        <a href="blog-detail.html">
+                                                            <img width="700" height="450"
+                                                                 src="{{asset($stream->course->image_path)}}" alt=""/>
+                                                        </a>
                                                     </div>
-                                                    <div class="entry-content">
-                                                        <p>
-                                                            {{$stream->course->description}}
-                                                        </p>
-                                                    </div>
-                                                    <div class="entry-meta">
+                                                    <div class="entry-info">
+                                                        <div class="entry-header">
+                                                            <h3 class="entry-title">
+                                                                <a href="{{route('single.course', ['id' => $course->id])}}">
+                                                                    {{$stream->name}}
+                                                                </a>
+                                                            </h3>
+                                                        </div>
+                                                        <div class="entry-content">
+                                                            <p>
+                                                                {{$stream->course->description}}
+                                                            </p>
+                                                        </div>
+                                                        <div class="entry-meta">
 																<span class="meta-date">
 																	Дата начала:
 																	<time datetime="2015-08-11T06:27:49+00:00">{{$stream->started_at}}</time>
 																</span>
-                                                        <br>
-                                                        <span class="meta-author">
+                                                            <br>
+                                                            <span class="meta-author">
 																	Дата окончания:
                                                             <time datetime="2015-08-11T06:27:49+00:00">{{$stream->deadline}}</time>
 																</span>
-                                                        <br>
-                                                        <span class="meta-category">
+                                                            <br>
+                                                            <span class="meta-category">
 																	Курс:
 																	<a href="#">{{$stream->course->name}}</a>
 																</span>
+                                                        </div>
+                                                        @php
+                                                        $paid = false;
+                                                              foreach ($user->streams as $user_streams){
+                                                              if($user_streams->id == $stream->id)
+                                                              $paid=true;
+                                                              }
+                                                                @endphp
+                                                        @if($paid==false)
+                                                        <a class="read-more btn btn-outline" href="blog-detail.html">
+                                                            Записаться
+                                                        </a>
+                                                            @else
+                                                            <a class="read-more btn btn-outline" href="{{route('single.course.lessons'
+                                                            ,['id' => $stream->course->id])}}">
+                                                                Перейте к урокам
+                                                            </a>
+                                                            @endif
                                                     </div>
-                                                    <a class="read-more btn btn-outline" href="blog-detail.html">
-                                                        Записаться
-                                                    </a>
                                                 </div>
-                                            </div>
-                                        </article>
-                                    </li>
-                                        <br>
-                                        @endforeach
+                                            </article>
+                                            <br>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
