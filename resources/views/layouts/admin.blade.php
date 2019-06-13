@@ -124,7 +124,7 @@
 
                     <li>
                         <a href="{{(route('stream.index'))}}">
-                            <i class="fa fa-first-order"></i> <span>Потоки</span>
+                            <i class="fa fa-tasks" aria-hidden="true"></i> <span>Потоки</span>
                         </a>
                     </li>
 
