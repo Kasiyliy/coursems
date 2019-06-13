@@ -13,6 +13,8 @@
 
 Auth::routes();
 Route::get('/', ['as' => 'front' , 'uses' => 'UserSideController@index']);
+Route::get('/faqs', ['as' => 'front.faqs', 'uses' => 'UserSideController@faqs']);
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
@@ -20,7 +22,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/client/courses', ['as' => 'client.course.index', 'uses' => 'ClientController@courses']);
     Route::get('/client/courses/{id}', ['as' => 'client.course.details', 'uses' => 'ClientController@details'])->where('id', '[0-9]+');
 
-    Route::group(['middleware' => 'admin'], function () {
+    Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
 
         Route::get('/users', ['as' => 'user.index', 'uses' => 'UserController@index']);
         Route::get('/users/create', ['as' => 'user.create', 'uses' => 'UserController@create']);
@@ -68,6 +70,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/streams/update/{id}', ['as' => 'stream.update', 'uses' => 'streamController@update'])->where('id', '[0-9]+');
         Route::post('/streams/toggle/status/{id}', ['as' => 'stream.toggle.status', 'uses' => 'streamController@toggleStatus'])->where('id', '[0-9]+');
         Route::post('/streams/delete/{id}', ['as' => 'stream.delete', 'uses' => 'streamController@delete'])->where('id', '[0-9]+');
+
+        Route::get('/faq/create', ['as' => 'faq.create', 'uses' => 'FAQController@create']);
+        Route::get('/faqs', ['as' => 'faq.index', 'uses' => 'FAQController@index']);
+        Route::post('/faq/store', ['as' => 'faq.store', 'uses' => 'FAQController@store']);
+        Route::post('/faq/delete/{id}', ['as' => 'faq.delete', 'uses' => 'FAQController@delete'])->where('id', '[0-9]+');
+        Route::get('/faq/edit/{id}', ['as' => 'faq.edit', 'uses' => 'FAQController@edit']);
+        Route::post('/faq/update/{id}', ['as' => 'faq.update', 'uses' => 'FAQController@update']);
     });
 
     Route::get('/user/edit', ['as' => 'self.user.edit', 'uses' => 'UserController@selfEdit']);

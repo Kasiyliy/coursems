@@ -128,6 +128,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="{{(route('faq.index'))}}">
+                            <i class="fa fa-question-circle"></i> <span>FAQs</span>
+                        </a>
+                    </li>
+
                     <li class="header">Настройки</li>
                     <li>
                         <a href="{{e(route('role.index'))}}">

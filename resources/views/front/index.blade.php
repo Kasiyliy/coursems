@@ -741,7 +741,8 @@
                         <div class="col-sm-12 p-0">
                             <div class="post-grid-wrap">
                                 <ul class="row list">
-                                    @foreach($streams as $stream)
+
+                                @foreach($streams as $stream)
                                     <li class="col-sm-12">
                                         <article class="hentry">
                                             <div class="hentry-wrap">
