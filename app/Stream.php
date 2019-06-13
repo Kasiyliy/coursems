@@ -22,4 +22,8 @@ class Stream extends Model
     {
         return $this->belongsTo(Course::class);
     }
+
+    public function users(){
+        return $this->belongsToMany('App\User', 'streams_users');
+    }
 }

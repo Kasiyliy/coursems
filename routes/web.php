@@ -13,6 +13,8 @@
 
 Auth::routes();
 Route::get('/', ['as' => 'front' , 'uses' => 'UserSideController@index']);
+Route::get('/course/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
+Route::get('/course/lessons/{id}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@course_lessons']);
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);

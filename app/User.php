@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function isClient(){
         return $this->role_id == Role::CLIENT_ID;
     }
+
+    public function streams(){
+        return $this->belongsToMany('App\Stream', 'streams_users');
+    }
 }
