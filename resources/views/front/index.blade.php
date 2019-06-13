@@ -784,10 +784,12 @@
                                                         </div>
                                                         @php
                                                         $paid = false;
+                                                        if(Auth::user()){
                                                               foreach ($user->streams as $user_streams){
                                                               if($user_streams->id == $stream->id)
                                                               $paid=true;
                                                               }
+                                                        }
                                                                 @endphp
                                                         @if($paid==false)
                                                         <a class="read-more btn btn-outline" href="blog-detail.html">

@@ -13,7 +13,16 @@
                     <div class="right-topbar">
                         <div class="user-login">
                             <ul class="nav top-nav">
+                                @if(!Auth::user())
                                 <li><a data-rel="loginModal" href="#"> Login </a></li>
+                                    @else
+                                    <li><a href="{{route('logout')}}"  onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();"> Logout </a></li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        @csrf
+                                    </form>
+                                @endif
                             </ul>
                         </div>
                     </div>
