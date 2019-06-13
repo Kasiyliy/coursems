@@ -15,11 +15,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="name">Вопрос</label>
-                                        <input type="text" name="question" class="form-control" placeholder="Вопрос" required value="{{$faq->name}}">
+                                        <input type="text" name="question" class="form-control" placeholder="Вопрос" required value="{{$faq->question}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Ответ</label>
-                                        <input type="text" name="answer" class="form-control" placeholder="Ответ" required value="{{$faq->name}}">
+                                        <input type="text" name="answer" class="form-control" placeholder="Ответ" required value="{{$faq->answer}}">
                                     </div>
                                 </div>
 

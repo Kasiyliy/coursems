@@ -26,7 +26,8 @@ class FAQController extends Controller
             'answer' => $request->answer,
         ]);
 
-        return redirect()->back();
+        Session::flash('success', ' Элемент успешно добавлен!');
+        return redirect()->route('faq.index');
     }
 
     public function delete($id){

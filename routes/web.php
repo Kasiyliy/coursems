@@ -22,6 +22,8 @@ Route::get('/secure/config/key-generate', ['uses'=> 'ConfigController@keyGenerat
 Auth::routes();
 Route::get('/', ['as' => 'front' , 'uses' => 'UserSideController@index']);
 Route::get('/faqs', ['as' => 'front.faqs', 'uses' => 'UserSideController@faqs']);
+Route::get('/course/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
+Route::get('/course/lessons/{id}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@course_lessons']);
 
 Route::group(['middleware' => 'auth'], function () {
 

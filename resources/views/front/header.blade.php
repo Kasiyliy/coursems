@@ -14,9 +14,9 @@
                         <div class="user-login">
                             <ul class="nav top-nav">
                                 @if(!Auth::user())
-                                <li><a data-rel="loginModal" href="#"> Login </a></li>
-                                    @else
-                                    <li><a href="{{route('logout')}}"  onclick="event.preventDefault();
+                                    <li><a data-rel="loginModal" href="#"> Login </a></li>
+                                @else
+                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();"> Logout </a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                           style="display: none;">
@@ -145,16 +145,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="collection.html"><span class="underline">Работы</span></a></li>
-                                        <li class="menu-item-has-children dropdown">
-                                            <a href="#" class="dropdown-hover">
-                                                <span class="underline">Отзывы</span> <span class="caret"></span>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="blog-default.html">Blog Default</a></li>
-                                                <li><a href="blog-center.html">Blog Center</a></li>
-                                                <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                            </ul>
-                                        </li>
+
                                         <li class="menu-item-has-children dropdown">
                                             <a href="#" class="dropdown-hover">
                                                 <span class="underline">Контакты</span> <span class="caret"></span>
