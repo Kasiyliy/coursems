@@ -677,7 +677,7 @@
                                                             <div class="product-wrap">
                                                                 <div class="product-images">
                                                                     <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-                                                                        <img width="100%" height="50%"
+                                                                        <img width="505" height="375"
                                                                              src="{{asset($course->image_path)}}"
                                                                              alt=""/>
                                                                     </div>
@@ -756,7 +756,7 @@
                                                     <div class="entry-info">
                                                         <div class="entry-header">
                                                             <h3 class="entry-title">
-                                                                <a href="{{route('single.course', ['id' => $course->id])}}">
+                                                                <a href="{{route('single.course', ['id' => $stream->course->id])}}">
                                                                     {{$stream->name}}
                                                                 </a>
                                                             </h3>
@@ -798,6 +798,8 @@
                                                             @else
                                                             <a class="read-more btn btn-outline" href="{{route('single.course.lessons'
                                                             ,['id' => $stream->course->id])}}">
+
+
                                                                 Перейте к урокам
                                                             </a>
                                                             @endif

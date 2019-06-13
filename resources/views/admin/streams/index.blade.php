@@ -30,7 +30,7 @@
                                     <td>{{$stream->course->name}}</td>
                                     <td>{{substr($stream->started_at,0,10)}}</td>
                                     <td>{{substr($stream->deadline,0,10)}}</td>
-                                    <td><?= $stream->started ? "Открыт" : "Закрыт"?></td>
+                                    <td><?= $stream->started ? "Закрыт" : "Открыт"?></td>
                                     <td>
                                         <a href="{{route('stream.edit' ,['id'=>$stream->id ])}}" class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>
                                         <a href="{{route('stream.details' ,['id'=>$stream->id ])}}" class="btn-xs btn btn-info"><span class="fa fa-book"></span> Участники</a>
