@@ -5,8 +5,10 @@
             <div class="row">
                 <div class="col-sm-6 col-left-topbar">
                     <div class="left-topbar">
-                        Shop unique and handmade items directly
-                        <a href="#">About<i class="fa fa-long-arrow-right"></i></a>
+                        @if(auth()->user() && auth()->user()->isAdmin())
+                            Войдите в админ панель
+                            <a href="{{route('home')}}">Админ панель<i class="fa fa-long-arrow-right"></i></a>
+                        @endif
                     </div>
                 </div>
                 <div class="col-sm-6 col-right-topbar">
