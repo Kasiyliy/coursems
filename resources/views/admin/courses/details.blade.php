@@ -13,13 +13,15 @@
                     </div>
                     <div class="panel-body">
 
-                        @foreach($course->lessons as  $lesson  )
+                        @foreach($course->lessons as  $lesson)
                             <div class="panel panel-primary">
                                 <div class="panel-heading">{{$lesson->name}}</div>
                                 <div class="panel-body">
                                     {{$lesson->description}}<br>
-                                    <iframe width="560" height="315" src="{{$lesson->video_path}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    <br>
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item"  src="{{$lesson->video_path}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <hr>
                                     <button type="button" class="btn btn-danger btn-xs mr-1" data-toggle="modal" data-target="#exampleModal{{$lesson->id}}">
                                         <span class="fa fa-trash"></span> Удалить
                                     </button>
