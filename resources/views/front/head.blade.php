@@ -1,4 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 <title>WooW | HTML Commerce Template</title>
 <link rel="shortcut icon" href="{{asset('front/images/favicon.ico')}}">
@@ -18,6 +19,7 @@
 <link rel='stylesheet' href='{{asset('front/css/commerce.css')}}' type='text/css' media='all'/>
 <link rel='stylesheet' href='{{asset('front/css/custom.css')}}' type='text/css' media='all'/>
 <link rel='stylesheet' href='{{asset('front/css/magnific-popup.css')}}' type='text/css' media='all'/>
+<link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

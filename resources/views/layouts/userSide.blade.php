@@ -14,5 +14,6 @@
     </footer>
 </div>
 @include('front.javascript')
+@yield('front.custom.js')
 </body>
 </html>

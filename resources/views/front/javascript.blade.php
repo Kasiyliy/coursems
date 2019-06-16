@@ -193,8 +193,27 @@
 <script type='text/javascript' src='{{asset('front/js/extensions/revolution.extension.navigation.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('front/js/extensions/revolution.extension.migration.min.js')}}'></script>
 <script type='text/javascript' src='{{asset('front/js/extensions/revolution.extension.parallax.min.js')}}'></script>
-<script type="text/javascript">
+<script src="{{ asset('js/toastr.js') }}"></script>
+<script>
+    toastr.options.closeButton = true;
+    @if(Session::has('success'))
+    toastr.success("{{Session::get('success')}}");
+    @endif
 
+    @if(Session::has('info'))
+    toastr.info("{{Session::get('info')}}");
+    @endif
+
+    @if(Session::has('error'))
+    toastr.info("{{Session::get('error')}}");
+    @endif
+
+    @if(Session::has('warning'))
+    toastr.info("{{Session::get('warning')}}");
+    @endif
+
+</script>
+<script type="text/javascript">
     var tpj = jQuery;
 
     var revapi7;

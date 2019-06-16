@@ -27,11 +27,62 @@
                                     <td>{{$order->user->email}}</td>
                                     <td>{{$order->status ? 'Оплачено' : 'Не оплачено'}}</td>
                                     <td class="d-flex">
-                                        <form action="{{route('order.toggle.status' ,['id'=>$order->id ])}}" method="post">
-                                            {{csrf_field()}}
-                                            <button type="submit" class="btn-xs btn btn-warning"><span class="fa fa-money"></span> {{$order->status ? 'Не оплатил' : 'Оплатил'}}</button>
-                                        </form>
+                                        <button type="submit" class="btn-xs btn btn-warning" data-toggle="modal" data-target="#exampleModal{{$order->id}}">
+                                            <span class="fa fa-money"></span> {{$order->status ? 'Не оплатил' : 'Оплатил'}}
+                                        </button>
+                                        <div class="modal fade" id="exampleModal{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <form action="{{route('order.toggle.status' ,['id'=>$order->id ])}}" method="post">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Предупреждение!</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Вы точно хотите изменить статус??
+                                                            {{csrf_field()}}
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Отмена</button>
+                                                            <input type="submit" value="Изменить" class="btn btn-danger btn-sm mr-1">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <a href="{{route('order.edit' ,['id'=>$order->id ])}}" class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>
+
+                                        <button type="button" class="btn btn-danger btn-xs mr-1" data-toggle="modal" data-target="#exampleModal{{$order->id}}">
+                                            <span class="fa fa-trash"></span> Удалить
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <form method="post" action="{{route('order.delete', ['id' => $order->id ])}}">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Предупреждение!</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Вы точно хотите удалить?
+                                                            {{csrf_field()}}
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Отмена</button>
+                                                            <input type="submit" value="Удалить" class="btn btn-danger btn-sm mr-1">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </td>
                                 </tr>
                             @endforeach

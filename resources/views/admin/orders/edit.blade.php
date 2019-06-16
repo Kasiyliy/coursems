@@ -19,9 +19,9 @@
                                         <select class="form-control" name="stream_id" required>
                                             @foreach($streams as $stream)
                                                 @if($stream->id != $order->stream_id)
-                                                    <option selected value="{{$stream->id}}">{{$stream->name}}</option>
+                                                    <option  value="{{$stream->id}}">{{$stream->name}}</option>
                                                 @else
-                                                    <option value="{{$stream->id}}">{{$stream->name}}</option>
+                                                    <option selected value="{{$stream->id}}">{{$stream->name}}</option>
                                                 @endif
                                             @endforeach
                                         </select>
@@ -38,12 +38,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="deadline">Доступен до</label>
-                                        <input name="deadline" class="form-control" type="date" value="{{substr($order->deadline ,0,10)}}">
-                                    </div>
                                 </div>
-
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-success btn-block" value="Изменить">

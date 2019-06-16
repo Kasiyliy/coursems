@@ -19,11 +19,13 @@ Route::get('/secure/config/config-cache', ['uses'=> 'ConfigController@configCach
 Route::get('/secure/config/key-generate', ['uses'=> 'ConfigController@keyGenerate']);
 
 
+
 Auth::routes();
 Route::get('/', ['as' => 'front' , 'uses' => 'UserSideController@index']);
 Route::get('/faqs', ['as' => 'front.faqs', 'uses' => 'UserSideController@faqs']);
 Route::get('/course/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
 Route::get('/course/lessons/{id}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@course_lessons']);
+Route::post('/make/order/{id}', 'UserSideController@makeOrder')->name('make.order')->where('id', '[0-9]+');
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -72,15 +74,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/orders/toggle/status/{id}', ['as' => 'order.toggle.status', 'uses' => 'orderController@toggleStatus'])->where('id', '[0-9]+');
         Route::post('/orders/delete/{id}', ['as' => 'order.delete', 'uses' => 'orderController@delete'])->where('id', '[0-9]+');
 
-        Route::get('/streams/create', ['as' => 'stream.create', 'uses' => 'streamController@create']);
-        Route::post('/streams/store', ['as' => 'stream.store', 'uses' => 'streamController@store']);
-        Route::get('/streams', ['as' => 'stream.index', 'uses' => 'streamController@index']);
-        Route::get('/streams/edit/{id}', ['as' => 'stream.edit', 'uses' => 'streamController@edit'])->where('id', '[0-9]+');
-        Route::get('/streams/{id}', ['as' => 'stream.details', 'uses' => 'streamController@details'])->where('id', '[0-9]+');
-        Route::post('/streams/update/{id}', ['as' => 'stream.update', 'uses' => 'streamController@update'])->where('id', '[0-9]+');
-        Route::post('/streams/toggle/status/{id}', ['as' => 'stream.toggle.status', 'uses' => 'streamController@toggleStatus'])->where('id', '[0-9]+');
-        Route::post('/streams/delete/{id}', ['as' => 'stream.delete', 'uses' => 'streamController@delete'])->where('id', '[0-9]+');
-        Route::post('/streams/started/{id}', ['as' => 'stream.started', 'uses' => 'streamController@started'])->where('id', '[0-9]+');
+        Route::get('/streams/create', ['as' => 'stream.create', 'uses' => 'StreamController@create']);
+        Route::post('/streams/store', ['as' => 'stream.store', 'uses' => 'StreamController@store']);
+        Route::get('/streams', ['as' => 'stream.index', 'uses' => 'StreamController@index']);
+        Route::get('/streams/edit/{id}', ['as' => 'stream.edit', 'uses' => 'StreamController@edit'])->where('id', '[0-9]+');
+        Route::get('/streams/{id}', ['as' => 'stream.details', 'uses' => 'StreamController@details'])->where('id', '[0-9]+');
+        Route::post('/streams/update/{id}', ['as' => 'stream.update', 'uses' => 'StreamController@update'])->where('id', '[0-9]+');
+        Route::post('/streams/toggle/status/{id}', ['as' => 'stream.toggle.status', 'uses' => 'StreamController@toggleStatus'])->where('id', '[0-9]+');
+        Route::post('/streams/delete/{id}', ['as' => 'stream.delete', 'uses' => 'StreamController@delete'])->where('id', '[0-9]+');
+        Route::post('/streams/started/{id}', ['as' => 'stream.started', 'uses' => 'StreamController@started'])->where('id', '[0-9]+');
 
 
 
@@ -90,11 +92,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/faq/delete/{id}', ['as' => 'faq.delete', 'uses' => 'FAQController@delete'])->where('id', '[0-9]+');
         Route::get('/faq/edit/{id}', ['as' => 'faq.edit', 'uses' => 'FAQController@edit']);
         Route::post('/faq/update/{id}', ['as' => 'faq.update', 'uses' => 'FAQController@update']);
-    });
 
+
+    });
     Route::get('/user/edit', ['as' => 'self.user.edit', 'uses' => 'UserController@selfEdit']);
     Route::post('/user/update', ['as' => 'self.user.update', 'uses' => 'UserController@selfUpdate']);
     Route::post('/user/updatePassword', ['as' => 'self.user.updatePassword', 'uses' => 'UserController@selfUpdatePassword']);
 
 
 });
+

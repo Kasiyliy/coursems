@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Stream;
 use App\Order;
 use App\User;
 use DateTime;
@@ -15,7 +16,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::where('status', 0)->get();
         return view('admin.orders.index', compact("orders"));
     }
 
@@ -85,6 +86,14 @@ class OrderController extends Controller
         $order->status = !$order->status;
         $order->save();
         Session::flash('success', 'Элемент успешно обновлен!');
+        return redirect()->back();
+
+    }
+
+    public function delete($id){
+        $order = Order::findOrFail($id);
+        $order->forcedelete();
+        Session::flash('success', 'Элемент успешно удален!');
         return redirect()->back();
 
     }

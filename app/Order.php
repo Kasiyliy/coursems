@@ -9,7 +9,10 @@ class Order extends Model
 {
     use SoftDeletes;
 
-    public static $validatesAll = [];
+    public static $validatesAll = [
+        'stream_id',
+        'user_id',
+        ];
 
     protected $fillable = [
         'stream_id',

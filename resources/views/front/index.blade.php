@@ -795,13 +795,16 @@
                                                             {{--}--}}
                                                         {{--@endphp--}}
                                                         @if(!$stream->alreadyHasId)
-                                                        <a class="read-more btn btn-outline" href="blog-detail.html">
+                                                            <form method="POST" action="{{route('make.order', ['id' => $stream->id])}}">
+                                                                @csrf
+                                                                <button type="submit" class="read-more btn btn-outline">
                                                             Записаться
-                                                        </a>
+                                                        </button>
+                                                            </form>
                                                             @else
-                                                            <a class="read-more btn btn-outline" href="#">
+                                                            <h3>
                                                                 Вы записаны!
-                                                            </a>
+                                                            </h3>
                                                             @endif
                                                     </div>
                                                 </div>
@@ -967,8 +970,23 @@
     </div>
 @endsection
 
-@section('front.javascript')
+@section('front.custom.js')
     <script>
+        function makeOrder(url) {
+            $.ajax(
+                {
+                    url: url,
+                    type: 'POST',
+                    success: function (res) {
+                        if(res.status){
+                            toastr.success(res.message);
+                        }
+                        else{
+                            toastr.warning(res.message);
+                        }
+                    }
+                });
+        }
 
     </script>
 @endsection
