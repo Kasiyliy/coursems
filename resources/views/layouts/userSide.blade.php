@@ -3,6 +3,7 @@
 <head>
   @include('front.head')
 </head>
+@yield('front.styles')
 <body>
 @include('front.somethingWrong')
 <div id="wrapper" class="wide-wrap">

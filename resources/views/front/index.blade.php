@@ -1,4 +1,9 @@
 @extends('layouts.userSide')
+@section('front.styles')
+    <style>
+
+    </style>
+@endsection
 @section('content')
     <div class="content-container no-padding">
         <div class="container-full">
@@ -748,10 +753,7 @@
                                             <article class="hentry">
                                                 <div class="hentry-wrap">
                                                     <div class="entry-featured">
-                                                        <a href="blog-detail.html">
-                                                            <img width="700" height="450"
-                                                                 src="{{asset($stream->course->image_path)}}" alt=""/>
-                                                        </a>
+
                                                     </div>
                                                     <div class="entry-info">
                                                         <div class="entry-header">
@@ -965,4 +967,10 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('front.javascript')
+    <script>
+
+    </script>
 @endsection

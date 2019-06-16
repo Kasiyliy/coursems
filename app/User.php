@@ -37,15 +37,16 @@ class User extends Authenticatable
         return $this->hasOne(Company::class, 'user_id');
     }
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'order_id');
+    }
+
     public function isAdmin(){
         return $this->role_id == Role::ADMIN_ID;
     }
 
     public function isClient(){
         return $this->role_id == Role::CLIENT_ID;
-    }
-
-    public function streams(){
-        return $this->belongsToMany('App\Stream', 'streams_users');
     }
 }
