@@ -16,7 +16,7 @@ class StreamController extends Controller
     public function index()
     {
         $streams = Stream::all();
-        return view('admin.streams.index' , compact("streams"));
+        return view('admin.streams.index', compact("streams"));
     }
 
     public function details($id)
@@ -88,12 +88,12 @@ class StreamController extends Controller
         }
     }
 
-    public function started($id){
+    public function started($id)
+    {
         $stream = Stream::findOrFail($id);
-        if($stream->started){
+        if ($stream->started) {
             $stream->started = 0;
-        }
-        else{
+        } else {
             $stream->started = 1;
         }
         $stream->save();

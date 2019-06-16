@@ -346,7 +346,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #bca480;
+  color: #061900;
   text-decoration: none;
 }
 a:focus {
@@ -2409,13 +2409,13 @@ select[multiple].input-lg {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background: #bca480;
+  background: #000000;
   z-index: -1;
 }
 .btn:hover,
 .btn:focus {
   text-decoration: none;
-  border-color: #bca480;
+  border-color: #000000;
   color: #fff;
 }
 .btn:hover:after,
@@ -2441,7 +2441,7 @@ select[multiple].input-lg {
 .btn-default:focus,
 .btn-default:active,
 .btn-default.active {
-  border-color: #bca480;
+  border-color: #061900;
   color: #fff;
 }
 .btn-default:hover:after,
@@ -2456,14 +2456,14 @@ select[multiple].input-lg {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #bca480;
-  border-color: #bca480;
+  background-color: #000000;
+  border-color: #000000;
 }
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active {
-  border-color: #bca480;
+  border-color: #061900;
   color: #fff;
 }
 .btn-primary:hover:after,
@@ -2485,7 +2485,7 @@ select[multiple].input-lg {
 .btn-success:focus,
 .btn-success:active,
 .btn-success.active {
-  border-color: #bca480;
+  border-color: #000000;
   color: #fff;
 }
 .btn-success:hover:after,
