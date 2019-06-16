@@ -32,6 +32,10 @@
                                     <td>{{substr($stream->deadline,0,10)}}</td>
                                     <td><?= $stream->started ? "Закрыт" : "Открыт"?></td>
                                     <td>
+                                        <form action="{{route('stream.started' ,['id'=>$stream->id ])}}" method="post">
+                                            {{csrf_field()}}
+                                            <button type="submit" class="btn-xs btn btn-warning"><span class="fa fa-eye"></span> {{$stream->started ? 'Открыть' : 'Закрыть'}}</button>
+                                        </form>
                                         <a href="{{route('stream.edit' ,['id'=>$stream->id ])}}" class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>
                                         <a href="{{route('stream.details' ,['id'=>$stream->id ])}}" class="btn-xs btn btn-info"><span class="fa fa-book"></span> Участники</a>
                                     </td>

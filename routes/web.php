@@ -80,6 +80,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/streams/update/{id}', ['as' => 'stream.update', 'uses' => 'streamController@update'])->where('id', '[0-9]+');
         Route::post('/streams/toggle/status/{id}', ['as' => 'stream.toggle.status', 'uses' => 'streamController@toggleStatus'])->where('id', '[0-9]+');
         Route::post('/streams/delete/{id}', ['as' => 'stream.delete', 'uses' => 'streamController@delete'])->where('id', '[0-9]+');
+        Route::post('/streams/started/{id}', ['as' => 'stream.started', 'uses' => 'streamController@started'])->where('id', '[0-9]+');
 
 
 

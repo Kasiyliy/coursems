@@ -87,4 +87,20 @@ class StreamController extends Controller
             return redirect()->back();
         }
     }
+
+    public function started($id){
+        $stream = Stream::findOrFail($id);
+        if($stream->started){
+            $stream->started = 0;
+        }
+        else{
+            $stream->started = 1;
+        }
+        $stream->save();
+
+        Session::flash('success', 'Элемент успешно обновлен!');
+
+        return redirect()->route('stream.index');
+
+    }
 }

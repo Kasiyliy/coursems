@@ -15,7 +15,8 @@ class Stream extends Model
         'name',
         'course_id',
         'started_at',
-        'deadline'
+        'deadline',
+        'started',
     ];
 
     public function course()
