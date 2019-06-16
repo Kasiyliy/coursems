@@ -784,25 +784,23 @@
 																	<a href="#">{{$stream->course->name}}</a>
 																</span>
                                                         </div>
-                                                        @php
-                                                        $paid = false;
-                                                        if(Auth::user()){
-                                                              foreach ($user->streams as $user_streams){
-                                                              if($user_streams->id == $stream->id)
-                                                              $paid=true;
-                                                              }
-                                                        }
-                                                                @endphp
-                                                        @if($paid==false)
+
+                                                        {{--@php--}}
+                                                            {{--$paid = false;--}}
+                                                            {{--if(Auth::user()){--}}
+                                                                  {{--foreach ($user->orders as $order){--}}
+                                                                  {{--if($order->stream_id == $stream->id)--}}
+                                                                  {{--$paid=true;--}}
+                                                                  {{--}--}}
+                                                            {{--}--}}
+                                                        {{--@endphp--}}
+                                                        @if(!$stream->alreadyHasId)
                                                         <a class="read-more btn btn-outline" href="blog-detail.html">
                                                             Записаться
                                                         </a>
                                                             @else
-                                                            <a class="read-more btn btn-outline" href="{{route('single.course.lessons'
-                                                            ,['id' => $stream->course->id])}}">
-
-
-                                                                Перейте к урокам
+                                                            <a class="read-more btn btn-outline" href="#">
+                                                                Вы записаны!
                                                             </a>
                                                             @endif
                                                     </div>

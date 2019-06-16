@@ -15,6 +15,26 @@ class UserSideController extends Controller
         $header_courses = Course::where('visible', 1)->orderBy('id','desc')->take(4)->get();
         $streams = Stream::all()->where('started', 0);
         $user = Auth::user();
+
+        if($user) {
+            $user_stream_ids = array();
+            foreach ($user->orders()->where('status', 0)->get() as $order){
+                if($order->stream){
+                    $user_stream_ids[] = $order->stream_id;
+                }
+            }
+        }
+
+
+        foreach ($streams as $stream){
+            if($stream){
+                if(in_array($stream->id , $user_stream_ids)) {
+                    $stream->alreadyHasId = true;
+                }
+            }
+        }
+
+
         return view('front.index', compact('courses', 'streams', 'user', 'header_courses'));
     }
 
