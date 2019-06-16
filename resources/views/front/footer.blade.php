@@ -129,5 +129,5 @@
     </div>
 </div>
 <div class="footer-copyright text-center">
-    © 2015 WOOW - Responsive Commerce Theme
+    Все права защищены 2019
 </div>

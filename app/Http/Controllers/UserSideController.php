@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\FAQ;
+use App\Lesson;
 use App\Stream;
 use App\Order;
 use Session;
@@ -43,14 +44,15 @@ class UserSideController extends Controller
     public function course($id){
         $header_courses = Course::where('visible', 1)->orderBy('id','desc')->take(4)->get();
         $course = Course::findOrFail($id);
-        return view('front.single_course', compact('course', 'header_courses'));
+        $lessons = $course->lessons;
+        return view('front.courseDetails', compact('course','lessons', 'header_courses'));
     }
 
-    public function course_lessons($id){
+    public function course_lessons($courseID, $lessonID){
         $header_courses = Course::where('visible', 1)->orderBy('id','desc')->take(4)->get();
-        $course = Course::findOrFail($id);
-        $lessons = $course->lessons;
-        return view('front.course_lessons', compact('course','lessons', 'header_courses'));
+        $course = Course::findOrFail($courseID);
+        $lesson = Lesson::findOrFail($lessonID);
+        return view('front.courseLessons', compact('course', 'lesson', 'header_courses'));
     }
 
     public function faqs(){

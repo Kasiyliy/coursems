@@ -16,10 +16,11 @@
                         <div class="user-login">
                             <ul class="nav top-nav">
                                 @if(!Auth::user())
-                                    <li><a data-rel="loginModal" href="#"><i class="fa fa-user"></i> Login </a></li>
+                                    <li><a data-rel="loginModal" href="#"><i class="fa fa-user"></i> Войти</a></li>
                                 @else
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();"><i class="fa fa-user"></i> Logout </a></li>
+                                                document.getElementById('logout-form').submit();"><i
+                                                    class="fa fa-user"></i> Выйти</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                           style="display: none;">
                                         @csrf
@@ -53,9 +54,11 @@
                                         <i class="elegant_icon_bag"></i><span>0</span>
                                     </a>
                                     <a class="navbar-brand" href="..">
-                                        <img class="logo" alt="WOOW" src="front/images/logo.png">
-                                        <img class="logo-fixed" alt="WOOW" src="front/images/logo-fixed.png">
-                                        <img class="logo-mobile" alt="WOOW" src="front/images/logo-mobile.png">
+                                        <img class="logo" alt="WOOW" src="{{ asset('front/images/logo.png') }}">
+                                        <img class="logo-fixed" alt="WOOW"
+                                             src="{{ asset('front/images/logo-fixed.png') }}">
+                                        <img class="logo-mobile" alt="WOOW"
+                                             src="{{ asset('front/images/logo-mobile.png') }}">
                                     </a>
                                 </div>
                                 <nav class="collapse navbar-collapse primary-navbar-collapse">
@@ -65,22 +68,14 @@
                                                 <span class="underline">Главная</span> <span class="caret"></span>
                                             </a>
                                         </li>
-                                        <li class="menu-item-has-children megamenu megamenu-fullwidth dropdown">
-                                            <a href="shop.html" class="dropdown-hover">
+                                        <li class="menu-item-has-children dropdown">
+                                            <a href="#" class="dropdown-hover">
                                                 <span class="underline">Курсы</span> <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu">
                                                 @foreach($header_courses as $course)
-                                                <li class="mega-col-3">
-                                                    <h3 class="megamenu-title">{{$course->name}} <span class="caret"></span>
-                                                    </h3>
-                                                    <ul class="dropdown-menu">
-                                                        @foreach($course->streams as $stream)
-                                                        <li><a href="#">{{$stream->name}}</a></li>
-                                                            @endforeach
-                                                    </ul>
-                                                </li>
-                                                    @endforeach
+                                                    <li><a href="/courses/{{$course->id}}">{{$course->name}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
                                         <li><a href="#"><span class="underline">Работы</span></a></li>

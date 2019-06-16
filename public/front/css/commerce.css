@@ -2385,7 +2385,7 @@ p.demo_store {
 }
 .commerce ul.products li.product figure .product-wrap .product-images:after {
   content: '';
-  background: rgba(188, 164, 128, 0.7);
+  background: rgba(53, 53, 53, 0.7);
   position: absolute;
   left: 0;
   right: 0;

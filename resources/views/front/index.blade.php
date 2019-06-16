@@ -113,6 +113,7 @@
                         </div>
                     </div>
                 </div>
+                <br>
                 {{--<div class="container">--}}
                 {{--<div class="row row-fluid mb-6 pt-6">--}}
                 {{--<div class="col-sm-4">--}}
@@ -688,13 +689,8 @@
                                                                     </div>
                                                                     <div class="loop-action">
                                                                         <div class="shop-loop-quickview">
-                                                                            <a title="Quick view" href="#">
-                                                                                Посмотреть
-                                                                            </a>
-                                                                        </div>
-                                                                        <div class="loop-add-to-cart">
-                                                                            <a href="#" class="add_to_cart_button">
-                                                                                Записаться
+                                                                            <a title="Quick view" href="{{route('single.course', ['id' => $course->id])}}">
+                                                                                Подробнее
                                                                             </a>
                                                                         </div>
                                                                     </div>
