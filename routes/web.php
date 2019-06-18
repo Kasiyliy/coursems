@@ -84,14 +84,17 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/streams/delete/{id}', ['as' => 'stream.delete', 'uses' => 'StreamController@delete'])->where('id', '[0-9]+');
         Route::post('/streams/started/{id}', ['as' => 'stream.started', 'uses' => 'StreamController@started'])->where('id', '[0-9]+');
 
-
-
         Route::get('/faq/create', ['as' => 'faq.create', 'uses' => 'FAQController@create']);
         Route::get('/faqs', ['as' => 'faq.index', 'uses' => 'FAQController@index']);
         Route::post('/faq/store', ['as' => 'faq.store', 'uses' => 'FAQController@store']);
         Route::post('/faq/delete/{id}', ['as' => 'faq.delete', 'uses' => 'FAQController@delete'])->where('id', '[0-9]+');
         Route::get('/faq/edit/{id}', ['as' => 'faq.edit', 'uses' => 'FAQController@edit']);
         Route::post('/faq/update/{id}', ['as' => 'faq.update', 'uses' => 'FAQController@update']);
+
+        Route::get('/homeworks', ['as' => 'homeworks.index', 'uses' => 'HomeWorksController@index']);
+        Route::get('/homeworks/edit/{id}', ['as' => 'homeworks.edit', 'uses' => 'HomeWorksController@edit']);
+        Route::post('/homeworks/update/{id}', ['as' => 'homeworks.update', 'uses' => 'HomeWorksController@update']);
+
 
 
     });
