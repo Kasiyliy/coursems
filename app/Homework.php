@@ -1,13 +1,12 @@
 <?php
 
 namespace App;
+use SoftDeletes;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Homework extends Model
 {
-    use SoftDeletes;
-
     public static $validatesAll = [];
 
     protected $fillable = [

@@ -134,6 +134,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="{{(route('homeworks.index'))}}">
+                            <i class="fa fa-book"></i> <span>Homeworks</span>
+                        </a>
+                    </li>
+
                     <li class="header">Настройки</li>
                     <li>
                         <a href="{{e(route('role.index'))}}">
