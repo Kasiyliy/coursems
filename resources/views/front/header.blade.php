@@ -53,7 +53,7 @@
                                     <a class="cart-icon-mobile" href="#">
                                         <i class="elegant_icon_bag"></i><span>0</span>
                                     </a>
-                                    <a class="navbar-brand" href="..">
+                                    <a class="navbar-brand" href="{{route('front')}}">
                                         <img class="logo" alt="WOOW" src="{{ asset('front/images/logo.png') }}">
                                         <img class="logo-fixed" alt="WOOW"
                                              src="{{ asset('front/images/logo-fixed.png') }}">
@@ -63,8 +63,8 @@
                                 </div>
                                 <nav class="collapse navbar-collapse primary-navbar-collapse">
                                     <ul class="nav navbar-nav primary-nav">
-                                        <li class="current-menu-item menu-item-has-children dropdown">
-                                            <a href=".." class="dropdown-hover">
+                                        <li class=" menu-item-has-children dropdown">
+                                            <a href="{{route('front')}}" class="dropdown-hover">
                                                 <span class="underline">Главная</span> <span class="caret"></span>
                                             </a>
                                         </li>
@@ -78,17 +78,22 @@
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="#"><span class="underline">Работы</span></a></li>
+                                        @if(Auth::user())
+                                            <li>
+                                                <a href="{{route('my.courses')}}">
+                                                    <span class="underline">Мои курсы</span>
+                                                </a>
+                                            </li>
+                                        @endif
 
                                         <li class="menu-item-has-children dropdown">
                                             <a href="#" class="dropdown-hover">
                                                 <span class="underline">Контакты</span> <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="about-us.html">About us</a></li>
-                                                <li><a href="contact-us.html">Contact Us</a></li>
+                                                <li><a href="">О нас</a></li>
+                                                <li><a href="">Контакты</a></li>
                                                 <li><a href="{{route('front.faqs')}}">FAQ</a></li>
-                                                <li><a href="404.html">404</a></li>
                                             </ul>
                                         </li>
                                     </ul>

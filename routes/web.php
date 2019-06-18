@@ -23,12 +23,13 @@ Route::get('/secure/config/key-generate', ['uses'=> 'ConfigController@keyGenerat
 Auth::routes();
 Route::get('/', ['as' => 'front' , 'uses' => 'UserSideController@index']);
 Route::get('/faqs', ['as' => 'front.faqs', 'uses' => 'UserSideController@faqs']);
-Route::get('/courses/{courseID}/lessons/{lessonID}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@course_lessons']);
+Route::get('/courses/lessons/{id}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@courseLessons']);
+
 Route::get('/courses/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
 Route::post('/make/order/{id}', 'UserSideController@makeOrder')->name('make.order')->where('id', '[0-9]+');
 
 Route::group(['middleware' => 'auth'], function () {
-
+    Route::get('/my/courses', ['as' => 'my.courses' , 'uses' => 'UserSideController@myCourses']);
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
     Route::get('/client/courses', ['as' => 'client.course.index', 'uses' => 'ClientController@courses']);
@@ -65,14 +66,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/lessons/update/{id}', ['as' => 'lesson.update', 'uses' => 'LessonController@update'])->where('id', '[0-9]+');
         Route::post('/lessons/delete/{id}', ['as' => 'lesson.delete', 'uses' => 'LessonController@delete'])->where('id', '[0-9]+');
 
-        Route::get('/orders/create', ['as' => 'order.create', 'uses' => 'orderController@create']);
-        Route::post('/orders/store', ['as' => 'order.store', 'uses' => 'orderController@store']);
-        Route::get('/orders', ['as' => 'order.index', 'uses' => 'orderController@index']);
-        Route::get('/orders/edit/{id}', ['as' => 'order.edit', 'uses' => 'orderController@edit'])->where('id', '[0-9]+');
-        Route::get('/orders/{id}', ['as' => 'order.details', 'uses' => 'orderController@details'])->where('id', '[0-9]+');
-        Route::post('/orders/update/{id}', ['as' => 'order.update', 'uses' => 'orderController@update'])->where('id', '[0-9]+');
-        Route::post('/orders/toggle/status/{id}', ['as' => 'order.toggle.status', 'uses' => 'orderController@toggleStatus'])->where('id', '[0-9]+');
-        Route::post('/orders/delete/{id}', ['as' => 'order.delete', 'uses' => 'orderController@delete'])->where('id', '[0-9]+');
+        Route::get('/orders/create', ['as' => 'order.create', 'uses' => 'OrderController@create']);
+        Route::post('/orders/store', ['as' => 'order.store', 'uses' => 'OrderController@store']);
+        Route::get('/orders', ['as' => 'order.index', 'uses' => 'OrderController@index']);
+        Route::get('/orders/edit/{id}', ['as' => 'order.edit', 'uses' => 'OrderController@edit'])->where('id', '[0-9]+');
+        Route::get('/orders/{id}', ['as' => 'order.details', 'uses' => 'OrderController@details'])->where('id', '[0-9]+');
+        Route::post('/orders/update/{id}', ['as' => 'order.update', 'uses' => 'OrderController@update'])->where('id', '[0-9]+');
+        Route::post('/orders/toggle/status/{id}', ['as' => 'order.toggle.status', 'uses' => 'OrderController@toggleStatus'])->where('id', '[0-9]+');
+        Route::post('/orders/delete/{id}', ['as' => 'order.delete', 'uses' => 'OrderController@delete'])->where('id', '[0-9]+');
 
         Route::get('/streams/create', ['as' => 'stream.create', 'uses' => 'StreamController@create']);
         Route::post('/streams/store', ['as' => 'stream.store', 'uses' => 'StreamController@store']);

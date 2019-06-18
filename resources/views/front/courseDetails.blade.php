@@ -21,7 +21,7 @@
     <div class="content-container">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 main-wrap">
+                <div class="col-md-7 main-wrap">
                     <div class="main-content">
                         <div class="posts">
                             <div class="posts-wrap posts-layout-center">
@@ -30,29 +30,60 @@
                                     <div class="hentry-wrap">
                                         <div class="entry-featured">
                                             <h2 class="entry-title">{{$course->name}}</h2><br>
-                                            <a href="blog-detail.html">
+                                            <a>
                                                 <img width="700" height="450" src="{{asset($course->image_path)}}"
                                                      alt="Blog-1"/>
                                             </a>
                                         </div>
-                                        @foreach($lessons as $lesson)
-                                            <div class="entry-meta icon-meta">
-                                                <div class="entry-info">
-                                                    <div class="entry-header">
-                                                        <h2 class="entry-title">
-                                                            <a href="/courses/{{$course->id}}/lessons/{{$lesson->id}}">{{$lesson->name}} </a>
-                                                        </h2>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
+                                        <table class="table table-hover table-bordered">
+                                            <thead>
+                                            <th>
+                                                <p class="text-center">№</p>
+                                            </th>
+                                            <th>
+                                                <p class="text-left">Наименование</p>
+                                            </th>
+                                            </thead>
+                                            <tbody>
+                                            @if(count($lessons))
+                                                @foreach($lessons as $index => $lesson)
+                                                    <tr>
+                                                        <td>
+                                                            <b>{{$index+1}}</b>
+                                                        </td>
+                                                        <td>
+                                                            <p class="text-dark text-left">{{$lesson->name}}</p>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            @else
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <p class="text-center">Нет уроков</p>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </article>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-5">
+                    <div class="entry-header">
+                        <h4>{{$course->price}}KZT</h4>
+                    </div>
+                    <div class="entry-content">
+                        <p>
+                            {{$course->description}}
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 @endsection

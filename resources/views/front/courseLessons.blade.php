@@ -41,10 +41,10 @@
                 <div class="col-md-3 sidebar-wrap">
                     <div class="main-sidebar">
                         <div class="widget widget_product_categories">
-                            <h4 class="widget-title"><span>{{$course->name}}</span></h4>
+                            <h4 class="widget-title"><span>{{$lesson->course->name}}</span></h4>
                             <ul class="product-categories">
-                                @foreach($course->lessons as $lesson)
-                                    <li><a href="/courses/{{$course->id}}/lessons/{{$lesson->id}}">{{$lesson->name}}</a></li>
+                                @foreach($lesson->course->lessons as $lesson)
+                                    <li><a href="/courses/lessons/{{$lesson->id}}">{{$lesson->name}}</a></li>
                                 @endforeach
                             </ul>
                         </div>

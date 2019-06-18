@@ -27,7 +27,7 @@
                             <div class="row inner faq-wrapper">
                                 <div class="col-sm-12">
                                     <div class="content_element title">
-                                        <h2>General Questions</h2>
+                                        <h2>Часто задаваемые вопросы</h2>
                                     </div>
                                     <div class="accordion" id="accordion1">
                                         @foreach($faqs as $faq)
