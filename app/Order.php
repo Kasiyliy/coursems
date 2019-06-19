@@ -12,11 +12,13 @@ class Order extends Model
     public static $validatesAll = [
         'stream_id',
         'user_id',
+        'status'
         ];
 
     protected $fillable = [
         'stream_id',
         'user_id',
+        'status'
     ];
 
     public function stream()

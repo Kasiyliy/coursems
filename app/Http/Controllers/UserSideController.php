@@ -24,7 +24,8 @@ class UserSideController extends Controller
 
         if ($user) {
             $user_stream_ids = array();
-            foreach ($user->orders()->where('status', 0)->get() as $order) {
+            $orders = $user->orders;
+            foreach ($orders as $order) {
                 if ($order->stream) {
                     $user_stream_ids[] = $order->stream_id;
                 }
@@ -35,6 +36,14 @@ class UserSideController extends Controller
                 if ($stream) {
                     if (in_array($stream->id, $user_stream_ids)) {
                         $stream->alreadyHasId = true;
+                    }
+                }
+            }
+
+            foreach ($streams as $stream) {
+                foreach ($orders as $order){
+                    if($stream->id == $order->stream_id) {
+                        $stream->paid = $order->status;
                     }
                 }
             }
@@ -120,19 +129,15 @@ class UserSideController extends Controller
         } else {
             if ($user->orders()->where('status', 0)->where('stream_id', $stream_id)->first()) {
                 Session::flash('warning', 'Вы уже записаны!');
+                return redirect()->back();
             }
-//            $order = new Order();
-//            $order->user_id = ;
-//            $order->stream_id = ;
-//            $order->status = 0;
-//            $order->save();
 
             Order::create([
                 'user_id' => $user->id,
                 'stream_id' => $stream_id,
-                'status' => 0
+                'status' => 0,
             ]);
-            Session::flash('success', 'Вы успешно записались в поток!');
+            Session::flash('success', 'Ваша заявка принята! Мы вам обязательно позвоним!');
             return redirect()->route('front');
         }
 
