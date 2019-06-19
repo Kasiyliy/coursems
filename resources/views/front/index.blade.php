@@ -276,7 +276,7 @@
                                         <!-- Display the countdown timer in an element -->
                                         <script>
                                             // Set the date we're counting down to
-                                            var countDownDate = new Date("{{$stream->deadline}}").getTime();
+                                            var countDownDate = new Date("{{$stream->started_at}}").getTime();
 
                                             // Update the count down every 1 second
                                             var x = setInterval(function () {
@@ -285,7 +285,7 @@
                                                 var now = new Date().getTime();
 
                                                 // Find the distance between now and the count down date
-                                                var distance = countDownDate - now;
+                                                var distance = now - countDownDate;
 
                                                 // Time calculations for days, hours, minutes and seconds
                                                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -294,8 +294,35 @@
                                                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                                                 // Display the result in the element with id="demo"
-                                                document.getElementById("{{$stream->id}}timer").innerHTML = days + " дней " + hours + " часов "
-                                                    + minutes + " минут " + seconds + " секунд ";
+                                                var dayWord = " дней ";
+                                                if(days === 1) {
+                                                    dayWord = " день ";
+                                                }else if(days > 1 && days < 5) {
+                                                    dayWord = " дня ";
+                                                }
+
+                                                var hourWord = " часов ";
+                                                if(hours === 1) {
+                                                    hourWord = " час ";
+                                                }else if(hours > 1 && hours < 5) {
+                                                    hourWord = " часа ";
+                                                }
+
+                                                var minuteWord = " минут ";
+                                                if(minutes === 1) {
+                                                    minuteWord = " минута ";
+                                                }else if(minutes > 1 && minutes < 5) {
+                                                    minuteWord = " минуты ";
+                                                }
+
+                                                var secondWord = " секунд ";
+                                                if(seconds === 1) {
+                                                    secondWord = " секунда ";
+                                                }else if(seconds > 1 && seconds < 5) {
+                                                    secondWord = " секунды ";
+                                                }
+
+                                                document.getElementById("{{$stream->id}}timer").innerHTML = days + dayWord + hours + hourWord + minutes + minuteWord + seconds + secondWord;
 
                                                 // If the count down is finished, write some text
                                                 if (distance < 0) {
