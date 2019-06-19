@@ -42,7 +42,7 @@ class UserSideController extends Controller
 
         $faqs = FAQ::orderBy('id', 'desc')->take(4)->get();
 
-        return view('front.index', compact('courses','faqs','streams', 'user', 'header_courses'));
+        return view('front.index', compact('courses', 'faqs', 'streams', 'user', 'header_courses'));
     }
 
     public function course($id)
@@ -61,8 +61,7 @@ class UserSideController extends Controller
         $myOrders = $user->orders->where('status', 0);
 
         foreach ($myOrders as $myOrder) {
-            //TODO
-            if($myOrder->stream->deadline < date('Y-m-d')){
+            if (strtotime($myOrder->stream->deadline) > time()) {
                 $myStreams[] = $myOrder->stream;
             }
         }
@@ -72,7 +71,6 @@ class UserSideController extends Controller
     public function courseLessons($id)
     {
         $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
-
         $lesson = Lesson::findOrFail($id);
         if (!$lesson->course) {
             return abort(404);
@@ -84,11 +82,8 @@ class UserSideController extends Controller
                 ->where('status', 1)
                 ->orderBy('id', 'desc')
                 ->first();
-            $lessons = $course->lessons
-//                ->where('id' , '>',  )
-                ->orderBy('id', 'asc')->get();
-            $correct = false;
-            foreach ($lessons as $index => $lesson) {
+            $lessons = $course->lessons;
+            foreach ($lessons as $lesson) {
                 if ($lesson->id == $lastHomework->lesson_id) {
 
                 }
@@ -133,8 +128,8 @@ class UserSideController extends Controller
 //            $order->save();
 
             Order::create([
-                'user_id' =>$user->id ,
-                'stream_id'=> $stream_id,
+                'user_id' => $user->id,
+                'stream_id' => $stream_id,
                 'status' => 0
             ]);
             Session::flash('success', 'Вы успешно записались в поток!');

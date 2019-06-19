@@ -31,12 +31,23 @@ class Lesson extends Model
         'description',
         'video_path',
         'course_id',
+        'next_lesson_id',
     ];
 
 
     public function course()
     {
         return $this->belongsTo(Course::class);
+    }
+
+    public function nextLesson()
+    {
+        return $this->belongsTo(Lesson::class, 'next_lesson_id');
+    }
+
+    public function previousLesson()
+    {
+        return $this->hasOne(Lesson::class, 'next_lesson_id');
     }
 
 }

@@ -18,12 +18,10 @@ class CreateLessonsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('video_path');
-
             $table->integer('course_id')->unsigned();
             $table->foreign('course_id')
                 ->references('id')
                 ->on('courses');
-
             $table->softDeletes();
             $table->timestamps();
         });

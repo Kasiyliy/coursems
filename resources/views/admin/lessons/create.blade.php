@@ -28,7 +28,17 @@
                                         <label for="name">Ссылка на видео</label>
                                         <input type="text" min="0" name="video_path" class="form-control" placeholder="Ссылка" required>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="lesson_id">Следующий урок</label>
+                                        <select class="form-control" name="next_lesson_id">
+                                            <option></option>
+                                            @foreach($course->lessons as $lesson)
+                                                <option value="{{$lesson->id}}">{{$lesson->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                 </div>
+
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-success btn-block" value="Добавить">
@@ -51,4 +61,18 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script src="{{asset('admin/tinymce/tinymce.min.js')}}"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            setup: function (editor) {
+                editor.on('submit', function (e) {
+                    editor.save();
+                });
+            }
+        });
+    </script>
 @endsection
