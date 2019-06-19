@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-<title>WooW | HTML Commerce Template</title>
+<title>GlamBlog.KZ</title>
 <link rel="shortcut icon" href="{{asset('front/images/favicon.ico')}}">
 
 <link rel='stylesheet' href='{{asset('front/css/settings.css')}}' type='text/css' media='all'/>

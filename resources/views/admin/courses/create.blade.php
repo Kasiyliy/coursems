@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
+
+
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-12">
@@ -20,7 +22,7 @@
 
                                     <div class="form-group">
                                         <label for="name">Описание</label>
-                                        <textarea name="description" rows="5" class="form-control" placeholder="Описание" required></textarea>
+                                        <textarea name="description" rows="10" class="form-control" placeholder="Описание" ></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -58,4 +60,20 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+
+@section('scripts')
+    <script src="{{asset('admin/tinymce/tinymce.min.js')}}"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            setup: function (editor) {
+                editor.on('submit', function (e) {
+                    editor.save();
+                });
+            }
+        });
+    </script>
 @endsection

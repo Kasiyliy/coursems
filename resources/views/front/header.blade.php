@@ -91,8 +91,8 @@
                                                 <span class="underline">Контакты</span> <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="">О нас</a></li>
-                                                <li><a href="">Контакты</a></li>
+                                                <li><a href="{{route('front.about.us')}}">О нас</a></li>
+                                                <li><a href="{{route('front.contact')}}">Контакты</a></li>
                                                 <li><a href="{{route('front.faqs')}}">FAQ</a></li>
                                             </ul>
                                         </li>

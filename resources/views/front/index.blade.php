@@ -1,9 +1,9 @@
 @extends('layouts.userSide')
-@section('front.styles')
-    <style>
 
-    </style>
+@section('front.styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
 @endsection
+
 @section('content')
     <div class="content-container no-padding">
         <div class="container-full">
@@ -138,7 +138,8 @@
                                                                     </div>
                                                                     <div class="loop-action">
                                                                         <div class="shop-loop-quickview">
-                                                                            <a title="Quick view" href="{{route('single.course', ['id' => $course->id])}}">
+                                                                            <a title="Quick view"
+                                                                               href="{{route('single.course', ['id' => $course->id])}}">
                                                                                 Подробнее
                                                                             </a>
                                                                         </div>
@@ -198,7 +199,7 @@
                                             <article class="hentry">
                                                 <div class="hentry-wrap">
                                                     <div class="entry-featured">
-
+                                                        <div class="your-clock "></div>
                                                     </div>
                                                     <div class="entry-info">
                                                         <div class="entry-header">
@@ -207,11 +208,6 @@
                                                                     {{$stream->name}}
                                                                 </a>
                                                             </h3>
-                                                        </div>
-                                                        <div class="entry-content">
-                                                            <p>
-                                                                {{$stream->course->description}}
-                                                            </p>
                                                         </div>
                                                         <div class="entry-meta">
 																<span class="meta-date">
@@ -226,31 +222,36 @@
                                                             <br>
                                                             <span class="meta-category">
 																	Курс:
-																	<a href="#">{{$stream->course->name}}</a>
+																	<a class="link-black btn-link"
+                                                                       href="{{route('single.course', ['id' => $stream->course_id])}}">
+                                                                        {{$stream->course->name}}
+                                                                        <span class="text-muted"> читать дальше..</span>
+                                                                    </a>
 																</span>
                                                         </div>
 
                                                         {{--@php--}}
-                                                            {{--$paid = false;--}}
-                                                            {{--if(Auth::user()){--}}
-                                                                  {{--foreach ($user->orders as $order){--}}
-                                                                  {{--if($order->stream_id == $stream->id)--}}
-                                                                  {{--$paid=true;--}}
-                                                                  {{--}--}}
-                                                            {{--}--}}
+                                                        {{--$paid = false;--}}
+                                                        {{--if(Auth::user()){--}}
+                                                        {{--foreach ($user->orders as $order){--}}
+                                                        {{--if($order->stream_id == $stream->id)--}}
+                                                        {{--$paid=true;--}}
+                                                        {{--}--}}
+                                                        {{--}--}}
                                                         {{--@endphp--}}
                                                         @if(!$stream->alreadyHasId)
-                                                            <form method="POST" action="{{route('make.order', ['id' => $stream->id])}}">
+                                                            <form method="POST"
+                                                                  action="{{route('make.order', ['id' => $stream->id])}}">
                                                                 @csrf
                                                                 <button type="submit" class="read-more btn btn-outline">
-                                                            Записаться
-                                                        </button>
+                                                                    Записаться
+                                                                </button>
                                                             </form>
-                                                            @else
+                                                        @else
                                                             <h3>
                                                                 Вы записаны!
                                                             </h3>
-                                                            @endif
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </article>
@@ -277,117 +278,35 @@
                     </div>
                     <div class="row row-fluid mb-7">
                         <div class="col-sm-12">
-                            <div class="testimonial mb-3">
+                            <div class="testimonial mb-5">
                                 <div class="caroufredsel" data-visible-min="1" data-visible-max="2"
                                      data-scroll-fx="scroll" data-speed="5000" data-responsive="1" data-infinite="1"
                                      data-autoplay="0">
                                     <div class="caroufredsel-wrap">
                                         <ul class="caroufredsel-items">
-                                            <li class="caroufredsel-item col-sm-6">
-                                                <div class="testimonial-wrap">
-                                                    <div class="testimonial-text">
-                                                        <span>&ldquo;</span>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                        <span>&rdquo;</span>
-                                                    </div>
-                                                    <div class="clearfix">
-                                                        <div class="testimonial-avatar">
-                                                            <img src="front/images/avatar/thumb_50x50.jpg" alt=""/>
+
+                                            @foreach($faqs as $faq)
+                                                <li class="caroufredsel-item col-sm-6">
+                                                    <div class="testimonial-wrap" style="background-color: #f1f1f1;
+                                                border-radius: 5px; padding: 10px; margin: 30px; color: white; box-shadow: 15px 15px 15px rgba(200,200,200,0.5)">
+                                                        <div class="testimonial-text">
+                                                            <h5 class="text-center">
+                                                                {{$faq->question}}
+                                                            </h5>
                                                         </div>
-                                                        <span class="testimonial-author">Hughnei</span>
-                                                        <span class="testimonial-company">CEO/Founder Sitesao</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="caroufredsel-item col-sm-6">
-                                                <div class="testimonial-wrap">
-                                                    <div class="testimonial-text">
-                                                        <span>&ldquo;</span>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                        <span>&rdquo;</span>
-                                                    </div>
-                                                    <div class="clearfix">
-                                                        <div class="testimonial-avatar">
-                                                            <img src="front/images/avatar/thumb_50x50.jpg" alt=""/>
+                                                        <div class="clearfix">
+                                                        <span class="testimonial-author text-center"
+                                                              style="color: #0b0b0b;">
+                                                        {{$faq->answer}}
+                                                        </span>
                                                         </div>
-                                                        <span class="testimonial-author">dangdong</span>
-                                                        <span class="testimonial-company">CEO/Founder Sitesao</span>
                                                     </div>
-                                                </div>
-                                            </li>
-                                            <li class="caroufredsel-item col-sm-6">
-                                                <div class="testimonial-wrap">
-                                                    <div class="testimonial-text">
-                                                        <span>&ldquo;</span>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                        <span>&rdquo;</span>
-                                                    </div>
-                                                    <div class="clearfix">
-                                                        <div class="testimonial-avatar">
-                                                            <img src="front/images/avatar/thumb_50x50.jpg" alt=""/>
-                                                        </div>
-                                                        <span class="testimonial-author">Hughnei</span>
-                                                        <span class="testimonial-company">CEO/Founder Sitesao</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="caroufredsel-item col-sm-6">
-                                                <div class="testimonial-wrap">
-                                                    <div class="testimonial-text">
-                                                        <span>&ldquo;</span>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                        <span>&rdquo;</span>
-                                                    </div>
-                                                    <div class="clearfix">
-                                                        <div class="testimonial-avatar">
-                                                            <img src="front/images/avatar/thumb_50x50.jpg" alt=""/>
-                                                        </div>
-                                                        <span class="testimonial-author">dangdong</span>
-                                                        <span class="testimonial-company">CEO/Founder Sitesao</span>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                                </li>
+                                            @endforeach
+
                                         </ul>
                                         <a href="#" class="caroufredsel-prev hide"></a>
                                         <a href="#" class="caroufredsel-next hide"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row-fluid mb-0 pb-5">
-                        <div class="col-sm-12">
-                            <div class="client client-slider">
-                                <div class="caroufredsel" data-height="variable" data-visible-min="1"
-                                     data-visible-max="4" data-responsive="1" data-infinite="1" data-autoplay="1"
-                                     data-speed="15000">
-                                    <div class="caroufredsel-wrap">
-                                        <ul class="caroufredsel-items row">
-                                            <li class="caroufredsel-item col-md-3">
-                                                <img alt="" src="front/images/client/client_270x100.png">
-                                            </li>
-                                            <li class="caroufredsel-item col-md-3">
-                                                <img alt="" src="front/images/client/client_270x100.png">
-                                            </li>
-                                            <li class="caroufredsel-item col-md-3">
-                                                <img alt="" src="front/images/client/client_270x100.png">
-                                            </li>
-                                            <li class="caroufredsel-item col-md-3">
-                                                <img alt="" src="front/images/client/client_270x100.png">
-                                            </li>
-                                            <li class="caroufredsel-item col-md-3">
-                                                <img alt="" src="front/images/client/client_270x100.png">
-                                            </li>
-                                            <li class="caroufredsel-item col-md-3">
-                                                <img alt="" src="front/images/client/client_270x100.png">
-                                            </li>
-                                        </ul>
-                                        <a href="#" class="caroufredsel-prev"></a>
-                                        <a href="#" class="caroufredsel-next"></a>
                                     </div>
                                 </div>
                             </div>
@@ -416,22 +335,15 @@
 @endsection
 
 @section('front.custom.js')
-    <script>
-        function makeOrder(url) {
-            $.ajax(
-                {
-                    url: url,
-                    type: 'POST',
-                    success: function (res) {
-                        if(res.status){
-                            toastr.success(res.message);
-                        }
-                        else{
-                            toastr.warning(res.message);
-                        }
-                    }
-                });
-        }
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
+    <script type="text/javascript">
+
+        var clock = $('.your-clock').FlipClock(3600, {
+            countdown: true
+        });
+
 
     </script>
+
 @endsection

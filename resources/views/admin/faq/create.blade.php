@@ -12,7 +12,7 @@
                     <div class="panel-body">
                         <form enctype="multipart/form-data" action="{{route('faq.store')}}" method="post">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="name">Вопрос</label>
                                         <input type="text" name="question" class="form-control" placeholder="Вопрос" required>
@@ -20,7 +20,7 @@
 
                                     <div class="form-group">
                                         <label for="name">Ответ</label>
-                                        <input type="text" name="answer" class="form-control" placeholder="Ответ" required>
+                                        <textarea name="answer" class="form-control" rows="5"  required></textarea>
                                     </div>
                                 </div>
 

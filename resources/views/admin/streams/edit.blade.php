@@ -29,9 +29,16 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                </div>
+
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="started_at">Начало</label>
                                         <input type="date" class="form-control" name="started_at" required value="{{substr($stream->started_at ,0,10)}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="started_at">Дата окончания</label>
+                                        <input type="date" class="form-control" name="deadline" required value="{{substr($stream->deadline ,0,10)}}">
                                     </div>
                                 </div>
 

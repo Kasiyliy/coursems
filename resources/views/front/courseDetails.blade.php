@@ -78,7 +78,7 @@
                     </div>
                     <div class="entry-content">
                         <p>
-                            {{$course->description}}
+                            {!!$course->description!!}
                         </p>
                     </div>
                 </div>

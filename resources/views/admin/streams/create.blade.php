@@ -25,12 +25,17 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="started_at">Начало</label>
                                         <input type="date" class="form-control" name="started_at" required>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="started_at">Дата окончания</label>
+                                        <input type="date" class="form-control" name="deadline" required>
+                                    </div>
                                 </div>
-
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-success btn-block" value="Добавить">

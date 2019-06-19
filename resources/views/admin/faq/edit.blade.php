@@ -19,7 +19,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Ответ</label>
-                                        <input type="text" name="answer" class="form-control" placeholder="Ответ" required value="{{$faq->answer}}">
+                                        <textarea name="answer" class="form-control" rows="5"  required>{{$faq->answer}}</textarea>
                                     </div>
                                 </div>
 

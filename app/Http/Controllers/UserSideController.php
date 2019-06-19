@@ -40,7 +40,9 @@ class UserSideController extends Controller
             }
         }
 
-        return view('front.index', compact('courses', 'streams', 'user', 'header_courses'));
+        $faqs = FAQ::orderBy('id', 'desc')->take(4)->get();
+
+        return view('front.index', compact('courses','faqs','streams', 'user', 'header_courses'));
     }
 
     public function course($id)
@@ -56,10 +58,13 @@ class UserSideController extends Controller
         $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
         $myStreams = array();
         $user = Auth::user();
-        $myOrders = $user->orders->where('status', 1);
+        $myOrders = $user->orders->where('status', 0);
 
         foreach ($myOrders as $myOrder) {
-            $myStreams[] = $myOrder->stream;
+            //TODO
+            if($myOrder->stream->deadline < date('Y-m-d')){
+                $myStreams[] = $myOrder->stream;
+            }
         }
         return view('front.myCourses', compact('myStreams', 'header_courses'));
     }
@@ -99,21 +104,39 @@ class UserSideController extends Controller
         return view('front.faqs', compact('faqs', 'header_courses'));
     }
 
+    public function aboutUs()
+    {
+        $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
+        return view('front.aboutUs', compact('header_courses'));
+    }
+
+    public function contact()
+    {
+        $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
+        return view('front.contact', compact('header_courses'));
+    }
+
     public function makeOrder($stream_id)
     {
         $user = Auth::user();
         if (!$user) {
-            Session::flash('warning', 'Войдите в систему, либо зарегейтрируйтесь!');
-
+            Session::flash('warning', 'Войдите в систему, либо зарегистрируйтесь!');
+            return redirect()->back();
         } else {
             if ($user->orders()->where('status', 0)->where('stream_id', $stream_id)->first()) {
                 Session::flash('warning', 'Вы уже записаны!');
             }
-            $order = new Order();
-            $order->user_id = $user->id;
-            $order->stream_id = $stream_id;
-            $order->status = 0;
-            $order->save();
+//            $order = new Order();
+//            $order->user_id = ;
+//            $order->stream_id = ;
+//            $order->status = 0;
+//            $order->save();
+
+            Order::create([
+                'user_id' =>$user->id ,
+                'stream_id'=> $stream_id,
+                'status' => 0
+            ]);
             Session::flash('success', 'Вы успешно записались в поток!');
             return redirect()->route('front');
         }

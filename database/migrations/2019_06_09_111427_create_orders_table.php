@@ -15,15 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('course_id')->unsigned();
-            $table->foreign('course_id')
+            $table->integer('stream_id')->unsigned();
+            $table->foreign('stream_id')
                 ->references('id')
-                ->on('courses');
+                ->on('streams');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
-            $table->dateTime('deadline');
             $table->boolean('status')->default(true);
             $table->softDeletes();
             $table->timestamps();

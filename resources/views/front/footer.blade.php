@@ -1,18 +1,18 @@
-<div class="footer-newsletter">
-    <div class="container">
-        <div class="footer-newsletter-wrap">
-            <h3 class="footer-newsletter-heading">NEWSLETTER</h3>
-            <form class="mailchimp-form">
-                <div class="mailchimp-form-content clearfix">
-                    <label for="subscribe_email" class="hide">Subscribe</label>
-                    <input type="email" id="subscribe_email" class="form-control" required="required"
-                           placeholder="Enter your email..." name="email">
-                    <button type="submit" class="btn mailchimp-submit">sign up</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+{{--<div class="footer-newsletter">--}}
+    {{--<div class="container">--}}
+        {{--<div class="footer-newsletter-wrap">--}}
+            {{--<h3 class="footer-newsletter-heading">NEWSLETTER</h3>--}}
+            {{--<form class="mailchimp-form">--}}
+                {{--<div class="mailchimp-form-content clearfix">--}}
+                    {{--<label for="subscribe_email" class="hide">Subscribe</label>--}}
+                    {{--<input type="email" id="subscribe_email" class="form-control" required="required"--}}
+                           {{--placeholder="Enter your email..." name="email">--}}
+                    {{--<button type="submit" class="btn mailchimp-submit">sign up</button>--}}
+                {{--</div>--}}
+            {{--</form>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</div>--}}
 <div class="footer-featured">
     <div class="container">
         <div class="row">

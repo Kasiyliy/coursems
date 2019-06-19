@@ -15,7 +15,6 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Вопрос</th>
-                                <th>Ответ</th>
                                 <th>Действия</th>
                             </tr>
                             </thead>
@@ -24,7 +23,6 @@
                                 <tr>
                                     <td>{{$faq->id}}</td>
                                     <td>{{$faq->question}}</td>
-                                    <td>{{$faq->answer}}</td>
                                     <td class="d-flex">
                                         <button type="button" class="btn btn-danger btn-xs mr-1" data-toggle="modal" data-target="#exampleModal{{$faq->id}}">
                                             <span class="fa fa-trash"></span> Удалить

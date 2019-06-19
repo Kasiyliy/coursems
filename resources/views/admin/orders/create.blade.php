@@ -21,6 +21,8 @@
                                             @endforeach
                                         </select>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="course_id">Пользователь</label>
                                         <select class="form-control" name="user_id" required>

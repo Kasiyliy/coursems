@@ -23,6 +23,8 @@ Route::get('/secure/config/key-generate', ['uses'=> 'ConfigController@keyGenerat
 Auth::routes();
 Route::get('/', ['as' => 'front' , 'uses' => 'UserSideController@index']);
 Route::get('/faqs', ['as' => 'front.faqs', 'uses' => 'UserSideController@faqs']);
+Route::get('/about', ['as' => 'front.about.us', 'uses' => 'UserSideController@aboutUs']);
+Route::get('/contact', ['as' => 'front.contact', 'uses' => 'UserSideController@contact']);
 Route::get('/courses/lessons/{id}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@courseLessons']);
 
 Route::get('/courses/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);

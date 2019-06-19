@@ -15,7 +15,6 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Наименование</th>
-                                <th>Описание</th>
                                 <th>Виден пользователям</th>
                                 <th>Действия</th>
                             </tr>
@@ -25,7 +24,6 @@
                                 <tr>
                                     <td>{{$course->id}}</td>
                                     <td>{{$course->name}}</td>
-                                    <td>{{$course->description}}</td>
                                     <td>{{$course->visible ? 'Да' : 'Нет'}}</td>
                                     <td class="d-flex">
                                         <button type="button" class="btn btn-danger btn-xs mr-1" data-toggle="modal" data-target="#exampleModal{{$course->id}}">

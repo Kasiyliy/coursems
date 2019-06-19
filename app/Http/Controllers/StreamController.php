@@ -48,7 +48,7 @@ class StreamController extends Controller
         } else {
             $stream = new Stream();
             $stream->fill($request->all());
-            $stream->deadline = date('Y-m-d', strtotime($stream->started_date . ' +30 day'));
+//            $stream->deadline = date('Y-m-d', strtotime($stream->started_date . ' +30 day'));
             $stream->save();
             Session::flash('success', 'Элемент успешно добавлен!');
             return redirect()->back();
