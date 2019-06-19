@@ -75,7 +75,8 @@
                                              data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                             data-elementdelay="0.05" data-end="8300">
+                                             data-elementdelay="0.05" data-end="8300"
+                                             style="color: black">
                                             autumn comming
                                         </div>
                                         <div class="tp-caption home2-big-white tp-resizeme" data-x="-1" data-y="250"
@@ -85,21 +86,22 @@
                                              data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                              data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                             data-elementdelay="0.05" data-end="8300">
+                                             data-elementdelay="0.05" data-end="8300"
+                                             style="color: black">
                                             sale up to 85%
                                         </div>
-                                        <div class="tp-caption white-button rev-btn" data-x="" data-y="350"
-                                             data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
-                                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:0;e:Linear.easeNone;"
-                                             data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                                             data-transform_in="x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                                             data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                             data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                                             data-responsive="off" data-end="8300">
-                                            discover the collection now
-                                        </div>
+                                        {{--<div class="tp-caption white-button rev-btn" data-x="" data-y="350"--}}
+                                             {{--data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
+                                             {{--data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:0;e:Linear.easeNone;"--}}
+                                             {{--data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"--}}
+                                             {{--data-transform_in="x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"--}}
+                                             {{--data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"--}}
+                                             {{--data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
+                                             {{--data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"--}}
+                                             {{--data-splitin="none" data-splitout="none" data-responsive_offset="on"--}}
+                                             {{--data-responsive="off" data-end="8300">--}}
+                                            {{--discover the collection now--}}
+                                        {{--</div>--}}
                                         <div class="tp-caption Fashion-BigDisplay tp-resizeme" data-x="100" data-y="100"
                                              data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
                                              data-transform_in="opacity:0;s:300;e:Power2.easeInOut;"
@@ -196,12 +198,9 @@
                                 <ul class="row list">
                                     @foreach($streams as $stream)
                                         <li class="col-sm-12">
-                                            <article class="hentry">
+                                            <article class="ml-10 mt-5 hentry">
                                                 <div class="hentry-wrap">
                                                     <div class="entry-featured">
-                                                        <div class="your-clock "></div>
-                                                    </div>
-                                                    <div class="entry-info">
                                                         <div class="entry-header">
                                                             <h3 class="entry-title">
                                                                 <a href="{{route('single.course', ['id' => $stream->course->id])}}">
@@ -253,10 +252,54 @@
                                                             </h3>
                                                         @endif
                                                     </div>
+                                                    <div class="entry-info">
+                                                        <div class="your-clock">
+                                                            <h3 id="{{$stream->id.'timer'}}"></h3>
+                                                            <span class="meta-author">
+																	Людей в группе:
+                                                                @foreach($registered as $client)
+                                                                    @if($client->id == $stream->id)
+                                                                        {{$client->count}}
+                                                                    @endif
+                                                                @endforeach
+																</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </article>
                                             <br>
                                         </li>
+                                        <!-- Display the countdown timer in an element -->
+                                        <script>
+                                            // Set the date we're counting down to
+                                            var countDownDate = new Date("{{$stream->deadline}}").getTime();
+
+                                            // Update the count down every 1 second
+                                            var x = setInterval(function () {
+
+                                                // Get today's date and time
+                                                var now = new Date().getTime();
+
+                                                // Find the distance between now and the count down date
+                                                var distance = countDownDate - now;
+
+                                                // Time calculations for days, hours, minutes and seconds
+                                                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                                // Display the result in the element with id="demo"
+                                                document.getElementById("{{$stream->id}}timer").innerHTML = days + " дней " + hours + " часов "
+                                                    + minutes + " минут " + seconds + " секунд ";
+
+                                                // If the count down is finished, write some text
+                                                if (distance < 0) {
+                                                    clearInterval(x);
+                                                    document.getElementById("{{$stream->id}}timer").innerHTML = "EXPIRED";
+                                                }
+                                            }, 1000);
+                                        </script>
                                     @endforeach
                                 </ul>
                             </div>
@@ -337,13 +380,5 @@
 @section('front.custom.js')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js"></script>
-    <script type="text/javascript">
-
-        var clock = $('.your-clock').FlipClock(3600, {
-            countdown: true
-        });
-
-
-    </script>
 
 @endsection

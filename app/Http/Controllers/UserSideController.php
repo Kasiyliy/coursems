@@ -8,7 +8,9 @@ use App\Homework;
 use App\Lesson;
 use App\Stream;
 use App\Order;
+use Psy\Util\Str;
 use Session;
+use DB;
 
 use Auth;
 use Illuminate\Http\Request;
@@ -20,6 +22,15 @@ class UserSideController extends Controller
         $courses = Course::where('visible', 1)->get();
         $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
         $streams = Stream::all()->where('started', 0);
+
+        $registered = DB::table('streams')
+            ->select( DB::raw('count(streams.id) as count'), 'streams.id as id')
+            ->leftJoin('orders', 'streams.id', '=', 'orders.stream_id')
+            ->where('started', 0)
+            ->groupBy('id')
+            ->get();
+
+
         $user = Auth::user();
 
         if ($user) {
@@ -42,7 +53,7 @@ class UserSideController extends Controller
 
         $faqs = FAQ::orderBy('id', 'desc')->take(4)->get();
 
-        return view('front.index', compact('courses', 'faqs', 'streams', 'user', 'header_courses'));
+        return view('front.index', compact('courses', 'faqs', 'streams', 'user', 'header_courses', 'registered'));
     }
 
     public function course($id)
