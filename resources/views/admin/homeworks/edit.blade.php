@@ -7,7 +7,7 @@
                 <div class="panel">
                     <div class="panel-header">
                         <h2>Редактровать</h2>
-                        <a class="btn btn-primary btn-sm" href="{{route('homeworks.index')}}">Назад</a>
+                        <a class="btn btn-info btn-sm" href="{{route('stream.index')}}">Назад</a>
                     </div>
                     <div class="panel-body">
                         <div class="col-md-6">
