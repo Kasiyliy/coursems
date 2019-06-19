@@ -23,8 +23,7 @@ class StreamController extends Controller
     {
         $stream = Stream::find($id);
 //        $orders = DB::table('orders')->where('stream_id', $id)->get();
-        $orders = DB::table('orders')->leftJoin('users', 'orders.user_id', '=', 'users.id')->where('stream_id', $id)->get();
-
+        $orders = Order::where('stream_id', $id)->get();
         if ($stream) {
             return view('admin.streams.details', compact("orders", "stream"));
         } else {

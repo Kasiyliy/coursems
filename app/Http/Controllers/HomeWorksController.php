@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
+use App\Stream;
 use Validator;
 use Session;
 use App\Homework;
@@ -12,6 +14,25 @@ class HomeWorksController extends Controller
 {
     public function index(){
         $homeworks = Homework::all();
+        return view('admin.homeworks.index', compact('homeworks'));
+    }
+
+    public function homeworkByOrder($id){
+
+        $order = Order::find($id);
+        $stream = Stream::find($order->stream_id);
+        $lessons = $stream->course->lessons;
+        $lessonsIds = null;
+
+        foreach($lessons as $lesson){
+            $lessonsIds[] = $lesson->id;
+        }
+
+        $homeworks = Homework::where('user_id', $order->user_id)->whereIn('lesson_id',$lessonsIds)->get();
+
+
+
+
         return view('admin.homeworks.index', compact('homeworks'));
     }
 

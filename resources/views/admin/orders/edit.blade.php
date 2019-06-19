@@ -7,7 +7,7 @@
                 <div class="panel">
                     <div class="panel-header">
                         <h2>Добавить</h2>
-                        <a class="btn btn-primary btn-sm" href="{{route('order.index')}}">Назад</a>
+                        <a class="btn btn-primary btn-sm" href="{{URL::previous()}}">Назад</a>
                     </div>
                     <div class="panel-body">
                         <form enctype="multipart/form-data" action="{{route('order.update', ['id' => $order->id])}}"

@@ -24,10 +24,11 @@
                             @foreach($orders as $id => $order)
                                 <tr>
                                     <td>{{$id+1}}</td>
-                                    <td>{{$order->email}}</td>
+                                    <td>{{$order->user->email}}</td>
                                     <td>{{$order->status ? 'Оплачено' : 'Не оплачено'}}</td>
                                     <td class="d-flex">
                                         <a href="{{route('order.edit' ,['id'=>$order->id ])}}" class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>
+                                        <a href="{{route('homeworks.stream' ,['id'=>$order->id])}}" class="btn-xs btn btn-info"><span class="fa fa-edit"></span> Домашняя работа</a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -98,6 +98,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/faq/update/{id}', ['as' => 'faq.update', 'uses' => 'FAQController@update']);
 
         Route::get('/homeworks', ['as' => 'homeworks.index', 'uses' => 'HomeWorksController@index']);
+        Route::get('/homeworks/stream/{id}', ['as' => 'homeworks.stream', 'uses' => 'HomeWorksController@homeworkByOrder']);
         Route::get('/homeworks/edit/{id}', ['as' => 'homeworks.edit', 'uses' => 'HomeWorksController@edit']);
         Route::post('/homeworks/update/{id}', ['as' => 'homeworks.update', 'uses' => 'HomeWorksController@update']);
 
