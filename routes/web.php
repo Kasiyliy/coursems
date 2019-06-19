@@ -26,6 +26,9 @@ Route::get('/faqs', ['as' => 'front.faqs', 'uses' => 'UserSideController@faqs'])
 Route::get('/about', ['as' => 'front.about.us', 'uses' => 'UserSideController@aboutUs']);
 Route::get('/contact', ['as' => 'front.contact', 'uses' => 'UserSideController@contact']);
 Route::get('/courses/lessons/{id}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@courseLessons']);
+Route::get('/add/homework/lesson/{id}', ['as' => 'homework.add' , 'uses' => 'UserSideController@homework']);
+Route::post('/store/homework/lesson/{id}', ['as' => 'homework.store' , 'uses' => 'UserSideController@homeworkAdd']);
+
 
 Route::get('/courses/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
 Route::post('/make/order/{id}', 'UserSideController@makeOrder')->name('make.order')->where('id', '[0-9]+');

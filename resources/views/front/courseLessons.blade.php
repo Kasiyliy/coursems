@@ -43,10 +43,25 @@
                         <div class="widget widget_product_categories">
                             <h4 class="widget-title"><span>{{$lesson->course->name}}</span></h4>
                             <ul class="product-categories">
-                                @foreach($lesson->course->lessons as $lesson)
-                                    <li><a href="/courses/lessons/{{$lesson->id}}">{{$lesson->name}}</a></li>
+                                @foreach($visibleLessons as $visibleLesson)
+                                    <li><a href="/courses/lessons/{{$visibleLesson->id}}">{{$visibleLesson->name}}</a></li>
                                 @endforeach
                             </ul>
+
+                            <ul>
+                                @if($nextLesson)
+                                    <li><a href="/courses/lessons/{{$nextLesson->id}}">Перейти к следующему уроку..</a></li>
+                                    @else
+                                    <li>
+                                        @if(!$lastHomework)
+                                            <a href="{{route('homework.add', ['id' => $lesson->id])}}">Сдать домашнее задание</a>
+                                            @else
+                                            Курс окончен!
+                                        @endif
+                                    </li>
+                                @endif
+                            </ul>
+
                         </div>
 
                     </div>
