@@ -136,7 +136,7 @@
 
                     <li>
                         <a href="{{(route('homeworks.index'))}}">
-                            <i class="fa fa-book"></i> <span>Homeworks</span>
+                            <i class="fa fa-book"></i> <span>Домашние работы</span>
                         </a>
                     </li>
 

@@ -8,7 +8,9 @@ use App\Homework;
 use App\Lesson;
 use App\Stream;
 use App\Order;
+use Psy\Util\Str;
 use Session;
+use DB;
 
 use Auth;
 use Illuminate\Http\Request;
@@ -20,11 +22,21 @@ class UserSideController extends Controller
         $courses = Course::where('visible', 1)->get();
         $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
         $streams = Stream::all()->where('started', 0);
+
+        $registered = DB::table('streams')
+            ->select( DB::raw('count(streams.id) as count'), 'streams.id as id')
+            ->leftJoin('orders', 'streams.id', '=', 'orders.stream_id')
+            ->where('started', 0)
+            ->groupBy('id')
+            ->get();
+
+
         $user = Auth::user();
 
         if ($user) {
             $user_stream_ids = array();
-            foreach ($user->orders()->where('status', 0)->get() as $order) {
+            $orders = $user->orders;
+            foreach ($orders as $order) {
                 if ($order->stream) {
                     $user_stream_ids[] = $order->stream_id;
                 }
@@ -38,11 +50,19 @@ class UserSideController extends Controller
                     }
                 }
             }
+
+            foreach ($streams as $stream) {
+                foreach ($orders as $order){
+                    if($stream->id == $order->stream_id) {
+                        $stream->paid = $order->status;
+                    }
+                }
+            }
         }
 
         $faqs = FAQ::orderBy('id', 'desc')->take(4)->get();
 
-        return view('front.index', compact('courses','faqs','streams', 'user', 'header_courses'));
+        return view('front.index', compact('courses', 'faqs', 'streams', 'user', 'header_courses', 'registered'));
     }
 
     public function course($id)
@@ -61,8 +81,7 @@ class UserSideController extends Controller
         $myOrders = $user->orders->where('status', 0);
 
         foreach ($myOrders as $myOrder) {
-            //TODO
-            if($myOrder->stream->deadline < date('Y-m-d')){
+            if (strtotime($myOrder->stream->deadline) > time()) {
                 $myStreams[] = $myOrder->stream;
             }
         }
@@ -72,7 +91,6 @@ class UserSideController extends Controller
     public function courseLessons($id)
     {
         $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
-
         $lesson = Lesson::findOrFail($id);
         if (!$lesson->course) {
             return abort(404);
@@ -84,11 +102,8 @@ class UserSideController extends Controller
                 ->where('status', 1)
                 ->orderBy('id', 'desc')
                 ->first();
-            $lessons = $course->lessons
-//                ->where('id' , '>',  )
-                ->orderBy('id', 'asc')->get();
-            $correct = false;
-            foreach ($lessons as $index => $lesson) {
+            $lessons = $course->lessons;
+            foreach ($lessons as $lesson) {
                 if ($lesson->id == $lastHomework->lesson_id) {
 
                 }
@@ -125,19 +140,15 @@ class UserSideController extends Controller
         } else {
             if ($user->orders()->where('status', 0)->where('stream_id', $stream_id)->first()) {
                 Session::flash('warning', 'Вы уже записаны!');
+                return redirect()->back();
             }
-//            $order = new Order();
-//            $order->user_id = ;
-//            $order->stream_id = ;
-//            $order->status = 0;
-//            $order->save();
 
             Order::create([
-                'user_id' =>$user->id ,
-                'stream_id'=> $stream_id,
-                'status' => 0
+                'user_id' => $user->id,
+                'stream_id' => $stream_id,
+                'status' => 0,
             ]);
-            Session::flash('success', 'Вы успешно записались в поток!');
+            Session::flash('success', 'Ваша заявка принята! Мы вам обязательно позвоним!');
             return redirect()->route('front');
         }
 

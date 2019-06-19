@@ -27,10 +27,10 @@
                                     <td>{{$order->user->email}}</td>
                                     <td>{{$order->status ? 'Оплачено' : 'Не оплачено'}}</td>
                                     <td class="d-flex">
-                                        <button type="submit" class="btn-xs btn btn-warning" data-toggle="modal" data-target="#exampleModal{{$order->id}}">
-                                            <span class="fa fa-money"></span> {{$order->status ? 'Не оплатил' : 'Оплатил'}}
+                                        <button type="submit" class="btn-xs btn btn-warning" data-toggle="modal" data-target="#editModal{{$order->id}}">
+                                            <span class="fa fa-money"></span> {{$order->status ? 'Отменить оплату' : 'Сделать оплаченным'}}
                                         </button>
-                                        <div class="modal fade" id="exampleModal{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="editModal{{$order->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <form action="{{route('order.toggle.status' ,['id'=>$order->id ])}}" method="post">

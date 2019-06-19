@@ -27,8 +27,6 @@ class LessonController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         } else {
-//            $lesson = Lesson::create($request->all());
-
             $lesson = new Lesson();
             $lesson->fill($request->all());
             $lesson->video_path = 'https://www.youtube.com/embed/'.substr($lesson->video_path, 32);
@@ -38,7 +36,7 @@ class LessonController extends Controller
             return redirect()->back();
         }
     }
-    
+
     public function delete($id)
     {
         $lesson = Lesson::find($id);
@@ -50,7 +48,7 @@ class LessonController extends Controller
         }
         return redirect()->back();
     }
-    
+
     public function edit($id)
     {
         $lesson = Lesson::find($id);
@@ -76,6 +74,11 @@ class LessonController extends Controller
             Session::flash('error', 'Ошибка!');
             return redirect()->back()->withErrors($validator);
         } else {
+
+            if($lesson->previousLesson && $request->next_lesson_id && $lesson->previousLesson->id === $request->next_lesson_id){
+                Session::flash('warning', 'К уроку нельзя добавлять следующим этот урок!');
+                return redirect()->back();
+            }
             $lesson->fill($request->all());
             $lesson->save();
             Session::flash('success', 'Элемент успешно обновлен!');
