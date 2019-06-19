@@ -107,17 +107,19 @@ class UserSideController extends Controller
             else{
                 foreach ($checkedHomeworks as $checkedHomework){
                     $visibleLessons[] = $checkedHomework->lesson;
-
                 }
             }
                 $lastHomework = Homework::where('lesson_id', $lesson->id)
                     ->where('user_id', $user->id)
-                    ->where('status', 1)
                     ->orderBy('id', 'desc')
                     ->first();
                 if($lastHomework) {
                     $lessonOrder = Lesson::findOrFail($lastHomework->lesson_id)->next_lesson_id;
                     $nextLesson = Lesson::where('course_id', $course->id)->where('next_lesson_id', $lessonOrder + 1)->first();
+                }
+                else{
+                    $nextLesson = Lesson::where('course_id', $course->id)->where('next_lesson_id', 1)->first();
+
                 }
             return view('front.courseLessons', compact('lesson', 'header_courses', 'nextLesson', 'visibleLessons','lastHomework'));
         }

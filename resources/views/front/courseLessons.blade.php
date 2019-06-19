@@ -44,20 +44,30 @@
                             <h4 class="widget-title"><span>{{$lesson->course->name}}</span></h4>
                             <ul class="product-categories">
                                 @foreach($visibleLessons as $visibleLesson)
-                                    <li><a href="/courses/lessons/{{$visibleLesson->id}}">{{$visibleLesson->name}}</a></li>
+                                    <li><a href="/courses/lessons/{{$visibleLesson->id}}">{{$visibleLesson->name}}</a>
+                                    </li>
                                 @endforeach
                             </ul>
 
                             <ul>
                                 @if($nextLesson)
-                                    <li><a href="/courses/lessons/{{$nextLesson->id}}">Перейти к следующему уроку..</a></li>
-                                    @else
+
                                     <li>
-                                        @if(!$lastHomework)
-                                            <a href="{{route('homework.add', ['id' => $lesson->id])}}">Сдать домашнее задание</a>
+                                        @if($lastHomework)
+                                            @if($lastHomework->status == 0)
+                                                <a href="#">Подождите следующий урок</a>
                                             @else
-                                            Курс окончен!
+                                                <a href="/courses/lessons/{{$nextLesson->id}}">Перейти к следующему
+                                                    уроку..</a></li>
+                                            @endif
+
+                                        @else
+                                            <a href="{{route('homework.add', ['id' => $lesson->id])}}">Добавить домашнее
+                                                задание</a></li>
                                         @endif
+                                @else
+                                    <li>
+                                        Курс окончен!
                                     </li>
                                 @endif
                             </ul>

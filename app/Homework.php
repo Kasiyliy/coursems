@@ -13,7 +13,8 @@ class Homework extends Model
         'lesson_id',
         'user_id',
         'comment',
-        'image_path'
+        'image_path',
+        'status',
     ];
 
     public function lesson()
