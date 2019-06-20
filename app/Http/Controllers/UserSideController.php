@@ -21,7 +21,7 @@ class UserSideController extends Controller
     {
         $courses = Course::where('visible', 1)->get();
         $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
-        $streams = Stream::all()->where('started', 0);
+        $streams = Stream::all()->where('started_at', '>=', date('Y-m-d'));
 
         $registered = DB::table('streams')
             ->select( DB::raw('count(streams.id) as count'), 'streams.id as id')

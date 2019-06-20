@@ -7,7 +7,7 @@
                     <button type="button" class="close" data-dismiss="modal">
                         <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
                     </button>
-                    <h4 class="modal-title">Login</h4>
+                    <h4 class="modal-title">Вход</h4>
                 </div>
                 <div class="modal-body">
 
@@ -37,16 +37,14 @@
                     </div>
                     <div class="checkbox clearfix">
                         <label class="form-flat-checkbox pull-left">
-                            <input class="form-check-input" type="checkbox" name="remember"
+                            <input type="checkbox" class="form-check-input" name="remember"
                                    id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                            <label class="form-check-label" for="remember">
-                                Запомнить меня
-                            </label>
+                            <i></i>
+                            <label class="form-check-label" for="remember">Запомнить меня</label>
                         </label>
                         <span class="lostpassword-modal-link pull-right">
 									@if (Route::has('password.request'))
-                                <a class="btn btn-link" data-rel="lostpasswordModal"
+                                <a class="" data-rel="lostpasswordModal"
                                    href="{{ route('password.request') }}">
 										Забыли пароль?
 									</a>
@@ -56,12 +54,11 @@
                 </div>
                 <div class="modal-footer">
 							<span class="user-login-modal-register pull-left">
-								Не зарегистрированы?
-									<a class="btn btn-link" href="{{route('register')}}">
-										Регистрация
+									<a class="" href="{{route('register')}}">
+										Не зарегистрированы?
 									</a>
 							</span>
-                    <button type="submit" class="btn btn-default btn-outline">Вход</button>
+                    <button type="submit" class="btn btn-default pull-right">Вход</button>
 
                 </div>
             </form>

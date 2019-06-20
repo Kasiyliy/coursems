@@ -118,12 +118,12 @@
                 <br>
 
                 <div class="container">
-                    <div class="row row-fluid mb-10">
+                    <div class="row row-fluid mb-10 mt-3">
                         <div class="col-sm-12">
                             <div class="caroufredsel product-slider nav-position-center" data-height="variable"
                                  data-visible-min="1" data-responsive="1" data-infinite="1" data-autoplay="0">
                                 <div class="product-slider-title">
-                                    <h3 class="el-heading">Что даст вам курс?</h3>
+                                    <h3 class="el-heading">Доступные курсы</h3>
                                 </div>
                                 <div class="caroufredsel-wrap">
                                     <div class="commerce columns-3">
@@ -171,7 +171,7 @@
                                                                         <div class="info-price">
 																				<span class="price">
 																					<span class="amount">
-																						{{$course->price}} тенге
+																						<del>{{$course->price +5000}} тенге</del> {{$course->price}} тенге
 																					</span>
 																				</span>
                                                                         </div>
@@ -184,8 +184,6 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                    <a href="#" class="caroufredsel-prev"></a>
-                                    <a href="#" class="caroufredsel-next"></a>
                                 </div>
                             </div>
                         </div>
@@ -211,12 +209,12 @@
                                                         <div class="entry-meta">
 																<span class="meta-date">
 																	Дата начала:
-																	<time datetime="2015-08-11T06:27:49+00:00">{{$stream->started_at}}</time>
+																	<time datetime="2015-08-11">{{trim($stream->started_at, '00:00:00')}}</time>
 																</span>
                                                             <br>
                                                             <span class="meta-author">
 																	Дата окончания:
-                                                            <time datetime="2015-08-11T06:27:49+00:00">{{$stream->deadline}}</time>
+                                                            <time datetime="2015-08-11T06:27:49+00:00">{{trim($stream->deadline, '00:00:00')}}</time>
 																</span>
                                                             <br>
                                                             <span class="meta-category">
@@ -276,57 +274,58 @@
                                         <!-- Display the countdown timer in an element -->
                                         <script>
                                             // Set the date we're counting down to
-                                            var countDownDate = new Date("{{$stream->started_at}}").getTime();
+                                            var countDownDate{{$stream->id}} = new Date("{{$stream->started_at}}").getTime();
 
                                             // Update the count down every 1 second
-                                            var x = setInterval(function () {
+                                            var x{{$stream->id}} = setInterval(function () {
 
                                                 // Get today's date and time
-                                                var now = new Date().getTime();
+                                                var now{{$stream->id}} = new Date().getTime();
 
                                                 // Find the distance between now and the count down date
-                                                var distance = now - countDownDate;
+                                                var distance{{$stream->id}} = countDownDate{{$stream->id}} - now{{$stream->id}};
 
                                                 // Time calculations for days, hours, minutes and seconds
-                                                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                                                var days{{$stream->id}} = Math.floor(distance{{$stream->id}} / (1000 * 60 * 60 * 24));
+                                                var hours{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                                var minutes{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60)) / (1000 * 60));
+                                                var seconds{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60)) / 1000);
 
                                                 // Display the result in the element with id="demo"
                                                 var dayWord = " дней ";
-                                                if(days === 1) {
+                                                if(days{{$stream->id}} === 1) {
                                                     dayWord = " день ";
-                                                }else if(days > 1 && days < 5) {
+                                                }else if(days{{$stream->id}} > 1 && days{{$stream->id}} < 5) {
                                                     dayWord = " дня ";
                                                 }
 
                                                 var hourWord = " часов ";
-                                                if(hours === 1) {
+                                                if(hours{{$stream->id}} === 1) {
                                                     hourWord = " час ";
-                                                }else if(hours > 1 && hours < 5) {
+                                                }else if(hours{{$stream->id}} > 1 && hours{{$stream->id}} < 5) {
                                                     hourWord = " часа ";
                                                 }
 
                                                 var minuteWord = " минут ";
-                                                if(minutes === 1) {
+                                                if(minutes{{$stream->id}} === 1) {
                                                     minuteWord = " минута ";
-                                                }else if(minutes > 1 && minutes < 5) {
+                                                }else if(minutes{{$stream->id}} > 1 && minutes{{$stream->id}} < 5) {
                                                     minuteWord = " минуты ";
                                                 }
 
                                                 var secondWord = " секунд ";
-                                                if(seconds === 1) {
+                                                if(seconds{{$stream->id}} === 1) {
                                                     secondWord = " секунда ";
-                                                }else if(seconds > 1 && seconds < 5) {
+                                                }else if(seconds{{$stream->id}} > 1 && seconds{{$stream->id}} < 5) {
                                                     secondWord = " секунды ";
                                                 }
 
-                                                document.getElementById("{{$stream->id}}timer").innerHTML = days + dayWord + hours + hourWord + minutes + minuteWord + seconds + secondWord;
+                                                document.getElementById("{{$stream->id}}timer").innerHTML = days{{$stream->id}} + dayWord + hours{{$stream->id}}
+                                                    + hourWord + minutes{{$stream->id}} + minuteWord + seconds{{$stream->id}} + secondWord;
 
                                                 // If the count down is finished, write some text
-                                                if (distance < 0) {
-                                                    clearInterval(x);
+                                                if (distance{{$stream->id}} < 0) {
+                                                    clearInterval(x{{$stream->id}});
                                                     document.getElementById("{{$stream->id}}timer").innerHTML = "EXPIRED";
                                                 }
                                             }, 1000);
@@ -369,7 +368,7 @@
                                                             </h5>
                                                         </div>
                                                         <div class="clearfix">
-                                                        <span class="testimonial-author text-center"
+                                                        <span class="testimonial-company text-center"
                                                               style="color: #0b0b0b;">
                                                         {{$faq->answer}}
                                                         </span>

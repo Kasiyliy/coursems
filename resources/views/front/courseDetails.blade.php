@@ -74,7 +74,7 @@
 
                 <div class="col-md-5">
                     <div class="entry-header">
-                        <h4>{{$course->price}}KZT</h4>
+                        <h4>{{$course->price}} KZT</h4>
                     </div>
                     <div class="entry-content">
                         <p>
