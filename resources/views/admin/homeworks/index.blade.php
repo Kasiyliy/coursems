@@ -7,7 +7,6 @@
                 <div class="panel"  style="padding: 10px;">
                     <div class="panel-header">
                         <h2>Домашние работы</h2>
-                        <a class="btn btn-info btn-sm" href="{{URL::previous()}}">Назад</a>
                     </div>
                     <div class="panel-body">
                         <table class="table table-hover table-responsive">
