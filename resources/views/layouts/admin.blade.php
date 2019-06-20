@@ -95,6 +95,12 @@
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">Навигация</li>
+                <li>
+                    <a href="{{(route('front'))}}">
+                        <i class="fa fa-arrow-circle-o-left"></i> <span>На сайт</span>
+                    </a>
+                </li>
                 <li class="header">Главная</li>
 
                 @if(Auth::user()->isClient())
