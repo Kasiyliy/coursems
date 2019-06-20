@@ -30,7 +30,7 @@
                                     <td>{{$stream->course->name}}</td>
                                     <td>{{substr($stream->started_at,0,10)}}</td>
                                     <td>{{substr($stream->deadline,0,10)}}</td>
-                                    <td><?= $stream->started ? "Закрыт" : "Открыт"?></td>
+                                    <td>{{$stream->started ? "Закрыт" : "Открыт"}}</td>
                                     <td>
                                         <form action="{{route('stream.started' ,['id'=>$stream->id ])}}" method="post">
                                             {{csrf_field()}}
