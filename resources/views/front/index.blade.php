@@ -360,7 +360,7 @@
 
                                             @foreach($faqs as $faq)
                                                 <li class="caroufredsel-item col-sm-6">
-                                                    <div class="testimonial-wrap" style="background-color: #f1f1f1;
+                                                    <div class="testimonial-wrap pb-3" style="background-color: #f1f1f1;
                                                 border-radius: 5px; padding: 10px; margin: 30px; color: white; box-shadow: 15px 15px 15px rgba(200,200,200,0.5)">
                                                         <div class="testimonial-text">
                                                             <h5 class="text-center">
@@ -378,8 +378,6 @@
                                             @endforeach
 
                                         </ul>
-                                        <a href="#" class="caroufredsel-prev hide"></a>
-                                        <a href="#" class="caroufredsel-next hide"></a>
                                     </div>
                                 </div>
                             </div>

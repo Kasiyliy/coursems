@@ -24,7 +24,7 @@ class UserSideController extends Controller
         $streams = Stream::all()->where('started_at', '>=', date('Y-m-d'));
 
         $registered = DB::table('streams')
-            ->select( DB::raw('count(streams.id) as count'), 'streams.id as id')
+            ->select(DB::raw('count(streams.id) as count'), 'streams.id as id')
             ->leftJoin('orders', 'streams.id', '=', 'orders.stream_id')
             ->where('started', 0)
             ->groupBy('id')
@@ -52,8 +52,8 @@ class UserSideController extends Controller
             }
 
             foreach ($streams as $stream) {
-                foreach ($orders as $order){
-                    if($stream->id == $order->stream_id) {
+                foreach ($orders as $order) {
+                    if ($stream->id == $order->stream_id) {
                         $stream->paid = $order->status;
                     }
                 }
@@ -78,7 +78,7 @@ class UserSideController extends Controller
         $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
         $myStreams = array();
         $user = Auth::user();
-        $myOrders = $user->orders->where('status', 0);
+        $myOrders = $user->orders->where('status', 1);
 
         foreach ($myOrders as $myOrder) {
             if (strtotime($myOrder->stream->deadline) > time()) {
@@ -101,27 +101,25 @@ class UserSideController extends Controller
             $course = $lesson->course;
             $checkedHomeworks = Homework::where('user_id', $user->id)
                 ->where('status', 1)->get();
-            if($checkedHomeworks->count() == 0){
-                $visibleLessons[] = $lesson->course->lessons->where('next_lesson_id',1)->first();
-            }
-            else{
-                foreach ($checkedHomeworks as $checkedHomework){
+            if ($checkedHomeworks->count() == 0) {
+                $visibleLessons[] = $lesson->course->lessons->where('next_lesson_id', 1)->first();
+            } else {
+                foreach ($checkedHomeworks as $checkedHomework) {
                     $visibleLessons[] = $checkedHomework->lesson;
                 }
             }
-                $lastHomework = Homework::where('lesson_id', $lesson->id)
-                    ->where('user_id', $user->id)
-                    ->orderBy('id', 'desc')
-                    ->first();
-                if($lastHomework) {
-                    $lessonOrder = Lesson::findOrFail($lastHomework->lesson_id)->next_lesson_id;
-                    $nextLesson = Lesson::where('course_id', $course->id)->where('next_lesson_id', $lessonOrder + 1)->first();
-                }
-                else{
-                    $nextLesson = Lesson::where('course_id', $course->id)->where('next_lesson_id', 1)->first();
+            $lastHomework = Homework::where('lesson_id', $lesson->id)
+                ->where('user_id', $user->id)
+                ->orderBy('id', 'desc')
+                ->first();
+            if ($lastHomework) {
+                $lessonOrder = Lesson::findOrFail($lastHomework->lesson_id)->next_lesson_id;
+                $nextLesson = Lesson::where('course_id', $course->id)->where('next_lesson_id', $lessonOrder + 1)->first();
+            } else {
+                $nextLesson = Lesson::where('course_id', $course->id)->where('next_lesson_id', 1)->first();
 
-                }
-            return view('front.courseLessons', compact('lesson', 'header_courses', 'nextLesson', 'visibleLessons','lastHomework'));
+            }
+            return view('front.courseLessons', compact('lesson', 'header_courses', 'nextLesson', 'visibleLessons', 'lastHomework'));
         }
     }
 
@@ -179,13 +177,13 @@ class UserSideController extends Controller
         $image = $request->image_path;
         $image_path = time() . $image->getClientOriginalName();
         $imageFullPath = $image->move('assets/files/homeworks/', $image_path);
-         $homeWork = Homework::create([
+        $homeWork = Homework::create([
             'lesson_id' => $id,
-             'user_id' => Auth::user()->id,
-             'image_path' => $imageFullPath,
-             'comment' => $request->comment,
-             'status' => 0,
-         ]);
+            'user_id' => Auth::user()->id,
+            'image_path' => $imageFullPath,
+            'comment' => $request->comment,
+            'status' => 0,
+        ]);
 
         return redirect()->route('single.course.lessons', ['id' => $id]);
     }

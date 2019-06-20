@@ -49,7 +49,7 @@
                                         </td>
                                         <td class="product-price">
 													<span class="amount">
-														KZT {{$myStream->course->price}}</span>
+														{{$myStream->course->price}} KZT</span>
 													</span>
                                         </td>
                                         <td class="product-add-to-cart">

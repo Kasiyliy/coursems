@@ -47,12 +47,6 @@
                                         <span class="icon-bar bar-middle"></span>
                                         <span class="icon-bar bar-bottom"></span>
                                     </button>
-                                    <a class="navbar-search-button search-icon-mobile" href="#">
-                                        <i class="fa fa-search"></i>
-                                    </a>
-                                    <a class="cart-icon-mobile" href="#">
-                                        <i class="elegant_icon_bag"></i><span>0</span>
-                                    </a>
                                     <a class="navbar-brand" href="{{route('front')}}">
                                         <img class="logo" alt="WOOW" src="{{ asset('front/images/logo.png') }}">
                                         <img class="logo-fixed" alt="WOOW"
@@ -91,7 +85,7 @@
                                                 <span class="underline">Контакты</span> <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="{{route('front.about.us')}}">О нас</a></li>
+                                                <li><a href="{{route('front.about.us')}}">Об авторе</a></li>
                                                 <li><a href="{{route('front.contact')}}">Контакты</a></li>
                                                 <li><a href="{{route('front.faqs')}}">FAQ</a></li>
                                             </ul>
