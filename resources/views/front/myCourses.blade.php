@@ -49,11 +49,16 @@
                                         </td>
                                         <td class="product-price">
 													<span class="amount">
-														KZT {{$myStream->course->price}}</span>
+														{{$myStream->course->price}} KZT</span>
 													</span>
                                         </td>
                                         <td class="product-add-to-cart">
-                                            <a href="{{route('single.course.lessons',['id' =>$myStream->course->id])}}" class="add_to_cart_button button"> Перейти к курсу</a>
+                                            @php $firstLesson = $myStream->course->lessons->where('next_lesson_id',1)->first() @endphp
+                                            @if($firstLesson)
+                                            <a href="{{route('single.course.lessons',['id' => $firstLesson->id])}}" class="add_to_cart_button button"> Перейти к курсу</a>
+                                            @else
+                                                Пока еще нет уроков!
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

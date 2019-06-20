@@ -15,17 +15,12 @@
                                                     <div class="entry-featured">
                                                         <iframe class="embed-responsive-item"
                                                                 width="700" height="450"
-                                                                src="{{$lesson->video_path}}" frameborder="0"
+                                                                src="https://www.youtube.com/embed/{{$lesson->video_path}}" frameborder="0"
                                                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                                 allowfullscreen></iframe>
                                                     </div>
                                                     <div class="entry-meta icon-meta">
                                                         <div class="entry-info">
-                                                            <div class="entry-header">
-                                                                <h2 class="entry-title">
-                                                                    {{$lesson->name}}
-                                                                </h2>
-                                                            </div>
                                                             {{$lesson->description}}
                                                         </div>
                                                     </div>
@@ -41,12 +36,37 @@
                 <div class="col-md-3 sidebar-wrap">
                     <div class="main-sidebar">
                         <div class="widget widget_product_categories">
-                            <h4 class="widget-title"><span>{{$lesson->course->name}}</span></h4>
+                            <h2><span>{{$lesson->course->name}}</span></h2>
                             <ul class="product-categories">
-                                @foreach($lesson->course->lessons as $lesson)
-                                    <li><a href="/courses/lessons/{{$lesson->id}}">{{$lesson->name}}</a></li>
+                                @foreach($visibleLessons as $visibleLesson)
+                                    <li><a href="/courses/lessons/{{$visibleLesson->id}}">{{$visibleLesson->name}}</a>
+                                    </li>
                                 @endforeach
                             </ul>
+
+                            <ul>
+                                @if($nextLesson)
+
+                                    <li>
+                                        @if($lastHomework)
+                                            @if($lastHomework->status == 0)
+                                                <a href="#">Подождите следующий урок</a>
+                                            @else
+                                                <a href="/courses/lessons/{{$nextLesson->id}}">Перейти к следующему
+                                                    уроку..</a></li>
+                                            @endif
+
+                                        @else
+                                            <a href="{{route('homework.add', ['id' => $lesson->id])}}">Добавить домашнее
+                                                задание</a></li>
+                                        @endif
+                                @else
+                                    <li>
+                                        Курс окончен!
+                                    </li>
+                                @endif
+                            </ul>
+
                         </div>
 
                     </div>

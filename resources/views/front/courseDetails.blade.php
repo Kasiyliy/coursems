@@ -73,13 +73,13 @@
                 </div>
 
                 <div class="col-md-5">
-                    <div class="entry-header">
-                        <h4>{{$course->price}}KZT</h4>
-                    </div>
                     <div class="entry-content">
                         <p>
                             {!!$course->description!!}
                         </p>
+                    </div>
+                    <div class="entry-header">
+                        <h4>Стоимость: {{$course->price}} KZT</h4>
                     </div>
                 </div>
             </div>

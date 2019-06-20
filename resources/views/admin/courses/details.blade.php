@@ -22,7 +22,7 @@
                                         </div>
                                         <div class="panel-body">
                                             <div class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item" src="{{$lesson->video_path}}"
+                                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$lesson->video_path}}"
                                                         frameborder="0"
                                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                         allowfullscreen></iframe>

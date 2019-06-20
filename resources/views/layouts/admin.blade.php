@@ -95,13 +95,13 @@
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">Главная</li>
+                <li class="header">Навигация</li>
                 <li>
-                    <a href="{{route('home')}}">
-                        <i class="fa fa-home"></i> <span>Главная</span>
+                    <a href="{{(route('front'))}}">
+                        <i class="fa fa-arrow-circle-o-left"></i> <span>На сайт</span>
                     </a>
                 </li>
-
+                <li class="header">Главная</li>
 
                 @if(Auth::user()->isClient())
                     <li>
@@ -117,26 +117,26 @@
                     </li>
 
                     <li>
-                        <a href="{{(route('order.index'))}}">
-                            <i class="fa fa-first-order"></i> <span>Заявки</span>
-                        </a>
-                    </li>
-
-                    <li>
                         <a href="{{(route('stream.index'))}}">
                             <i class="fa fa-tasks" aria-hidden="true"></i> <span>Потоки</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="{{(route('faq.index'))}}">
-                            <i class="fa fa-question-circle"></i> <span>FAQs</span>
+                        <a href="{{(route('order.index'))}}">
+                            <i class="fa fa-first-order"></i> <span>Заявки</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="{{(route('homeworks.index'))}}">
                             <i class="fa fa-book"></i> <span>Домашние работы</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{(route('faq.index'))}}">
+                            <i class="fa fa-question-circle"></i> <span>FAQs</span>
                         </a>
                     </li>
 

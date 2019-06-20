@@ -11,7 +11,7 @@
 <link rel='stylesheet' href='{{asset('front/css/jquery.selectBox.css')}}' type='text/css' media='all'/>
 <link rel='stylesheet' href='{{asset('front/css/font-awesome.min.css')}}' type='text/css' media='all'/>
 <link rel='stylesheet'
-      href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic%7CCrimson+Text:400,400italic,600,600italic,700,700italic'
+      href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic%7CCrimson+Text:400,400italic,600,600italic,700,700italic'
       type='text/css' media='all'/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
 <link rel='stylesheet' href='{{asset('front/css/elegant-icon.css')}}' type='text/css' media='all'/>
