@@ -14,7 +14,7 @@
                     <div class="panel-body">
 
                         <div class="row">
-                            @foreach($course->lessons as  $lesson)
+                            @foreach($course->lessons()->orderBy('next_lesson_id', 'asc')->get() as  $lesson)
                                 <div class="col-sm-4">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
@@ -77,10 +77,7 @@
                                         </div>
                                         <div class="panel-footer">
 
-                                            <p class="text-center text-muted">Следующий
-                                                урок: {{$lesson->nextLesson ? $lesson->nextLesson->name: 'нет'}}</p>
-                                            <p class="text-center text-muted">Предыдущий
-                                                урок: {{$lesson->previousLesson ? $lesson->previousLesson->name: 'нет'}}</p>
+                                            <p class="text-center text-muted">Номер урока: {{$lesson->next_lesson_id}}</p>
                                         </div>
                                     </div>
                                 </div>

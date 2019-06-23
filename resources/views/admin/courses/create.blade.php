@@ -12,7 +12,7 @@
                         <a  class="btn btn-primary btn-sm" href="{{route('course.index')}}">Назад</a>
                     </div>
                     <div class="panel-body">
-                        <form enctype="multipart/form-data" action="{{route('course.store')}}" method="post">
+                        <form enctype="multipart/form-data" action="{{route('course.store')}}" method="post" novalidate>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -22,7 +22,7 @@
 
                                     <div class="form-group">
                                         <label for="name">Описание</label>
-                                        <textarea name="description" rows="10" class="form-control" placeholder="Описание" ></textarea>
+                                        <textarea id="editor" name="description" rows="10" class="form-control" placeholder="Описание" ></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -65,15 +65,12 @@
 
 
 @section('scripts')
-    <script src="{{asset('admin/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('admin/cke/cke.js')}}"></script>
     <script>
-        tinymce.init({
-            selector: 'textarea',
-            setup: function (editor) {
-                editor.on('submit', function (e) {
-                    editor.save();
-                });
-            }
-        });
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     </script>
 @endsection

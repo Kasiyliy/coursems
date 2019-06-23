@@ -35,6 +35,7 @@
                                                      alt="Blog-1"/>
                                             </a>
                                         </div>
+                                        <h3>Уроки</h3>
                                         <table class="table table-hover table-bordered">
                                             <thead>
                                             <th>

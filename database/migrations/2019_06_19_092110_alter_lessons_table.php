@@ -15,9 +15,6 @@ class AlterLessonsTable extends Migration
     {
         Schema::table('lessons', function (Blueprint $table) {
             $table->integer('next_lesson_id')->nullable(true)->unsigned();
-            $table->foreign('next_lesson_id')
-                ->references('id')
-                ->on('lessons');
         });
     }
 
@@ -29,7 +26,6 @@ class AlterLessonsTable extends Migration
     public function down()
     {
         Schema::table('lessons', function (Blueprint $table) {
-            $table->dropForeign(['next_lesson_id']);
             $table->dropColumn('next_lesson_id');
         });
     }

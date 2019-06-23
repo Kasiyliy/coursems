@@ -32,7 +32,6 @@
                                 <tr>
                                     <th class="product-thumbnail"></th>
                                     <th class="product-name"><span class="nobr">Название курса</span></th>
-                                    <th class="product-price"><span class="nobr">Цена</span></th>
                                     <th class="product-add-to-cart">Действия</th>
                                 </tr>
                                 </thead>
@@ -45,12 +44,10 @@
                                             </a>
                                         </td>
                                         <td class="product-name">
-                                            <a href="{{route('single.course',['id' =>$myStream->course->id])}}" class="btn btn-link" >{{$myStream->course->name}}</a>
-                                        </td>
-                                        <td class="product-price">
-													<span class="amount">
-														{{$myStream->course->price}} KZT</span>
-													</span>
+                                            <a href="{{route('single.course',['id' =>$myStream->course->id])}}" class="btn btn-link" >
+                                                {{$myStream->course->name}}:
+                                                <span class="text-muted">Читать далее...</span>
+                                            </a>
                                         </td>
                                         <td class="product-add-to-cart">
                                             @php $firstLesson = $myStream->course->lessons->where('next_lesson_id',1)->first() @endphp

@@ -10,7 +10,7 @@
                         <a  class="btn btn-primary btn-sm" href="{{route('course.details', ['id'=>$course->id])}}">Назад</a>
                     </div>
                     <div class="panel-body">
-                        <form enctype="multipart/form-data" action="{{route('lesson.store')}}" method="post">
+                        <form enctype="multipart/form-data" action="{{route('lesson.store')}}" method="post" novalidate>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -20,7 +20,7 @@
                                     <input type="hidden" name="course_id" value="{{$course->id}}" required>
                                     <div class="form-group">
                                         <label for="name">Описание</label>
-                                        <textarea name="description" rows="5" class="form-control" placeholder="Описание" required></textarea>
+                                        <textarea id="editor" name="description" rows="5" class="form-control" placeholder="Описание" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -29,13 +29,9 @@
                                         <input type="text" min="0" name="video_path" class="form-control" placeholder="Ссылка" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="lesson_id">Следующий урок</label>
-                                        <select class="form-control" name="next_lesson_id">
-                                            <option></option>
-                                            @foreach($course->lessons as $lesson)
-                                                <option value="{{$lesson->id}}">{{$lesson->name}}</option>
-                                            @endforeach
-                                        </select>
+                                        <label for="lesson_id">Очередность урока</label>
+                                        <input type="number" min="0" name="next_lesson_id"
+                                               class="form-control" placeholder="Номер урока" required>
                                     </div>
                                 </div>
 
@@ -64,15 +60,12 @@
 @endsection
 
 @section('scripts')
-    <script src="{{asset('admin/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('admin/cke/cke.js')}}"></script>
     <script>
-        tinymce.init({
-            selector: 'textarea',
-            setup: function (editor) {
-                editor.on('submit', function (e) {
-                    editor.save();
-                });
-            }
-        });
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     </script>
 @endsection

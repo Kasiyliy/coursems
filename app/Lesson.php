@@ -40,14 +40,4 @@ class Lesson extends Model
         return $this->belongsTo(Course::class);
     }
 
-    public function nextLesson()
-    {
-        return $this->belongsTo(Lesson::class, 'next_lesson_id');
-    }
-
-    public function previousLesson()
-    {
-        return $this->hasOne(Lesson::class, 'next_lesson_id');
-    }
-
 }
