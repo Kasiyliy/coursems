@@ -9,7 +9,7 @@
                             Войдите в админ панель
                             <a href="{{route('home')}}">Админ панель<i class="fa fa-long-arrow-right"></i></a>
                         @endif
-                    </div>
+                    </div>г
                 </div>
                 <div class="col-sm-6 col-right-topbar">
                     <div class="right-topbar">
