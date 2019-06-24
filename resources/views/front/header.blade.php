@@ -9,7 +9,7 @@
                             Войдите в админ панель
                             <a href="{{route('home')}}">Админ панель<i class="fa fa-long-arrow-right"></i></a>
                         @endif
-                    </div>г
+                    </div>
                 </div>
                 <div class="col-sm-6 col-right-topbar">
                     <div class="right-topbar">
@@ -48,10 +48,10 @@
                                         <span class="icon-bar bar-bottom"></span>
                                     </button>
                                     <a class="navbar-brand" href="{{route('front')}}">
-                                        <img class="logo" alt="WOOW" src="{{ asset('front/images/logo.png') }}">
-                                        <img class="logo-fixed" alt="WOOW"
+                                        <img class="logo" alt="Glam Blog" src="{{ asset('front/images/logo.png') }}">
+                                        <img class="logo-fixed" alt="Glam Blog"
                                              src="{{ asset('front/images/logo-fixed.png') }}">
-                                        <img class="logo-mobile" alt="WOOW"
+                                        <img class="logo-mobile" alt="Glam Blog"
                                              src="{{ asset('front/images/logo-mobile.png') }}">
                                     </a>
                                 </div>
@@ -85,9 +85,9 @@
                                                 <span class="underline">Контакты</span> <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="{{route('front.about.us')}}">Об авторе</a></li>
+                                                <li><a href="{{route('front.about.us')}}">Обо мне</a></li>
                                                 <li><a href="{{route('front.contact')}}">Контакты</a></li>
-                                                <li><a href="{{route('front.faqs')}}">FAQ</a></li>
+                                                <li><a href="{{route('front.faqs')}}">Вопросы</a></li>
                                             </ul>
                                         </li>
                                     </ul>

@@ -5,11 +5,11 @@
             <div class="page-breadcrumb">
                 <ul class="breadcrumb">
                     <li>
-								<span>
-									<a class="home" href="#">
-										<span>Home</span>
-									</a>
-								</span>
+                        <span>
+                            <a class="home" href="{{route('front')}}">
+                                <span>Главная</span>
+                            </a>
+                        </span>
                     </li>
                     <li>
                         <span>FAQ</span>
