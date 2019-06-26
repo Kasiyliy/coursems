@@ -70,7 +70,7 @@
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
                                              data-elementdelay="0.05">
-                                            Цена: {{$stream->course->price}}
+                                            Цена: {{$stream->course->price}} KZT
                                         </div>
                                         {{--<div class="tp-caption home1-small-black tp-resizeme mt-9" data-x="125" data-y="360"--}}
                                         {{--data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
