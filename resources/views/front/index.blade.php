@@ -13,7 +13,8 @@
                         <div class="rev_slider_wrapper fullwidthbanner-container">
                             <div id="rev_slider" class="rev_slider fullwidthabanner">
                                 <ul>
-                                    <li data-transition="fade" data-slotamount="default" data-easein="default"
+                                    @foreach($streams as $stream)
+                                        <li data-transition="fade" data-slotamount="default" data-easein="default"
                                         data-easeout="default" data-masterspeed="default" data-thumb=""
                                         data-delay="6000" data-rotate="0" data-saveperformance="off" data-title="Slide"
                                         data-description="">
@@ -26,8 +27,7 @@
                                              data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                             data-elementdelay="0.05">
-                                            Таймер
+                                             data-elementdelay="0.05" id="{{$stream->id}}timer">
                                         </div>
                                         <div class="tp-caption tp-resizeme" data-x="125" data-y="300"
                                              data-width="['none','none','none','none']"
@@ -49,19 +49,20 @@
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
                                              data-elementdelay="0.05">
-                                            дата старта
+                                            Дата старта: {{date("d.m.Y", strtotime($stream->started_at))}}
                                         </div>
                                         {{--<div class="tp-caption home1-small-black tp-resizeme mt-3" data-x="125" data-y="360"--}}
-                                             {{--data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
-                                             {{--data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
-                                             {{--data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
-                                             {{--data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
-                                             {{--data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
-                                             {{--data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
-                                             {{--data-elementdelay="0.05">--}}
-                                            {{--Продолжительность: 4 дня--}}
+                                        {{--data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
+                                        {{--data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
+                                        {{--data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
+                                        {{--data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
+                                        {{--data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
+                                        {{--data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
+                                        {{--data-elementdelay="0.05">--}}
+                                        {{--Продолжительность: 4 дня--}}
                                         {{--</div>--}}
-                                        <div class="tp-caption home1-small-black tp-resizeme mt-3" data-x="125" data-y="360"
+                                        <div class="tp-caption home1-small-black tp-resizeme mt-3" data-x="125"
+                                             data-y="360"
                                              data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
                                              data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
                                              data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
@@ -69,17 +70,17 @@
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
                                              data-elementdelay="0.05">
-                                            Цена: 10 000 тнг
+                                            Цена: {{$stream->course->price}}
                                         </div>
                                         {{--<div class="tp-caption home1-small-black tp-resizeme mt-9" data-x="125" data-y="360"--}}
-                                             {{--data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
-                                             {{--data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
-                                             {{--data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
-                                             {{--data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
-                                             {{--data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
-                                             {{--data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
-                                             {{--data-elementdelay="0.05">--}}
-                                            {{--<i>*Курс будет доступен 30 дней</i>--}}
+                                        {{--data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
+                                        {{--data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
+                                        {{--data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
+                                        {{--data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
+                                        {{--data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
+                                        {{--data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
+                                        {{--data-elementdelay="0.05">--}}
+                                        {{--<i>*Курс будет доступен 30 дней</i>--}}
                                         {{--</div>--}}
                                         <div class="tp-caption home3-big-black tp-resizeme" data-x="125" data-y="188"
                                              data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
@@ -89,9 +90,10 @@
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
                                              data-elementdelay="0.05">
-                                            сам себе визажист
+                                            {{$stream->course->name}}
                                         </div>
                                     </li>
+                                    @endforeach
                                     <li data-transition="fade" data-slotamount="default" data-easein="default"
                                         data-easeout="default" data-masterspeed="default" data-thumb=""
                                         data-delay="6000" data-rotate="0" data-saveperformance="off" data-title="Slide"
@@ -181,69 +183,25 @@
                                                             <div class="entry-header">
                                                                 <h3 class="entry-title">
                                                                     <a href="{{route('single.course', ['id' => $stream->course->id])}}">
-                                                                        {{$stream->name}}
+                                                                        {{$stream->course->name}}
                                                                     </a>
                                                                 </h3>
                                                             </div>
                                                             <div class="entry-meta">
 																<span class="meta-date">
-																	Дата начала:
-																	<time datetime="2015-08-11">{{trim($stream->started_at, '00:00:00')}}</time>
-																</span>
-                                                                <br>
-                                                                <span class="meta-author">
-																	Дата окончания:
-                                                            <time datetime="2015-08-11T06:27:49+00:00">{{trim($stream->deadline, '00:00:00')}}</time>
-																</span>
-                                                                <br>
-                                                                <span class="meta-category">
-																	Курс:
-																	<a class="link-black btn-link"
-                                                                       href="{{route('single.course', ['id' => $stream->course_id])}}">
-                                                                        {{$stream->course->name}}
-                                                                        <span class="text-muted"> читать дальше..</span>
-                                                                    </a>
-																</span>
-                                                            </div>
-
-                                                            {{--@php--}}
-                                                            {{--$paid = false;--}}
-                                                            {{--if(Auth::user()){--}}
-                                                            {{--foreach ($user->orders as $order){--}}
-                                                            {{--if($order->stream_id == $stream->id)--}}
-                                                            {{--$paid=true;--}}
-                                                            {{--}--}}
-                                                            {{--}--}}
-                                                            {{--@endphp--}}
-                                                            @if(!$stream->alreadyHasId)
-                                                                <form method="POST"
-                                                                      action="{{route('make.order', ['id' => $stream->id])}}">
-                                                                    @csrf
-                                                                    <button type="submit" class="read-more btn btn-outline">
-                                                                        Записаться
-                                                                    </button>
-                                                                </form>
-                                                            @else
-                                                                <h3>
-                                                                    @if($stream->paid)
-                                                                        Вы записаны, пройдите к своим курсам!
-                                                                    @else
-                                                                        Ваша заявка в обработке!
-                                                                    @endif
-                                                                </h3>
-                                                            @endif
-                                                        </div>
-                                                        <div class="entry-info">
-                                                            <div class="your-clock">
-                                                                <h3 id="{{$stream->id.'timer'}}"></h3>
-                                                                <span class="meta-author">
-																	Людей в группе:
-                                                                @foreach($registered as $client)
+                                                                    @foreach($registered as $client)
                                                                         @if($client->id == $stream->id)
-                                                                            {{$client->count}}
+                                                                            Людей в группе: {{$client->count}}
                                                                         @endif
                                                                     @endforeach
 																</span>
+                                                                <a class="read-more btn btn-outline"
+                                                                   href="{{route('single.course', ['id' => $stream->course_id])}}">
+                                                                    <span class="text-muted">Подробнее</span>
+                                                                </a>
+                                                                <span class="meta-date pt-5">
+                                                                    Цена: {{$stream->course->price}} KZT
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -253,7 +211,9 @@
                                             <!-- Display the countdown timer in an element -->
                                             <script>
                                                 // Set the date we're counting down to
-                                                var countDownDate{{$stream->id}} = new Date("{{$stream->started_at}}").getTime();
+                                                var countDownDate{{$stream->id}} = new Date("{{$stream->started_at}}");
+                                                countDownDate{{$stream->id}}.setDate(countDownDate{{$stream->id}}.getDate() + 1);
+                                                countDownDate{{$stream->id}} = countDownDate{{$stream->id}}.getTime();
 
                                                 // Update the count down every 1 second
                                                 var x{{$stream->id}} = setInterval(function () {
@@ -276,6 +236,9 @@
                                                         dayWord = " день ";
                                                     } else if (days{{$stream->id}} > 1 && days{{$stream->id}} < 5) {
                                                         dayWord = " дня ";
+                                                    } else if (days{{$stream->id}} === 0) {
+                                                        dayWord = "";
+                                                        days{{{$stream->id}}} = "";
                                                     }
 
                                                     var hourWord = " часов ";
@@ -283,6 +246,9 @@
                                                         hourWord = " час ";
                                                     } else if (hours{{$stream->id}} > 1 && hours{{$stream->id}} < 5) {
                                                         hourWord = " часа ";
+                                                    } else if (hours{{$stream->id}} === 0) {
+                                                        hourWord = "";
+                                                        hours{{{$stream->id}}} = "";
                                                     }
 
                                                     var minuteWord = " минут ";
@@ -290,6 +256,9 @@
                                                         minuteWord = " минута ";
                                                     } else if (minutes{{$stream->id}} > 1 && minutes{{$stream->id}} < 5) {
                                                         minuteWord = " минуты ";
+                                                    } else if (minutes{{$stream->id}} === 0) {
+                                                        minuteWord = "";
+                                                        minutes{{{$stream->id}}} = "";
                                                     }
 
                                                     var secondWord = " секунд ";
@@ -297,6 +266,9 @@
                                                         secondWord = " секунда ";
                                                     } else if (seconds{{$stream->id}} > 1 && seconds{{$stream->id}} < 5) {
                                                         secondWord = " секунды ";
+                                                    } else if (seconds{{$stream->id}} === 0) {
+                                                        secondWord = "";
+                                                        seconds{{{$stream->id}}} = "";
                                                     }
 
                                                     document.getElementById("{{$stream->id}}timer").innerHTML = days{{$stream->id}} + dayWord + hours{{$stream->id}}
@@ -336,19 +308,26 @@
                                                     <div class="accordion" id="accordion1">
                                                         <ul>
                                                             <li>
-                                                                <p><i class="fa fa-check-circle"></i> Меня зовут Айгуль Ахметкали, я визажист - бровист</p>
+                                                                <p><i class="fa fa-check-circle"></i> Меня зовут Айгуль
+                                                                    Ахметкали, я визажист - бровист</p>
                                                             </li>
                                                             <li>
-                                                                <p><i class="fa fa-check-circle"></i> Обучалась в Академии "MAKE UP FOR EVER" в Париже</p>
+                                                                <p><i class="fa fa-check-circle"></i> Обучалась в
+                                                                    Академии "MAKE UP FOR EVER" в Париже</p>
                                                             </li>
                                                             <li>
-                                                                <p><i class="fa fa-check-circle"></i> Работала в итальянском центре эстетики и красоты "ALDO CAPPOLA",
+                                                                <p><i class="fa fa-check-circle"></i> Работала в
+                                                                    итальянском центре эстетики и красоты "ALDO
+                                                                    CAPPOLA",
                                                                     сейчас
-                                                                    работаю в Швецарской клинике красоты "Beauty Lab by L. Raphael"</p>
+                                                                    работаю в Швецарской клинике красоты "Beauty Lab by
+                                                                    L. Raphael"</p>
                                                             </li>
                                                             <li>
-                                                                <p><i class="fa fa-check-circle"></i> Я фанатик "Beauty" мира. Самле главное в нашей сфере - это развитие,
-                                                                    я всегда совершенствую свои навыки и слежу за всеми последними
+                                                                <p><i class="fa fa-check-circle"></i> Я фанатик "Beauty"
+                                                                    мира. Самле главное в нашей сфере - это развитие,
+                                                                    я всегда совершенствую свои навыки и слежу за всеми
+                                                                    последними
                                                                     тенденциями</p>
                                                             </li>
                                                         </ul>
@@ -366,7 +345,8 @@
                 <div class="container-full" style="background-color: #f8f9fb">
                     <div class="row row-fluid mt-10 mb-10">
                         <div class="col-sm-12">
-                            <div class="caroufredsel product-slider nav-position-center" data-height="variable" data-visible-min="1" data-responsive="1" data-infinite="1" data-autoplay="0">
+                            <div class="caroufredsel product-slider nav-position-center" data-height="variable"
+                                 data-visible-min="1" data-responsive="1" data-infinite="1" data-autoplay="0">
                                 <div class="product-slider-title">
                                     <h3 class="el-heading">Мои работы</h3>
                                 </div>
@@ -379,10 +359,12 @@
                                                         <div class="product-wrap">
                                                             <div class="product-images">
                                                                 <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/1.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/1.jpg"/>
                                                                 </div>
                                                                 <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/1.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/1.jpg"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -395,10 +377,12 @@
                                                         <div class="product-wrap">
                                                             <div class="product-images">
                                                                 <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/2.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/2.jpg"/>
                                                                 </div>
                                                                 <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/2.2.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/2.2.jpg"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -411,10 +395,12 @@
                                                         <div class="product-wrap">
                                                             <div class="product-images">
                                                                 <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/3.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/3.jpg"/>
                                                                 </div>
                                                                 <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/3.3.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/3.3.jpg"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -427,10 +413,12 @@
                                                         <div class="product-wrap">
                                                             <div class="product-images">
                                                                 <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/7.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/7.jpg"/>
                                                                 </div>
                                                                 <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/7.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/7.jpg"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -443,10 +431,12 @@
                                                         <div class="product-wrap">
                                                             <div class="product-images">
                                                                 <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/6.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/6.jpg"/>
                                                                 </div>
                                                                 <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/6.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/6.jpg"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -459,10 +449,12 @@
                                                         <div class="product-wrap">
                                                             <div class="product-images">
                                                                 <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/8.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/8.jpg"/>
                                                                 </div>
                                                                 <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-                                                                    <img width="375" height="505" src="front/images/myWorks/8.jpg"/>
+                                                                    <img width="375" height="505"
+                                                                         src="front/images/myWorks/8.jpg"/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -524,33 +516,33 @@
                 </div>
 
                 {{--<div class="container">--}}
-                    {{--<div class="row row-fluid mb-0 pt-10">--}}
-                        {{--<div class="col-sm-12">--}}
-                            {{--<h3 class="text-center heading-center-custom mb-3">--}}
-                                {{--Контакты--}}
-                            {{--</h3>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="content-container">--}}
-                        {{--<div class="container">--}}
-                            {{--<div class="row">--}}
-                                {{--<div class="col-md-12">--}}
-                                    {{--<div class="col-sm-12">--}}
-                                        {{--<div class="accordion mt-5 ml-5" id="accordion1">--}}
-                                            {{--<p>г. Алматы</p>--}}
-                                            {{--<p>Телефон: <a href="tel:+77011943346">+7701 194 33 46</a></p>--}}
-                                            {{--<p>E-mail: <a href="mailto:glamblog.kz@gmail.com">glamblog.kz@gmail.com</a></p>--}}
-                                            {{--<p>Instagram: <a href="https://www.instagram.com/_glamblog_/">@_glamblog_</a>--}}
-                                            {{--</p>--}}
-                                            {{--<br>--}}
-                                        {{--</div>--}}
-                                        {{--<h3>Сотрудничество:</h3>--}}
-                                        {{--<p class="ml-5"><a href="mailto:glamblog.kz@gmail.com">glamblog.kz@gmail.com</a></p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
+                {{--<div class="row row-fluid mb-0 pt-10">--}}
+                {{--<div class="col-sm-12">--}}
+                {{--<h3 class="text-center heading-center-custom mb-3">--}}
+                {{--Контакты--}}
+                {{--</h3>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="content-container">--}}
+                {{--<div class="container">--}}
+                {{--<div class="row">--}}
+                {{--<div class="col-md-12">--}}
+                {{--<div class="col-sm-12">--}}
+                {{--<div class="accordion mt-5 ml-5" id="accordion1">--}}
+                {{--<p>г. Алматы</p>--}}
+                {{--<p>Телефон: <a href="tel:+77011943346">+7701 194 33 46</a></p>--}}
+                {{--<p>E-mail: <a href="mailto:glamblog.kz@gmail.com">glamblog.kz@gmail.com</a></p>--}}
+                {{--<p>Instagram: <a href="https://www.instagram.com/_glamblog_/">@_glamblog_</a>--}}
+                {{--</p>--}}
+                {{--<br>--}}
+                {{--</div>--}}
+                {{--<h3>Сотрудничество:</h3>--}}
+                {{--<p class="ml-5"><a href="mailto:glamblog.kz@gmail.com">glamblog.kz@gmail.com</a></p>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
+                {{--</div>--}}
                 {{--</div>--}}
             </div>
         </div>
