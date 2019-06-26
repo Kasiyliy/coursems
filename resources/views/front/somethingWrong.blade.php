@@ -48,9 +48,9 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-hover">Контакты <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{route('front.about.us')}}">О нас</a></li>
+                        <li><a href="{{route('front.about.us')}}">Обо мне</a></li>
                         <li><a href="{{route('front.contact')}}">Контакты</a></li>
-                        <li><a href="{{route('front.faqs')}}">FAQ</a></li>
+                        <li><a href="{{route('front.faqs')}}">Вопросы</a></li>
                     </ul>
                 </li>
             </ul>

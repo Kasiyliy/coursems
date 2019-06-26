@@ -34,7 +34,7 @@
                                         <div class="accordion-group toggle toggle_default toggle_color_default toggle_size_md mb-1 pl-3">
                                             <div class="accordion-heading toggle_title">
                                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{$faq->id}}">
-                                                    {{$faq->question}}
+                                                    <b>{{$faq->question}}</b>
                                                 </a>
                                             </div>
                                             <div id="collapse{{$faq->id}}" class="accordion-body toggle_content collapse">

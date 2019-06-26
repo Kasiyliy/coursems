@@ -27,7 +27,7 @@
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
                                              data-elementdelay="0.05">
-                                            сам себе визажист
+                                            Таймер
                                         </div>
                                         <div class="tp-caption tp-resizeme" data-x="125" data-y="300"
                                              data-width="['none','none','none','none']"
@@ -89,7 +89,7 @@
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
                                              data-elementdelay="0.05">
-                                            Таймер
+                                            сам себе визажист
                                         </div>
                                     </li>
                                     <li data-transition="fade" data-slotamount="default" data-easein="default"
@@ -120,18 +120,18 @@
                                              style="color: black">
                                             по 10 000 тенге
                                         </div>
-                                        <div class="tp-caption btn-default rev-btn" data-x="" data-y="350"
-                                        data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
-                                        data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:0;e:Linear.easeNone;"
-                                        data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                                        data-transform_in="x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                                        data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                        data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                        data-splitin="none" data-splitout="none" data-responsive_offset="on"
-                                        data-responsive="off" data-end="8300" style="color: #0b0b0b">
-                                        записаться на курс
-                                        </div>
+                                        {{--<div class="tp-caption btn-default rev-btn" data-x="" data-y="350"--}}
+                                        {{--data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
+                                        {{--data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:0;e:Linear.easeNone;"--}}
+                                        {{--data-style_hover="c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);cursor:pointer;"--}}
+                                        {{--data-transform_in="x:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"--}}
+                                        {{--data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"--}}
+                                        {{--data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
+                                        {{--data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"--}}
+                                        {{--data-splitin="none" data-splitout="none" data-responsive_offset="on"--}}
+                                        {{--data-responsive="off" data-end="8300" style="color: #0b0b0b">--}}
+                                        {{--записаться на курс--}}
+                                        {{--</div>--}}
                                         <div class="tp-caption Fashion-BigDisplay tp-resizeme" data-x="100" data-y="100"
                                              data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
                                              data-transform_in="opacity:0;s:300;e:Power2.easeInOut;"
@@ -321,6 +321,168 @@
                     <div class="row row-fluid mb-0 pt-10">
                         <div class="col-sm-12">
                             <h3 class="text-center heading-center-custom mb-3">
+                                Обо мне
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="content-container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="main-content">
+                                        <div class="col-sm-8">
+                                            <div class="row inner faq-wrapper">
+                                                <div class="col-sm-12">
+                                                    <div class="accordion" id="accordion1">
+                                                        <ul>
+                                                            <li>
+                                                                <p><i class="fa fa-check-circle"></i> Меня зовут Айгуль Ахметкали, я визажист - бровист</p>
+                                                            </li>
+                                                            <li>
+                                                                <p><i class="fa fa-check-circle"></i> Обучалась в Академии "MAKE UP FOR EVER" в Париже</p>
+                                                            </li>
+                                                            <li>
+                                                                <p><i class="fa fa-check-circle"></i> Работала в итальянском центре эстетики и красоты "ALDO CAPPOLA",
+                                                                    сейчас
+                                                                    работаю в Швецарской клинике красоты "Beauty Lab by L. Raphael"</p>
+                                                            </li>
+                                                            <li>
+                                                                <p><i class="fa fa-check-circle"></i> Я фанатик "Beauty" мира. Самле главное в нашей сфере - это развитие,
+                                                                    я всегда совершенствую свои навыки и слежу за всеми последними
+                                                                    тенденциями</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-full" style="background-color: #f8f9fb">
+                    <div class="row row-fluid mt-10 mb-10">
+                        <div class="col-sm-12">
+                            <div class="caroufredsel product-slider nav-position-center" data-height="variable" data-visible-min="1" data-responsive="1" data-infinite="1" data-autoplay="0">
+                                <div class="product-slider-title">
+                                    <h3 class="el-heading">Мои работы</h3>
+                                </div>
+                                <div class="caroufredsel-wrap">
+                                    <div class="commerce columns-4">
+                                        <ul class="products columns-4" data-columns="4">
+                                            <li class="product">
+                                                <div class="product-container">
+                                                    <figure>
+                                                        <div class="product-wrap">
+                                                            <div class="product-images">
+                                                                <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/1.jpg"/>
+                                                                </div>
+                                                                <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/1.jpg"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </li>
+                                            <li class="product">
+                                                <div class="product-container">
+                                                    <figure>
+                                                        <div class="product-wrap">
+                                                            <div class="product-images">
+                                                                <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/2.jpg"/>
+                                                                </div>
+                                                                <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/2.2.jpg"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </li>
+                                            <li class="product">
+                                                <div class="product-container">
+                                                    <figure>
+                                                        <div class="product-wrap">
+                                                            <div class="product-images">
+                                                                <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/3.jpg"/>
+                                                                </div>
+                                                                <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/3.3.jpg"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </li>
+                                            <li class="product">
+                                                <div class="product-container">
+                                                    <figure>
+                                                        <div class="product-wrap">
+                                                            <div class="product-images">
+                                                                <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/7.jpg"/>
+                                                                </div>
+                                                                <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/7.jpg"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </li>
+                                            <li class="product">
+                                                <div class="product-container">
+                                                    <figure>
+                                                        <div class="product-wrap">
+                                                            <div class="product-images">
+                                                                <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/6.jpg"/>
+                                                                </div>
+                                                                <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/6.jpg"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </li>
+                                            <li class="product">
+                                                <div class="product-container">
+                                                    <figure>
+                                                        <div class="product-wrap">
+                                                            <div class="product-images">
+                                                                <div class="shop-loop-thumbnail shop-loop-front-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/8.jpg"/>
+                                                                </div>
+                                                                <div class="shop-loop-thumbnail shop-loop-back-thumbnail">
+                                                                    <img width="375" height="505" src="front/images/myWorks/8.jpg"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="caroufredsel-prev"></a>
+                                    <a href="#" class="caroufredsel-next"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row row-fluid mb-0 pt-10">
+                        <div class="col-sm-12">
+                            <h3 class="text-center heading-center-custom mb-3">
                                 Часто задаваемые вопросы
                             </h3>
                         </div>
@@ -360,6 +522,36 @@
                         </div>
                     </div>
                 </div>
+
+                {{--<div class="container">--}}
+                    {{--<div class="row row-fluid mb-0 pt-10">--}}
+                        {{--<div class="col-sm-12">--}}
+                            {{--<h3 class="text-center heading-center-custom mb-3">--}}
+                                {{--Контакты--}}
+                            {{--</h3>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="content-container">--}}
+                        {{--<div class="container">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-12">--}}
+                                    {{--<div class="col-sm-12">--}}
+                                        {{--<div class="accordion mt-5 ml-5" id="accordion1">--}}
+                                            {{--<p>г. Алматы</p>--}}
+                                            {{--<p>Телефон: <a href="tel:+77011943346">+7701 194 33 46</a></p>--}}
+                                            {{--<p>E-mail: <a href="mailto:glamblog.kz@gmail.com">glamblog.kz@gmail.com</a></p>--}}
+                                            {{--<p>Instagram: <a href="https://www.instagram.com/_glamblog_/">@_glamblog_</a>--}}
+                                            {{--</p>--}}
+                                            {{--<br>--}}
+                                        {{--</div>--}}
+                                        {{--<h3>Сотрудничество:</h3>--}}
+                                        {{--<p class="ml-5"><a href="mailto:glamblog.kz@gmail.com">glamblog.kz@gmail.com</a></p>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>
