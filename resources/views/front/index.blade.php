@@ -214,9 +214,9 @@
                                                         </div>
                                                         <div class="entry-meta">
 																<span class="meta-date">
-																	Date:
+																	Старт:
 																	<time datetime="2015-08-11T06:27:22+00:00">
-																		August 11, 2015
+																		{{date("d.m.Y", strtotime($stream->started_at))}}
 																	</time>
 																</span>
                                                             <span class="meta-author">

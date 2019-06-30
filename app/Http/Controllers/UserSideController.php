@@ -60,7 +60,7 @@ class UserSideController extends Controller
             }
         }
 
-        $faqs = FAQ::orderBy('id', 'desc')->take(4)->get();
+        $faqs = FAQ::orderBy('id', 'desc')->get();
 
         return view('front.index', compact('courses', 'faqs', 'streams', 'user', 'header_courses', 'registered'));
     }
