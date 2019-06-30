@@ -33,43 +33,20 @@
                                                  alt="Blog-1"/>
                                             <h2 class="entry-title mb-3">{{$course->name}}</h2>
                                             <a class="read-more btn btn-outline mb-3" href="">купить курс</a>
-                                            <p>Стоимость: {{$course->price}} KZT</p>
+                                            <p>Стоимость: <del>{{$course->price + 5000}}</del> {{$course->price}} KZT</p>
                                             <br>
                                         </div>
                                         <p>
                                             {!!$course->description!!}
                                         </p>
-                                        <h3>Уроки</h3>
-                                        <table class="table table-hover table-bordered">
-                                            <thead>
-                                            <th>
-                                                <p class="text-center">№</p>
-                                            </th>
-                                            <th>
-                                                <p class="text-left">Наименование</p>
-                                            </th>
-                                            </thead>
-                                            <tbody>
-                                            @if(count($lessons))
+                                        @if(count($lessons))
+                                            <h3>Содержание курса</h3>
+                                            <ul>
                                                 @foreach($lessons as $index => $lesson)
-                                                    <tr>
-                                                        <td>
-                                                            <b>{{$index+1}}</b>
-                                                        </td>
-                                                        <td>
-                                                            <p class="text-dark text-left">{{$lesson->name}}</p>
-                                                        </td>
-                                                    </tr>
+                                                <li class="text-dark text-left">{{$index+1}}. {{$lesson->name}}</li>
                                                 @endforeach
-                                            @else
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <p class="text-center">Нет уроков</p>
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            </tbody>
-                                        </table>
+                                            </ul>
+                                        @endif
                                     </div>
                                 </article>
                             </div>

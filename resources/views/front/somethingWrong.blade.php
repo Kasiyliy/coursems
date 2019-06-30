@@ -24,17 +24,10 @@
                     <a href="{{route('front')}}" class="dropdown-hover">Главная</a>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="" class="dropdown-hover">Курсы<span class="caret"></span></a>
+                    <a href="#" class="dropdown-hover">Курсы<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         @foreach($header_courses as $course)
-                            <li class="menu-item-has-children dropdown-submenu">
-                                <a href="#">{{$course->name}} <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    @foreach($course->streams as $stream)
-                                        <li><a href="#">{{$stream->name}}</a></li>
-                                    @endforeach
-                                </ul>
-                            </li>
+                            <li><a href="/courses/{{$course->id}}">{{$course->name}}</a></li>
                         @endforeach
                     </ul>
                 </li>

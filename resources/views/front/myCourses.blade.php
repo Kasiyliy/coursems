@@ -24,9 +24,6 @@
                 <div class="col-md-12">
                     <div class="main-content">
                         <form class="commerce">
-                            <div class="wishlist-title ">
-                                <h2>Мои курсы</h2>
-                            </div>
                             <table class="shop_table cart wishlist_table">
                                 <thead>
                                 <tr>
