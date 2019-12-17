@@ -44,7 +44,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -55,13 +55,14 @@ class RegisterController extends Controller
             'phone_number' => ['required', 'string'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'instagram' => ['required', 'string', 'max:255'],
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     protected function create(array $data)
@@ -73,6 +74,7 @@ class RegisterController extends Controller
             'role_id' => Role::CLIENT_ID,
             'phone_number' => $data['phone_number'],
             'password' => Hash::make($data['password']),
+            'instagram' => $data['instagram'],
         ]);
     }
 }

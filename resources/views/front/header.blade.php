@@ -16,11 +16,17 @@
                         <div class="user-login">
                             <ul class="nav top-nav">
                                 @if(!Auth::user())
-                                    <li><a data-rel="loginModal" href="#"><i class="fa fa-user"></i> Войти</a></li>
+                                    <li>
+                                        <a style="float: left" data-rel="loginModal" href="#"><i
+                                                    class="fa fa-sign-in"></i> Войти</a>
+                                        <a style="float: left" class="ml-2"
+                                           href="{{route('register')}}"><i class="fa fa-user"></i>
+                                            Регистрация</a>
+                                    </li>
                                 @else
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();"><i
-                                                    class="fa fa-user"></i> Выйти</a></li>
+                                                    class="fa fa-sign-out"></i> Выйти</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                           style="display: none;">
                                         @csrf

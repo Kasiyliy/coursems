@@ -77,16 +77,17 @@
                                                 Цена:
                                                 {{$stream->course->price}} KZT
                                             </div>
-                                            {{--<div class="tp-caption home1-small-black tp-resizeme mt-9" data-x="125" data-y="360"--}}
-                                            {{--data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
-                                            {{--data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
-                                            {{--data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
-                                            {{--data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
-                                            {{--data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
-                                            {{--data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
-                                            {{--data-elementdelay="0.05">--}}
-                                            {{--<i>*Курс будет доступен 30 дней</i>--}}
-                                            {{--</div>--}}
+{{--                                            <div class="tp-caption home1-small-black tp-resizeme mt-9" data-x="125"--}}
+{{--                                                 data-y="360"--}}
+{{--                                                 data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
+{{--                                                 data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
+{{--                                                 data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
+{{--                                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
+{{--                                                 data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
+{{--                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
+{{--                                                 data-elementdelay="0.05">--}}
+{{--                                                *Курс будет доступен 30 дней--}}
+{{--                                            </div>--}}
                                             <div class="tp-caption home3-big-black tp-resizeme" data-x="125"
                                                  data-y="188"
                                                  data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
@@ -145,19 +146,7 @@
                 {{--Видео--}}
                 <div class="container">
                     <div class="row row-fluid mb-5 mt-5">
-                        <div class="col-sm-6">
-                            <div class="box-ft box-ft-1">
-                                <img src="front/images/thumb_569x341.jpg" alt="">
-                                <a href="#">
-                                    <span class="bof-tf-title-wrap">
-                                        <span class="bof-tf-title-wrap-2">
-                                            <span class="bof-tf-sub-title">New Comming</span>
-                                            <span class="bof-tf-title">AUTUMN 2015</span>
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
+                        <div class="col-sm-3"></div>
                         <div class="col-sm-6">
                             <div class="video-embed-shortcode">
                                 <img src="front/images/thumb_569x341.jpg" alt=""/>
@@ -220,16 +209,16 @@
 																	</time>
 																</span>
                                                             <span class="meta-author">
-																	Цена:
-                                                                    <del>{{$stream->course->price + 5000}}</del> {{$stream->course->price}} KZT
-																</span>
-                                                            <span class="meta-category">
-																	@foreach($registered as $client)
-                                                                    @if($client->id == $stream->id)
-                                                                        Людей в группе: {{$client->count}}
-                                                                    @endif
-                                                                @endforeach
-																</span>
+                                                                Цена:
+                                                                {{$stream->course->price}} KZT
+                                                            </span>
+                                                            {{--                                                            <span class="meta-category">--}}
+                                                            {{--                                                                @foreach($registered as $client)--}}
+                                                            {{--                                                                    @if($client->id == $stream->id)--}}
+                                                            {{--                                                                        Людей в группе: {{$client->count}}--}}
+                                                            {{--                                                                    @endif--}}
+                                                            {{--                                                                @endforeach--}}
+                                                            {{--                                                            </span>--}}
                                                         </div>
                                                         <a class="read-more btn btn-outline"
                                                            href="{{route('single.course', ['id' => $stream->course_id])}}">
@@ -331,7 +320,7 @@
                     <div class="row row-fluid mb-5 mt-5">
                         <div class="col-sm-6">
                             <div class="box-ft box-ft-1">
-                                <img src="front/images/avatar/about_me.jpg" alt="">
+                                <img src="front/images/avatar/about_me.jpg" alt="about_me">
                             </div>
                         </div>
                         <div class="col-sm-6">

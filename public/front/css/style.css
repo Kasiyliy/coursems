@@ -1016,7 +1016,6 @@ ul,
 ol {
   margin-top: 0;
   margin-bottom: 1em;
-  list-style: none;
 }
 ul ul,
 ol ul,
@@ -6401,7 +6400,6 @@ a[data-toggle="tooltip"]:hover {
 .wpml-languages,
 .top-nav > li {
   position: relative;
-  text-transform: uppercase;
 }
 .wpml-languages .dropdown-menu,
 .top-nav > li .dropdown-menu {

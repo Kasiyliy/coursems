@@ -40,7 +40,7 @@
                                             <li>
                                                 <p><i class="fa fa-check-circle"></i> Работала в итальянском центре эстетики и красоты "ALDO CAPPOLA",
                                                     сейчас
-                                                    работаю в Швецарской клинике красоты "Beauty Lab by L. Raphael"</p>
+                                                    работаю в Швейцарской клинике красоты "Beauty Lab by L. Raphael"</p>
                                             </li>
                                             <li>
                                                 <p><i class="fa fa-check-circle"></i> Я фанатик "Beauty" мира. Самле главное в нашей сфере - это развитие,
