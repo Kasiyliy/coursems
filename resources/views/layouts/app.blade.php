@@ -14,6 +14,7 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/toastr.js') }}"></script>
+    <script src="//code.jivosite.com/widget/eQatvcawrb" async></script>
 
     <!-- Fonts -->
 

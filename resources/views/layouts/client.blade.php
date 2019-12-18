@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{{asset("css/jquery.select.css")}}">
     <link href="{{ asset('css/toastr.css') }}" rel="stylesheet">
 
+    <script src="//code.jivosite.com/widget/eQatvcawrb" async></script>
+
+
     <link rel="stylesheet" type="text/css"
           href="{{asset("admin/bower_components/datatable/css/dataTables.bootstrap.min.css")}}"/>
     <link rel="stylesheet" type="text/css"
