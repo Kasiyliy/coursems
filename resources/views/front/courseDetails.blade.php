@@ -33,7 +33,7 @@
                                                  alt="{{$course->name}}" width="600px"/>
                                             <h2 class="entry-title mb-3">{{$course->name}}</h2>
                                             <a class="read-more btn btn-outline mb-3"
-                                               href="{{url('make/order/' . $course->id)}}">купить курс</a>
+                                               href="{{route('make.order' ,['id'=>$course->id ])}}">купить курс</a>
                                             <p>Стоимость: {{$course->price}} KZT</p>
                                             <br>
                                         </div>

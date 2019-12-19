@@ -33,12 +33,13 @@ Route::post('/store/homework/lesson/{id}', ['as' => 'homework.store' , 'uses' =>
 
 
 Route::get('/courses/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
-Route::get('/make/order/{id}', 'UserSideController@makeOrder')->name('make.order')->where('id', '[0-9]+');
+Route::get('/make/order/{id}', ['as' => 'make.order', 'uses' => 'UserSideController@makeOrder'])->where('id', '[0-9]+');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/my/courses', ['as' => 'my.courses' , 'uses' => 'UserSideController@myCourses']);
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
-    Route::get('/survey', ['as' => 'survey', 'uses' => 'HomeController@survey']);
+    Route::get('/survey', ['as' => 'survey', 'uses' => 'SurveyController@survey']);
+    Route::post('/survey/save', ['as' => 'survey.store', 'uses' => 'SurveyController@store']);
 
     Route::get('/client/courses', ['as' => 'client.course.index', 'uses' => 'ClientController@courses']);
     Route::get('/client/courses/{id}', ['as' => 'client.course.details', 'uses' => 'ClientController@details'])->where('id', '[0-9]+');
