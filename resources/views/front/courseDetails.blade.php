@@ -32,21 +32,22 @@
                                             <img class="img-sm mb-3" src="{{asset($course->image_path)}}"
                                                  alt="{{$course->name}}" width="600px"/>
                                             <h2 class="entry-title mb-3">{{$course->name}}</h2>
-                                            <a class="read-more btn btn-outline mb-3" href="">купить курс</a>
+                                            <a class="read-more btn btn-outline mb-3"
+                                               href="{{url('make/order/' . $course->id)}}">купить курс</a>
                                             <p>Стоимость: {{$course->price}} KZT</p>
                                             <br>
                                         </div>
                                         <p>
                                             {!!$course->description!!}
                                         </p>
-{{--                                        @if(count($lessons))--}}
-{{--                                            <h3>Содержание курса</h3>--}}
-{{--                                            <ul>--}}
-{{--                                                @foreach($lessons as $index => $lesson)--}}
-{{--                                                <li class="text-dark text-left">{{$index+1}}. {{$lesson->name}}</li>--}}
-{{--                                                @endforeach--}}
-{{--                                            </ul>--}}
-{{--                                        @endif--}}
+                                        {{--                                        @if(count($lessons))--}}
+                                        {{--                                            <h3>Содержание курса</h3>--}}
+                                        {{--                                            <ul>--}}
+                                        {{--                                                @foreach($lessons as $index => $lesson)--}}
+                                        {{--                                                <li class="text-dark text-left">{{$index+1}}. {{$lesson->name}}</li>--}}
+                                        {{--                                                @endforeach--}}
+                                        {{--                                            </ul>--}}
+                                        {{--                                        @endif--}}
                                     </div>
                                 </article>
                             </div>

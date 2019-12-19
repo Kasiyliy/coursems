@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->hasMany(Order::class, 'user_id');
     }
 
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class, 'user_id');
+    }
+
     public function isAdmin(){
         return $this->role_id == Role::ADMIN_ID;
     }

@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\HomeController;
+
 Route::get('/secure/config/migrate-refresh', ['uses'=> 'ConfigController@migrateRefresh']);
 Route::get('/secure/config/migrate', ['uses'=> 'ConfigController@migrate']);
 Route::get('/secure/config/db-seed', ['uses'=> 'ConfigController@dbSeed']);
@@ -31,11 +33,12 @@ Route::post('/store/homework/lesson/{id}', ['as' => 'homework.store' , 'uses' =>
 
 
 Route::get('/courses/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
-Route::post('/make/order/{id}', 'UserSideController@makeOrder')->name('make.order')->where('id', '[0-9]+');
+Route::get('/make/order/{id}', 'UserSideController@makeOrder')->name('make.order')->where('id', '[0-9]+');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/my/courses', ['as' => 'my.courses' , 'uses' => 'UserSideController@myCourses']);
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
+    Route::get('/survey', ['as' => 'survey', 'uses' => 'HomeController@survey']);
 
     Route::get('/client/courses', ['as' => 'client.course.index', 'uses' => 'ClientController@courses']);
     Route::get('/client/courses/{id}', ['as' => 'client.course.details', 'uses' => 'ClientController@details'])->where('id', '[0-9]+');

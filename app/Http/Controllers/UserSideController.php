@@ -8,6 +8,7 @@ use App\Homework;
 use App\Lesson;
 use App\Stream;
 use App\Order;
+use App\Subscription;
 use Psy\Util\Str;
 use Session;
 use DB;
@@ -75,18 +76,12 @@ class UserSideController extends Controller
 
     public function myCourses()
     {
-        $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
+        $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->get();
         $myStreams = array();
         $user = Auth::user();
-        $myOrders = $user->orders->where('status', 1);
+        $myOrders = $user->subscriptions->where('status', 1);
 
-        foreach ($myOrders as $myOrder) {
-            if (strtotime($myOrder->stream->deadline) > time()) {
-                $myStreams[] = $myOrder->stream;
-            }
-        }
-
-        return view('front.myCourses', compact('myStreams', 'header_courses'));
+        return view('front.myCourses', compact('myOrders', 'header_courses'));
     }
 
     public function courseLessons($id)
@@ -142,22 +137,27 @@ class UserSideController extends Controller
         return view('front.contact', compact('header_courses'));
     }
 
-    public function makeOrder($stream_id)
+    public function makeOrder($course_id)
     {
         $user = Auth::user();
         if (!$user) {
             Session::flash('warning', 'Войдите в систему, либо зарегистрируйтесь!');
-            return redirect()->back();
+            return redirect()->route('register');
         } else {
-            if ($user->orders()->where('status', 0)->where('stream_id', $stream_id)->first()) {
+            if ($user->subscriptions()->where('status', 1)->where('course_id', $course_id)->first()) {
                 Session::flash('warning', 'Вы уже записаны!');
                 return redirect()->back();
             }
 
-            Order::create([
+            if($course_id == 2) {
+                Session::flash('warning', 'Пройдите опрос для данного курса');
+                return redirect()->route('survey');
+            }
+
+            Subscription::create([
                 'user_id' => $user->id,
-                'stream_id' => $stream_id,
-                'status' => 0,
+                'course_id' => $course_id,
+                'status' => 1,
             ]);
             Session::flash('success', 'Ваша заявка принята! Мы вам обязательно позвоним!');
             return redirect()->route('front');

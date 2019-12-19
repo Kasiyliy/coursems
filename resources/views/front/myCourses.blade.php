@@ -33,21 +33,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($myStreams as $myStream)
+                                @foreach($myOrders as $myOrder)
                                     <tr>
                                         <td class="product-thumbnail">
                                             <a>
-                                                <img width="100" height="150" src="{{asset($myStream->course->image_path)}}" alt="Product-1"/>
+                                                <img width="100" height="150" src="{{asset($myOrder->course->image_path)}}" alt="Product-1"/>
                                             </a>
                                         </td>
                                         <td class="product-name">
-                                            <a href="{{route('single.course',['id' =>$myStream->course->id])}}" class="btn btn-link" >
-                                                {{$myStream->course->name}}:
+                                            <a href="{{route('single.course',['id' =>$myOrder->course->id])}}" class="btn btn-link" >
+                                                {{$myOrder->course->name}}:
                                                 <span class="text-muted">Читать далее...</span>
                                             </a>
                                         </td>
                                         <td class="product-add-to-cart">
-                                            @php $firstLesson = $myStream->course->lessons->where('next_lesson_id',1)->first() @endphp
+                                            @php $firstLesson = $myOrder->course->lessons->where('next_lesson_id',1)->first() @endphp
                                             @if($firstLesson)
                                             <a href="{{route('single.course.lessons',['id' => $firstLesson->id])}}" class="add_to_cart_button button"> Перейти к курсу</a>
                                             @else

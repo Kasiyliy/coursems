@@ -17,6 +17,11 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function survey(Request $request)
+    {
+        return view('auth.survey');
+    }
+
     public function front(Request $request)
     {
         return view('front.index');
