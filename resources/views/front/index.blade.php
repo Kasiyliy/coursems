@@ -14,24 +14,24 @@
                         <div class="rev_slider_wrapper fullwidthbanner-container">
                             <div id="rev_slider" class="rev_slider fullwidthabanner">
                                 <ul>
-                                    @foreach($streams as $stream)
+                                    @foreach($courses as $course)
                                         <li data-transition="fade" data-slotamount="default" data-easein="default"
                                             data-easeout="default" data-masterspeed="default" data-thumb=""
                                             data-delay="6000" data-rotate="0" data-saveperformance="off"
                                             data-title="Slide"
                                             data-description="">
-                                            <img src="front/images/slideshow/dummy.png" alt="" width="1920" height="657"
+                                            <img src="front/images/slideshow/qwe.jpg" alt="" width="1920" height="657"
                                                  data-lazyload="images/slideshow/slider_1920x657.jpg"/>
-                                            <div class="tp-caption home1-small-black tp-resizeme" data-x="125"
-                                                 data-y="135"
-                                                 data-transform_idle="o:1;"
-                                                 data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
-                                                 data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
-                                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                                 data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
-                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                                 data-elementdelay="0.05" id="{{$stream->id}}timer">
-                                            </div>
+{{--                                            <div class="tp-caption home1-small-black tp-resizeme" data-x="125"--}}
+{{--                                                 data-y="135"--}}
+{{--                                                 data-transform_idle="o:1;"--}}
+{{--                                                 data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
+{{--                                                 data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
+{{--                                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
+{{--                                                 data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
+{{--                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
+{{--                                                 data-elementdelay="0.05" id="{{$stream->id}}timer">--}}
+{{--                                            </div>--}}
                                             <div class="tp-caption tp-resizeme" data-x="125" data-y="300"
                                                  data-width="['none','none','none','none']"
                                                  data-height="['none','none','none','none']" data-transform_idle="o:1;"
@@ -40,31 +40,7 @@
                                                  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                  data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                  data-responsive_offset="on" data-elementdelay="0.05">
-                                                <img src="front/images/slideshow/dummy.png" alt="" width="23" height="3"
-                                                     data-ww="23px" data-hh="3px"
-                                                     data-lazyload="images/slideshow/rev_home1_img3.png"/>
                                             </div>
-                                            <div class="tp-caption home1-small-black tp-resizeme" data-x="125"
-                                                 data-y="360"
-                                                 data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
-                                                 data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
-                                                 data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
-                                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                                 data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
-                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                                 data-elementdelay="0.05">
-                                                Дата старта: {{date("d.m.Y", strtotime($stream->started_at))}}
-                                            </div>
-                                            {{--<div class="tp-caption home1-small-black tp-resizeme mt-3" data-x="125" data-y="360"--}}
-                                            {{--data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
-                                            {{--data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
-                                            {{--data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
-                                            {{--data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
-                                            {{--data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
-                                            {{--data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
-                                            {{--data-elementdelay="0.05">--}}
-                                            {{--Продолжительность: 4 дня--}}
-                                            {{--</div>--}}
                                             <div class="tp-caption home1-small-black tp-resizeme mt-3" data-x="125"
                                                  data-y="360"
                                                  data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
@@ -75,19 +51,8 @@
                                                  data-splitin="chars" data-splitout="none" data-responsive_offset="on"
                                                  data-elementdelay="0.05">
                                                 Цена:
-                                                {{$stream->course->price}} KZT
+                                                {{$course->price}} тенге
                                             </div>
-{{--                                            <div class="tp-caption home1-small-black tp-resizeme mt-9" data-x="125"--}}
-{{--                                                 data-y="360"--}}
-{{--                                                 data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"--}}
-{{--                                                 data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
-{{--                                                 data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
-{{--                                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
-{{--                                                 data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
-{{--                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
-{{--                                                 data-elementdelay="0.05">--}}
-{{--                                                *Курс будет доступен 30 дней--}}
-{{--                                            </div>--}}
                                             <div class="tp-caption home3-big-black tp-resizeme" data-x="125"
                                                  data-y="188"
                                                  data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
@@ -97,45 +62,10 @@
                                                  data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                  data-splitin="chars" data-splitout="none" data-responsive_offset="on"
                                                  data-elementdelay="0.05">
-                                                {{$stream->course->name}}
+                                                {{$course->name}}
                                             </div>
                                         </li>
                                     @endforeach
-                                    <li data-transition="fade" data-slotamount="default" data-easein="default"
-                                        data-easeout="default" data-masterspeed="default" data-thumb=""
-                                        data-delay="6000" data-rotate="0" data-saveperformance="off" data-title="Slide"
-                                        data-description="">
-                                        <img src="front/images/slideshow/dummy.png" alt="" width="1920" height="657"
-                                             data-lazyload="images/slideshow/slider_1920x657.jpg"/>
-                                        <div class="tp-caption home2-medium-white tp-resizeme" data-x="" data-y="200"
-                                             data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
-                                             data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
-                                             data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                             data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                             data-elementdelay="0.05" data-end="8300"
-                                             style="color: black">
-                                            Лучшие 2 ученицы получат
-                                        </div>
-                                        <div class="tp-caption home2-big-white tp-resizeme" data-x="-1" data-y="250"
-                                             data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
-                                             data-transform_in="x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
-                                             data-transform_out="x:[100%];s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="500"
-                                             data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                             data-elementdelay="0.05" data-end="8300"
-                                             style="color: black">
-                                            по 10 000 тенге
-                                        </div>
-                                        <div class="tp-caption Fashion-BigDisplay tp-resizeme" data-x="100" data-y="100"
-                                             data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
-                                             data-transform_in="opacity:0;s:300;e:Power2.easeInOut;"
-                                             data-transform_out="opacity:0;s:300;e:Power3.easeInOut;s:300;e:Power3.easeInOut;"
-                                             data-start="500" data-splitin="none" data-splitout="none"
-                                             data-responsive_offset="on"></div>
-                                    </li>
                                 </ul>
                                 <div class="tp-bannertimer tp-bottom"></div>
                             </div>
@@ -149,11 +79,11 @@
                         <div class="col-sm-3"></div>
                         <div class="col-sm-6">
                             <div class="video-embed-shortcode">
-                                <img src="front/images/thumb_569x341.jpg" alt=""/>
+                                <img src="front/images/video_screen.png" alt=""/>
                                 <div class="video-embed-shortcode mfp-hide">
                                     <div id="video-1" class="embed-wrap">
                                         <iframe width="1200" height="675"
-                                                src="https://www.youtube.com/embed/M4z90wlwYs8?feature=oembed"
+                                                src="https://www.youtube.com/embed/lj33nrF8QPg"
                                                 allowfullscreen></iframe>
                                     </div>
                                 </div>
@@ -173,7 +103,7 @@
                         <div class="col-sm-12 p-0">
                             <div class="post-grid-wrap">
                                 <ul class="row list">
-                                    @foreach($streams as $index => $stream)
+                                    @foreach($courses as $index => $course)
                                         <li class="col-sm-12">
                                             <article class="hentry">
                                                 <div class="hentry-wrap">
@@ -181,125 +111,109 @@
                                                          @else style="float: right" @endif>
                                                         <a href="blog-detail.html">
                                                             <img width="700" height="450"
-                                                                 src="{{asset($stream->course->image_path)}}" alt=""/>
+                                                                 src="{{asset($course->image_path)}}" alt=""/>
                                                         </a>
                                                     </div>
                                                     <div class="entry-info" @if($index % 2 == 0) style="float: left"
                                                          @else style="float: right" @endif>
                                                         <div class="entry-header">
                                                             <h3 class="entry-title">
-                                                                <a href="{{route('single.course', ['id' => $stream->course->id])}}">
-                                                                    {{$stream->course->name}}
+                                                                <a href="{{route('single.course', ['id' => $course->id])}}">
+                                                                    {{$course->name}}
                                                                 </a>
                                                             </h3>
                                                         </div>
                                                         <div class="entry-content">
                                                             <p>
-                                                                The summer holidays are wonderful. Dressing for them can
-                                                                be significantly less so: Packing light is always at a
-                                                                premium, but one never wants to feel high, dry, and
-                                                                seriously...
+                                                                {!!$course->description!!}
                                                             </p>
                                                         </div>
                                                         <div class="entry-meta">
-																<span class="meta-date">
-																	Старт:
-																	<time datetime="2015-08-11T06:27:22+00:00">
-																		{{date("d.m.Y", strtotime($stream->started_at))}}
-																	</time>
-																</span>
                                                             <span class="meta-author">
                                                                 Цена:
-                                                                {{$stream->course->price}} KZT
+                                                                {{$course->price}} тенге
                                                             </span>
-                                                            {{--                                                            <span class="meta-category">--}}
-                                                            {{--                                                                @foreach($registered as $client)--}}
-                                                            {{--                                                                    @if($client->id == $stream->id)--}}
-                                                            {{--                                                                        Людей в группе: {{$client->count}}--}}
-                                                            {{--                                                                    @endif--}}
-                                                            {{--                                                                @endforeach--}}
-                                                            {{--                                                            </span>--}}
                                                         </div>
                                                         <a class="read-more btn btn-outline"
-                                                           href="{{route('single.course', ['id' => $stream->course_id])}}">
+                                                           href="{{route('single.course', ['id' => $course->id])}}">
                                                             <span class="text-muted">Подробнее</span>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </article>
                                         </li>
-                                        <script>
-                                            // Set the date we're counting down to
-                                            var countDownDate{{$stream->id}} = new Date("{{$stream->started_at}}");
-                                            countDownDate{{$stream->id}}.setDate(countDownDate{{$stream->id}}.getDate() + 1);
-                                            countDownDate{{$stream->id}} = countDownDate{{$stream->id}}.getTime();
+{{--                                        <script>--}}
+{{--                                            // Set the date we're counting down to--}}
+{{--                                            var countDownDate{{$stream->id}} = new Date("{{$stream->started_at}}");--}}
+{{--                                            countDownDate{{$stream->id}}.setDate(countDownDate{{$stream->id}}.getDate() + 1);--}}
+{{--                                            countDownDate{{$stream->id}} = countDownDate{{$stream->id}}.getTime();--}}
 
-                                            // Update the count down every 1 second
-                                            var x{{$stream->id}} = setInterval(function () {
+{{--                                            // Update the count down every 1 second--}}
+{{--                                            var x{{$stream->id}} = setInterval(function () {--}}
 
-                                                // Get today's date and time
-                                                var now{{$stream->id}} = new Date().getTime();
+{{--                                                // Get today's date and time--}}
+{{--                                                var now{{$stream->id}} = new Date().getTime();--}}
 
-                                                // Find the distance between now and the count down date
-                                                var distance{{$stream->id}} = countDownDate{{$stream->id}} - now{{$stream->id}};
+{{--                                                // Find the distance between now and the count down date--}}
+{{--                                                var distance{{$stream->id}} = countDownDate{{$stream->id}} - now{{$stream->id}};--}}
 
-                                                // Time calculations for days, hours, minutes and seconds
-                                                var days{{$stream->id}} = Math.floor(distance{{$stream->id}} / (1000 * 60 * 60 * 24));
-                                                var hours{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                                var minutes{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60)) / (1000 * 60));
-                                                var seconds{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60)) / 1000);
+{{--                                                // Time calculations for days, hours, minutes and seconds--}}
+{{--                                                var days{{$stream->id}} = Math.floor(distance{{$stream->id}} / (1000 * 60 * 60 * 24));--}}
+{{--                                                var hours{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));--}}
+{{--                                                var minutes{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60)) / (1000 * 60));--}}
+{{--                                                var seconds{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60)) / 1000);--}}
 
-                                                // Display the result in the element with id="demo"
-                                                var dayWord = " дней ";
-                                                if (days{{$stream->id}} === 1) {
-                                                    dayWord = " день ";
-                                                } else if (days{{$stream->id}} > 1 && days{{$stream->id}} < 5) {
-                                                    dayWord = " дня ";
-                                                } else if (days{{$stream->id}} === 0) {
-                                                    dayWord = "";
-                                                    days{{{$stream->id}}} = "";
-                                                }
+{{--                                                // Display the result in the element with id="demo"--}}
+{{--                                                var dayWord = " дней ";--}}
+{{--                                                if (days{{$stream->id}} === 1) {--}}
+{{--                                                    dayWord = " день ";--}}
+{{--                                                } else if (days{{$stream->id}} > 1 && days{{$stream->id}} < 5) {--}}
+{{--                                                    dayWord = " дня ";--}}
+{{--                                                } else if (days{{$stream->id}} === 0) {--}}
+{{--                                                    dayWord = "";--}}
+{{--                                                    days{{{$stream->id}}} = "";--}}
+{{--                                                }--}}
 
-                                                var hourWord = " часов ";
-                                                if (hours{{$stream->id}} === 1) {
-                                                    hourWord = " час ";
-                                                } else if (hours{{$stream->id}} > 1 && hours{{$stream->id}} < 5) {
-                                                    hourWord = " часа ";
-                                                } else if (hours{{$stream->id}} === 0) {
-                                                    hourWord = "";
-                                                    hours{{{$stream->id}}} = "";
-                                                }
+{{--                                                var hourWord = " часов ";--}}
+{{--                                                if (hours{{$stream->id}} === 1) {--}}
+{{--                                                    hourWord = " час ";--}}
+{{--                                                } else if (hours{{$stream->id}} > 1 && hours{{$stream->id}} < 5) {--}}
+{{--                                                    hourWord = " часа ";--}}
+{{--                                                } else if (hours{{$stream->id}} === 0) {--}}
+{{--                                                    hourWord = "";--}}
+{{--                                                    hours{{{$stream->id}}} = "";--}}
+{{--                                                }--}}
 
-                                                var minuteWord = " минут ";
-                                                if (minutes{{$stream->id}} === 1) {
-                                                    minuteWord = " минута ";
-                                                } else if (minutes{{$stream->id}} > 1 && minutes{{$stream->id}} < 5) {
-                                                    minuteWord = " минуты ";
-                                                } else if (minutes{{$stream->id}} === 0) {
-                                                    minuteWord = "";
-                                                    minutes{{{$stream->id}}} = "";
-                                                }
+{{--                                                var minuteWord = " минут ";--}}
+{{--                                                if (minutes{{$stream->id}} === 1) {--}}
+{{--                                                    minuteWord = " минута ";--}}
+{{--                                                } else if (minutes{{$stream->id}} > 1 && minutes{{$stream->id}} < 5) {--}}
+{{--                                                    minuteWord = " минуты ";--}}
+{{--                                                } else if (minutes{{$stream->id}} === 0) {--}}
+{{--                                                    minuteWord = "";--}}
+{{--                                                    minutes{{{$stream->id}}} = "";--}}
+{{--                                                }--}}
 
-                                                var secondWord = " секунд ";
-                                                if (seconds{{$stream->id}} === 1) {
-                                                    secondWord = " секунда ";
-                                                } else if (seconds{{$stream->id}} > 1 && seconds{{$stream->id}} < 5) {
-                                                    secondWord = " секунды ";
-                                                } else if (seconds{{$stream->id}} === 0) {
-                                                    secondWord = "";
-                                                    seconds{{{$stream->id}}} = "";
-                                                }
+{{--                                                var secondWord = " секунд ";--}}
+{{--                                                if (seconds{{$stream->id}} === 1) {--}}
+{{--                                                    secondWord = " секунда ";--}}
+{{--                                                } else if (seconds{{$stream->id}} > 1 && seconds{{$stream->id}} < 5) {--}}
+{{--                                                    secondWord = " секунды ";--}}
+{{--                                                } else if (seconds{{$stream->id}} === 0) {--}}
+{{--                                                    secondWord = "";--}}
+{{--                                                    seconds{{{$stream->id}}} = "";--}}
+{{--                                                }--}}
 
-                                                document.getElementById("{{$stream->id}}timer").innerHTML = days{{$stream->id}} + dayWord + hours{{$stream->id}}
-                                                    + hourWord + minutes{{$stream->id}} + minuteWord + seconds{{$stream->id}} + secondWord;
+{{--                                                document.getElementById("{{$stream->id}}timer").innerHTML = days{{$stream->id}} + dayWord + hours{{$stream->id}}--}}
+{{--                                                    + hourWord + minutes{{$stream->id}} + minuteWord + seconds{{$stream->id}} + secondWord;--}}
 
-                                                // If the count down is finished, write some text
-                                                if (distance{{$stream->id}} < 0) {
-                                                    clearInterval(x{{$stream->id}});
-                                                    document.getElementById("{{$stream->id}}timer").innerHTML = "EXPIRED";
-                                                }
-                                            }, 1000);
-                                        </script>
+{{--                                                // If the count down is finished, write some text--}}
+{{--                                                if (distance{{$stream->id}} < 0) {--}}
+{{--                                                    clearInterval(x{{$stream->id}});--}}
+{{--                                                    document.getElementById("{{$stream->id}}timer").innerHTML = "EXPIRED";--}}
+{{--                                                }--}}
+{{--                                            }, 1000);--}}
+{{--                                        </script>--}}
                                     @endforeach
                                 </ul>
                             </div>

@@ -22,48 +22,13 @@ class UserSideController extends Controller
     {
         $courses = Course::where('visible', 1)->get();
         $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
-        $streams = Stream::all()->where('started_at', '>=', date('Y-m-d'));
-
-        $registered = DB::table('streams')
-            ->select(DB::raw('count(streams.id) as count'), 'streams.id as id')
-            ->leftJoin('orders', 'streams.id', '=', 'orders.stream_id')
-            ->where('started', 0)
-            ->groupBy('id')
-            ->get();
 
 
         $user = Auth::user();
 
-        if ($user) {
-            $user_stream_ids = array();
-            $orders = $user->orders;
-            foreach ($orders as $order) {
-                if ($order->stream) {
-                    $user_stream_ids[] = $order->stream_id;
-                }
-            }
-
-
-            foreach ($streams as $stream) {
-                if ($stream) {
-                    if (in_array($stream->id, $user_stream_ids)) {
-                        $stream->alreadyHasId = true;
-                    }
-                }
-            }
-
-            foreach ($streams as $stream) {
-                foreach ($orders as $order) {
-                    if ($stream->id == $order->stream_id) {
-                        $stream->paid = $order->status;
-                    }
-                }
-            }
-        }
-
         $faqs = FAQ::orderBy('id', 'desc')->get();
 
-        return view('front.index', compact('courses', 'faqs', 'streams', 'user', 'header_courses', 'registered'));
+        return view('front.index', compact('courses', 'faqs', 'user', 'header_courses'));
     }
 
     public function course($id)
@@ -154,13 +119,13 @@ class UserSideController extends Controller
                 return redirect()->route('survey');
             }
 
-            Subscription::create([
-                'user_id' => $user->id,
-                'course_id' => $course_id,
-                'status' => 1,
-            ]);
+//            Subscription::create([
+//                'user_id' => $user->id,
+//                'course_id' => $course_id,
+//                'status' => 1,
+//            ]);
             Session::flash('success', 'Ваша заявка принята! Мы вам обязательно позвоним!');
-            return redirect()->route('front');
+            return redirect()->route('pay.course', ['id'=>$course_id]);
         }
 
     }

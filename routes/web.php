@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/secure/config/migrate-refresh', ['uses'=> 'ConfigController@migrateRefresh']);
 Route::get('/secure/config/migrate', ['uses'=> 'ConfigController@migrate']);
@@ -40,6 +41,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
     Route::get('/survey', ['as' => 'survey', 'uses' => 'SurveyController@survey']);
     Route::post('/survey/save', ['as' => 'survey.store', 'uses' => 'SurveyController@store']);
+    Route::get('/pay/{id}', ['as' => 'pay.course', 'uses' => 'PaymentController@index'])->where('id', '[0-9]+');
+    Route::post('/pay/finish', ['as' => 'pay.finish', 'uses' => 'PaymentController@finish']);
 
     Route::get('/client/courses', ['as' => 'client.course.index', 'uses' => 'ClientController@courses']);
     Route::get('/client/courses/{id}', ['as' => 'client.course.details', 'uses' => 'ClientController@details'])->where('id', '[0-9]+');

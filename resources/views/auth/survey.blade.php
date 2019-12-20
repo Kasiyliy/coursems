@@ -31,22 +31,21 @@
                                 </div>
                             </div>
 
-                            {{--                        TODO: rename and add to db--}}
                             <div class="form-group row">
-                                <label for="skin_tone" class="col-md-4 col-form-label text-md-right">Какой у тебя
+                                <label for="skin_undertone" class="col-md-4 col-form-label text-md-right">Какой у тебя
                                     подтон?</label>
 
                                 <div class="col-md-6">
-                                    <select class="form-control" name="skin_tone" id="skin_tone" required>
+                                    <select class="form-control" name="skin_undertone" id="skin_undertone" required>
                                         <option value="" disabled selected>Выберите один из вариантов</option>
                                         <option value="холодный">холодный</option>
                                         <option value="нейтральный">нейтральный</option>
                                         <option value="теплый">теплый</option>
                                     </select>
 
-                                    @if ($errors->has('skin_tone'))
+                                    @if ($errors->has('skin_undertone'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('skin_tone') }}</strong>
+                                        <strong>{{ $errors->first('skin_undertone') }}</strong>
                                     </span>
                                     @endif
                                 </div>

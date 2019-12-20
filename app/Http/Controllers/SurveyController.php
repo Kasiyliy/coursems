@@ -13,12 +13,6 @@ class SurveyController extends Controller
 {
     public function survey(Request $request)
     {
-        $user = Auth::user();
-        if ($user->survey()->where('status', 1)->first()) {
-            Session::flash('warning', 'Вы уже проходили опрос!');
-            return redirect()->back();
-        }
-
         return view('auth.survey');
     }
 
@@ -57,7 +51,7 @@ class SurveyController extends Controller
             $survey->user_id = $user->id;
             $survey->save();
             Session::flash('success', 'Опрос успешно пройден!');
-            return redirect()->back();
+            return redirect()->route('pay.course', ['id' => '2']);
         }
     }
 

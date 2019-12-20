@@ -33,6 +33,7 @@ class Survey extends Model
     protected $fillable = [
         'user_id',
         'age',
+        'skin_undertone',
         'skin_type',
         'skin_tone',
         'skin_photo',
