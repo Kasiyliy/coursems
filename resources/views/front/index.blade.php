@@ -25,7 +25,7 @@
                                                      height="657"
                                                      data-lazyload="images/slideshow/slider_1920x657.jpg"/>
                                             @else
-                                                <img src="front/images/slideshow/girl.jpg" alt="" width="1920"
+                                                <img src="front/images/slideshow/zxc.jpg" alt="" width="1920"
                                                      height="657"
                                                      data-lazyload="images/slideshow/slider_1920x657.jpg"/>
                                             @endif
