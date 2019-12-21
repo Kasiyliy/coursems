@@ -20,18 +20,25 @@
                                             data-delay="6000" data-rotate="0" data-saveperformance="off"
                                             data-title="Slide"
                                             data-description="">
-                                            <img src="front/images/slideshow/qwe.jpg" alt="" width="1920" height="657"
-                                                 data-lazyload="images/slideshow/slider_1920x657.jpg"/>
-{{--                                            <div class="tp-caption home1-small-black tp-resizeme" data-x="125"--}}
-{{--                                                 data-y="135"--}}
-{{--                                                 data-transform_idle="o:1;"--}}
-{{--                                                 data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
-{{--                                                 data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
-{{--                                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
-{{--                                                 data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
-{{--                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
-{{--                                                 data-elementdelay="0.05" id="{{$stream->id}}timer">--}}
-{{--                                            </div>--}}
+                                            @if($course->id == 2)
+                                                <img src="front/images/slideshow/cosmetics.jpg" alt="" width="1920"
+                                                     height="657"
+                                                     data-lazyload="images/slideshow/slider_1920x657.jpg"/>
+                                            @else
+                                                <img src="front/images/slideshow/girl.jpg" alt="" width="1920"
+                                                     height="657"
+                                                     data-lazyload="images/slideshow/slider_1920x657.jpg"/>
+                                            @endif
+                                            {{--                                            <div class="tp-caption home1-small-black tp-resizeme" data-x="125"--}}
+                                            {{--                                                 data-y="135"--}}
+                                            {{--                                                 data-transform_idle="o:1;"--}}
+                                            {{--                                                 data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"--}}
+                                            {{--                                                 data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"--}}
+                                            {{--                                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"--}}
+                                            {{--                                                 data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"--}}
+                                            {{--                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
+                                            {{--                                                 data-elementdelay="0.05" id="{{$stream->id}}timer">--}}
+                                            {{--                                            </div>--}}
                                             <div class="tp-caption tp-resizeme" data-x="125" data-y="300"
                                                  data-width="['none','none','none','none']"
                                                  data-height="['none','none','none','none']" data-transform_idle="o:1;"
@@ -66,6 +73,35 @@
                                             </div>
                                         </li>
                                     @endforeach
+                                    <li data-transition="fade" data-slotamount="default" data-easein="default"
+                                        data-easeout="default" data-masterspeed="default" data-thumb=""
+                                        data-delay="6000" data-rotate="0" data-saveperformance="off"
+                                        data-title="Slide"
+                                        data-description="">
+                                        <img src="front/images/slideshow/tree.jpg" alt="" width="1920"
+                                             height="657"
+                                             data-lazyload="images/slideshow/slider_1920x657.jpg"/>
+                                        <div class="tp-caption tp-resizeme" data-x="125" data-y="300"
+                                             data-width="['none','none','none','none']"
+                                             data-height="['none','none','none','none']" data-transform_idle="o:1;"
+                                             data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+                                             data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
+                                             data-responsive_offset="on" data-elementdelay="0.05">
+                                        </div>
+                                        <div class="tp-caption home3-big-black tp-resizeme" data-x="125"
+                                             data-y="188"
+                                             data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
+                                             data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+                                             data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
+                                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                             data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
+                                             data-splitin="chars" data-splitout="none" data-responsive_offset="on"
+                                             data-elementdelay="0.05">
+                                            С НГ :)
+                                        </div>
+                                    </li>
                                 </ul>
                                 <div class="tp-bannertimer tp-bottom"></div>
                             </div>
@@ -142,78 +178,78 @@
                                                 </div>
                                             </article>
                                         </li>
-{{--                                        <script>--}}
-{{--                                            // Set the date we're counting down to--}}
-{{--                                            var countDownDate{{$stream->id}} = new Date("{{$stream->started_at}}");--}}
-{{--                                            countDownDate{{$stream->id}}.setDate(countDownDate{{$stream->id}}.getDate() + 1);--}}
-{{--                                            countDownDate{{$stream->id}} = countDownDate{{$stream->id}}.getTime();--}}
+                                        {{--                                        <script>--}}
+                                        {{--                                            // Set the date we're counting down to--}}
+                                        {{--                                            var countDownDate{{$stream->id}} = new Date("{{$stream->started_at}}");--}}
+                                        {{--                                            countDownDate{{$stream->id}}.setDate(countDownDate{{$stream->id}}.getDate() + 1);--}}
+                                        {{--                                            countDownDate{{$stream->id}} = countDownDate{{$stream->id}}.getTime();--}}
 
-{{--                                            // Update the count down every 1 second--}}
-{{--                                            var x{{$stream->id}} = setInterval(function () {--}}
+                                        {{--                                            // Update the count down every 1 second--}}
+                                        {{--                                            var x{{$stream->id}} = setInterval(function () {--}}
 
-{{--                                                // Get today's date and time--}}
-{{--                                                var now{{$stream->id}} = new Date().getTime();--}}
+                                        {{--                                                // Get today's date and time--}}
+                                        {{--                                                var now{{$stream->id}} = new Date().getTime();--}}
 
-{{--                                                // Find the distance between now and the count down date--}}
-{{--                                                var distance{{$stream->id}} = countDownDate{{$stream->id}} - now{{$stream->id}};--}}
+                                        {{--                                                // Find the distance between now and the count down date--}}
+                                        {{--                                                var distance{{$stream->id}} = countDownDate{{$stream->id}} - now{{$stream->id}};--}}
 
-{{--                                                // Time calculations for days, hours, minutes and seconds--}}
-{{--                                                var days{{$stream->id}} = Math.floor(distance{{$stream->id}} / (1000 * 60 * 60 * 24));--}}
-{{--                                                var hours{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));--}}
-{{--                                                var minutes{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60)) / (1000 * 60));--}}
-{{--                                                var seconds{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60)) / 1000);--}}
+                                        {{--                                                // Time calculations for days, hours, minutes and seconds--}}
+                                        {{--                                                var days{{$stream->id}} = Math.floor(distance{{$stream->id}} / (1000 * 60 * 60 * 24));--}}
+                                        {{--                                                var hours{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));--}}
+                                        {{--                                                var minutes{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60 * 60)) / (1000 * 60));--}}
+                                        {{--                                                var seconds{{$stream->id}} = Math.floor((distance{{$stream->id}} % (1000 * 60)) / 1000);--}}
 
-{{--                                                // Display the result in the element with id="demo"--}}
-{{--                                                var dayWord = " дней ";--}}
-{{--                                                if (days{{$stream->id}} === 1) {--}}
-{{--                                                    dayWord = " день ";--}}
-{{--                                                } else if (days{{$stream->id}} > 1 && days{{$stream->id}} < 5) {--}}
-{{--                                                    dayWord = " дня ";--}}
-{{--                                                } else if (days{{$stream->id}} === 0) {--}}
-{{--                                                    dayWord = "";--}}
-{{--                                                    days{{{$stream->id}}} = "";--}}
-{{--                                                }--}}
+                                        {{--                                                // Display the result in the element with id="demo"--}}
+                                        {{--                                                var dayWord = " дней ";--}}
+                                        {{--                                                if (days{{$stream->id}} === 1) {--}}
+                                        {{--                                                    dayWord = " день ";--}}
+                                        {{--                                                } else if (days{{$stream->id}} > 1 && days{{$stream->id}} < 5) {--}}
+                                        {{--                                                    dayWord = " дня ";--}}
+                                        {{--                                                } else if (days{{$stream->id}} === 0) {--}}
+                                        {{--                                                    dayWord = "";--}}
+                                        {{--                                                    days{{{$stream->id}}} = "";--}}
+                                        {{--                                                }--}}
 
-{{--                                                var hourWord = " часов ";--}}
-{{--                                                if (hours{{$stream->id}} === 1) {--}}
-{{--                                                    hourWord = " час ";--}}
-{{--                                                } else if (hours{{$stream->id}} > 1 && hours{{$stream->id}} < 5) {--}}
-{{--                                                    hourWord = " часа ";--}}
-{{--                                                } else if (hours{{$stream->id}} === 0) {--}}
-{{--                                                    hourWord = "";--}}
-{{--                                                    hours{{{$stream->id}}} = "";--}}
-{{--                                                }--}}
+                                        {{--                                                var hourWord = " часов ";--}}
+                                        {{--                                                if (hours{{$stream->id}} === 1) {--}}
+                                        {{--                                                    hourWord = " час ";--}}
+                                        {{--                                                } else if (hours{{$stream->id}} > 1 && hours{{$stream->id}} < 5) {--}}
+                                        {{--                                                    hourWord = " часа ";--}}
+                                        {{--                                                } else if (hours{{$stream->id}} === 0) {--}}
+                                        {{--                                                    hourWord = "";--}}
+                                        {{--                                                    hours{{{$stream->id}}} = "";--}}
+                                        {{--                                                }--}}
 
-{{--                                                var minuteWord = " минут ";--}}
-{{--                                                if (minutes{{$stream->id}} === 1) {--}}
-{{--                                                    minuteWord = " минута ";--}}
-{{--                                                } else if (minutes{{$stream->id}} > 1 && minutes{{$stream->id}} < 5) {--}}
-{{--                                                    minuteWord = " минуты ";--}}
-{{--                                                } else if (minutes{{$stream->id}} === 0) {--}}
-{{--                                                    minuteWord = "";--}}
-{{--                                                    minutes{{{$stream->id}}} = "";--}}
-{{--                                                }--}}
+                                        {{--                                                var minuteWord = " минут ";--}}
+                                        {{--                                                if (minutes{{$stream->id}} === 1) {--}}
+                                        {{--                                                    minuteWord = " минута ";--}}
+                                        {{--                                                } else if (minutes{{$stream->id}} > 1 && minutes{{$stream->id}} < 5) {--}}
+                                        {{--                                                    minuteWord = " минуты ";--}}
+                                        {{--                                                } else if (minutes{{$stream->id}} === 0) {--}}
+                                        {{--                                                    minuteWord = "";--}}
+                                        {{--                                                    minutes{{{$stream->id}}} = "";--}}
+                                        {{--                                                }--}}
 
-{{--                                                var secondWord = " секунд ";--}}
-{{--                                                if (seconds{{$stream->id}} === 1) {--}}
-{{--                                                    secondWord = " секунда ";--}}
-{{--                                                } else if (seconds{{$stream->id}} > 1 && seconds{{$stream->id}} < 5) {--}}
-{{--                                                    secondWord = " секунды ";--}}
-{{--                                                } else if (seconds{{$stream->id}} === 0) {--}}
-{{--                                                    secondWord = "";--}}
-{{--                                                    seconds{{{$stream->id}}} = "";--}}
-{{--                                                }--}}
+                                        {{--                                                var secondWord = " секунд ";--}}
+                                        {{--                                                if (seconds{{$stream->id}} === 1) {--}}
+                                        {{--                                                    secondWord = " секунда ";--}}
+                                        {{--                                                } else if (seconds{{$stream->id}} > 1 && seconds{{$stream->id}} < 5) {--}}
+                                        {{--                                                    secondWord = " секунды ";--}}
+                                        {{--                                                } else if (seconds{{$stream->id}} === 0) {--}}
+                                        {{--                                                    secondWord = "";--}}
+                                        {{--                                                    seconds{{{$stream->id}}} = "";--}}
+                                        {{--                                                }--}}
 
-{{--                                                document.getElementById("{{$stream->id}}timer").innerHTML = days{{$stream->id}} + dayWord + hours{{$stream->id}}--}}
-{{--                                                    + hourWord + minutes{{$stream->id}} + minuteWord + seconds{{$stream->id}} + secondWord;--}}
+                                        {{--                                                document.getElementById("{{$stream->id}}timer").innerHTML = days{{$stream->id}} + dayWord + hours{{$stream->id}}--}}
+                                        {{--                                                    + hourWord + minutes{{$stream->id}} + minuteWord + seconds{{$stream->id}} + secondWord;--}}
 
-{{--                                                // If the count down is finished, write some text--}}
-{{--                                                if (distance{{$stream->id}} < 0) {--}}
-{{--                                                    clearInterval(x{{$stream->id}});--}}
-{{--                                                    document.getElementById("{{$stream->id}}timer").innerHTML = "EXPIRED";--}}
-{{--                                                }--}}
-{{--                                            }, 1000);--}}
-{{--                                        </script>--}}
+                                        {{--                                                // If the count down is finished, write some text--}}
+                                        {{--                                                if (distance{{$stream->id}} < 0) {--}}
+                                        {{--                                                    clearInterval(x{{$stream->id}});--}}
+                                        {{--                                                    document.getElementById("{{$stream->id}}timer").innerHTML = "EXPIRED";--}}
+                                        {{--                                                }--}}
+                                        {{--                                            }, 1000);--}}
+                                        {{--                                        </script>--}}
                                     @endforeach
                                 </ul>
                             </div>
