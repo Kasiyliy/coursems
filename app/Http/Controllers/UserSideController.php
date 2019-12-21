@@ -107,24 +107,20 @@ class UserSideController extends Controller
         $user = Auth::user();
         if (!$user) {
             Session::flash('warning', 'Войдите в систему, либо зарегистрируйтесь!');
-            return redirect()->route('register');
+            return redirect()->route('login');
         } else {
             if ($user->subscriptions()->where('status', 1)->where('course_id', $course_id)->first()) {
                 Session::flash('warning', 'Вы уже записаны!');
                 return redirect()->back();
             }
 
-            if($course_id == 2) {
+            $course = Course::find($course_id);
+
+            if($course->name == 'Разбор косметики' && !$user->survey()->where('status', 1)->first()) {
                 Session::flash('warning', 'Пройдите опрос для данного курса');
                 return redirect()->route('survey');
             }
 
-//            Subscription::create([
-//                'user_id' => $user->id,
-//                'course_id' => $course_id,
-//                'status' => 1,
-//            ]);
-            Session::flash('success', 'Ваша заявка принята! Мы вам обязательно позвоним!');
             return redirect()->route('pay.course', ['id'=>$course_id]);
         }
 

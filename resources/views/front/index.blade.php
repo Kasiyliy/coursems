@@ -25,7 +25,7 @@
                                                      height="657"
                                                      data-lazyload="images/slideshow/slider_1920x657.jpg"/>
                                             @else
-                                                <img src="front/images/slideshow/zxc.jpg" alt="" width="1920"
+                                                <img src="front/images/slideshow/girl.jpg" alt="" width="1920"
                                                      height="657"
                                                      data-lazyload="images/slideshow/slider_1920x657.jpg"/>
                                             @endif
@@ -39,37 +39,53 @@
                                             {{--                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"--}}
                                             {{--                                                 data-elementdelay="0.05" id="{{$stream->id}}timer">--}}
                                             {{--                                            </div>--}}
+                                            <div class="tp-caption home3-big-black tp-resizeme" data-x="125"
+                                                 data-y="150"
+                                                 data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
+                                                 data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+                                                 data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
+                                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                                 data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
+                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"
+                                                 data-elementdelay="0.05">{{$course->name}}
+                                            </div>
                                             <div class="tp-caption tp-resizeme" data-x="125" data-y="300"
                                                  data-width="['none','none','none','none']"
-                                                 data-height="['none','none','none','none']" data-transform_idle="o:1;"
+                                                 data-height="['none','none','none','none']"
+                                                 data-transform_idle="o:1;"
                                                  data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
                                                  data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
                                                  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                  data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                  data-responsive_offset="on" data-elementdelay="0.05">
+                                                <h3>Цена: {{$course->price}} тенге</h3>
                                             </div>
-                                            <div class="tp-caption home1-small-black tp-resizeme mt-3" data-x="125"
-                                                 data-y="360"
-                                                 data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
+                                            @if($course->name != 'Разбор косметики')
+                                                <div class="tp-caption tp-resizeme" data-x="125" data-y="350"
+                                                     data-width="['none','none','none','none']"
+                                                     data-height="['none','none','none','none']"
+                                                     data-transform_idle="o:1;"
+                                                     data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
+                                                     data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
+                                                     data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                                     data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
+                                                     data-responsive_offset="on" data-elementdelay="0.05">
+                                                    Скидка 20% при репосте <a href="#">видео</a> в Stories
+                                                </div>
+                                            @endif
+                                            <div class="tp-caption tp-resizeme" data-x="125" data-y="430"
+                                                 data-width="['none','none','none','none']"
+                                                 data-height="['none','none','none','none']"
+                                                 data-transform_idle="o:1;"
                                                  data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
                                                  data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
                                                  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                  data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
-                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                                 data-elementdelay="0.05">
-                                                Цена:
-                                                {{$course->price}} тенге
-                                            </div>
-                                            <div class="tp-caption home3-big-black tp-resizeme" data-x="125"
-                                                 data-y="188"
-                                                 data-width="['auto']" data-height="['auto']" data-transform_idle="o:1;"
-                                                 data-transform_in="y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
-                                                 data-transform_out="rZ:0deg;sX:0.7;sY:0.7;opacity:0;s:500;e:Back.easeIn;s:500;e:Back.easeIn;"
-                                                 data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                                                 data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
-                                                 data-splitin="chars" data-splitout="none" data-responsive_offset="on"
-                                                 data-elementdelay="0.05">
-                                                {{$course->name}}
+                                                 data-responsive_offset="on" data-elementdelay="0.05">
+                                                <a class="read-more btn btn-outline"
+                                                   href="{{route('make.order' ,['id'=>$course->id ])}}">
+                                                    <span class="text-muted">Купить</span>
+                                                </a>
                                             </div>
                                         </li>
                                     @endforeach
@@ -89,6 +105,7 @@
                                              data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-responsive_offset="on" data-elementdelay="0.05">
+                                            Сделай подарок сестре, подруге или маме
                                         </div>
                                         <div class="tp-caption home3-big-black tp-resizeme" data-x="125"
                                              data-y="188"
@@ -99,7 +116,7 @@
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-splitin="chars" data-splitout="none" data-responsive_offset="on"
                                              data-elementdelay="0.05">
-                                            С НГ :)
+                                            С наступающим :)
                                         </div>
                                     </li>
                                 </ul>
@@ -153,11 +170,11 @@
                                                     <div class="entry-info" @if($index % 2 == 0) style="float: left"
                                                          @else style="float: right" @endif>
                                                         <div class="entry-header">
-                                                            <h3 class="entry-title">
+                                                            <h1 class="entry-title">
                                                                 <a href="{{route('single.course', ['id' => $course->id])}}">
                                                                     {{$course->name}}
                                                                 </a>
-                                                            </h3>
+                                                            </h1>
                                                         </div>
                                                         <div class="entry-content">
                                                             <p>
