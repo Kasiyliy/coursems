@@ -13,7 +13,7 @@
                             <input type="hidden" name="receiver" value="4100110291387351">
                             <input type="hidden" name="formcomment" value="Покупка курса '{{$course->name}}'">
                             <input type="hidden" name="short-dest" value="Покупка курса '{{$course->name}}'">
-                            <input type="hidden" name="label" value="{{$user->id.'='.$course->id}}">
+                            <input type="hidden" name="label" value="{{$user->id.' '.$course->id}}">
                             <input type="hidden" name="quickpay-form" value="shop">
                             <input type="hidden" name="targets" value="транзакция за курс '{{$course->name}}'">
                             <input id="price_yandex" type="hidden" name="sum" value="{{$course->price}}"
@@ -22,7 +22,8 @@
                             <input type="hidden" name="need-email" value="false">
                             <input type="hidden" name="need-phone" value="false">
                             <input type="hidden" name="need-address" value="false">
-                            <input type="hidden" name="successURL" value="{{route('pay.finish')}}">
+                            <input type="hidden" name="successURL"
+                                   value="{{route('pay.finish')}}?user_id={{$user->id}}&course_id={{$course->id}}">
                             <label for="paymentType">Выберите способ оплаты</label>
                             <select class="form-control" name="paymentType" id="paymentType">
                                 <option value="AC">Банковской картой</option>
