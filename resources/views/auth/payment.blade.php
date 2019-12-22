@@ -25,20 +25,26 @@
                             <input type="hidden" name="successURL"
                                    value="{{route('pay.finish')}}?user_id={{$user->id}}&course_id={{$course->id}}">
                             <label for="paymentType">Выберите способ оплаты</label>
-                            <select class="form-control" name="paymentType" id="paymentType">
+                            <select class="form-control" name="paymentType" id="paymentType"
+                                    onchange="onChangePayment()" required>
+                                <option value="" disabled selected>Выберите один из вариантов</option>
+                                <option value="kaspi">Kaspi bank</option>
                                 <option value="AC">Банковской картой</option>
                                 <option value="PC">Яндекс.Деньгами</option>
                             </select>
                             <br>
                             <h3>Сумма к оплате: <span id="price">0</span> тенге или <span id="rub_price">0</span> рублей
-                            </h3>
-                            <p>*комиссия за счет GlamBlog</p>
-                            <p>*курс рубля фиксированный 6.16 тенге</p>
+                            </h3><br>
+
+                            <h4 id="kaspi-id">Реквизиты для платежа:<br><br> 5169 4971 4165 4529</h4>
+
+                            <p id="comission">*комиссия за счет GlamBlog</p>
+                            <p id="currency">*курс рубля фиксированный 6.16 тенге</p>
                             @if($course->name != 'Разбор косметики')
                                 <input type="checkbox" id="repost" onclick="checkboxClick()"> Я сделал репост <br>
                             @endif
                             <br>
-                            <input class="btn btn-success" type="submit" value="Перейти к оплате">
+                            <input id="submit-btn" class="btn btn-success" type="submit" value="Перейти к оплате">
                         </form>
                     </div>
                 </div>
@@ -54,6 +60,20 @@
             $('#price_yandex').html(Math.floor(price / 6.16));
             $('#rub_price').html(Math.floor(price / 6.16));
         });
+
+        function onChangePayment() {
+            if ($('#paymentType').val() == 'kaspi') {
+                $('#submit-btn').hide();
+                $('#kaspi-id').html('Реквизиты для платежа:<br><br> 5169 4971 4165 4529');
+                $('#comission').html('');
+                $('#currency').html('');
+            } else {
+                $('#submit-btn').show();
+                $('#kaspi-id').html('');
+                $('#comission').html('*комиссия за счет GlamBlog');
+                $('#currency').html('*курс рубля фиксированный 6.16 тенге');
+            }
+        }
 
         function checkboxClick() {
             checked = !checked;
