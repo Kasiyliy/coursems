@@ -50,10 +50,15 @@ class PaymentController extends Controller
         $transaction->user_id = $user_id;
         $transaction->course_id = $course_id;
 
+        Subscription::create([
+            'user_id' => $user_id,
+            'course_id' => $course_id,
+            'status' => 1,
+        ]);
+
         $transaction->save();
         Session::flash('success', 'Курс успешно оплачен!');
 
         return response('', 200);
-//        return redirect()->route('pay.course', ['id' => '2']);
     }
 }

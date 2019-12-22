@@ -187,7 +187,11 @@
                                                                 {{$course->price}} тенге
                                                             </span>
                                                         </div>
-                                                        <a class="read-more btn btn-outline"
+                                                        <a class="btn btn-outline"
+                                                           href="{{route('make.order' ,['id'=>$course->id ])}}">
+                                                            <span class="text-muted">Купить</span>
+                                                        </a>
+                                                        <a class="read-more ml-2"
                                                            href="{{route('single.course', ['id' => $course->id])}}">
                                                             <span class="text-muted">Подробнее</span>
                                                         </a>
