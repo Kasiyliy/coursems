@@ -15,7 +15,9 @@ class ConfigController extends Controller
         $transaction = new Transaction();
         $transaction->fill($request->all());
 
-        list($user_id, $course_id) = explode('=', $request->label);
+        $array = explode('=', "$request->label=");
+        $user_id = $array[0];
+        $course_id = $array[1];
 
         $transaction->user_id = $user_id;
         $transaction->course_id = $course_id;
