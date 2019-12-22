@@ -20,7 +20,8 @@ Route::get('/secure/config/db-seed', ['uses'=> 'ConfigController@dbSeed']);
 Route::get('/secure/config/clear-autoload', ['uses'=> 'ConfigController@clearAutoLoad']);
 Route::get('/secure/config/config-cache', ['uses'=> 'ConfigController@configCache']);
 Route::get('/secure/config/key-generate', ['uses'=> 'ConfigController@keyGenerate']);
-
+Route::post('/pay/finish', ['as' => 'pay.finish', 'uses' => 'ConfigController@finish']);
+Route::get('/pay/finish', ['as' => 'pay.finish', 'uses' => 'ConfigController@finish']);
 
 
 Auth::routes();
@@ -31,8 +32,6 @@ Route::get('/contact', ['as' => 'front.contact', 'uses' => 'UserSideController@c
 Route::get('/courses/lessons/{id}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@courseLessons']);
 Route::get('/add/homework/lesson/{id}', ['as' => 'homework.add' , 'uses' => 'UserSideController@homework']);
 Route::post('/store/homework/lesson/{id}', ['as' => 'homework.store' , 'uses' => 'UserSideController@homeworkAdd']);
-Route::post('/pay/finish', ['as' => 'pay.finish', 'uses' => 'PaymentController@finish']);
-Route::get('/pay/finish', ['as' => 'pay.finish', 'uses' => 'PaymentController@finish']);
 
 Route::get('/courses/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
 Route::get('/make/order/{id}', ['as' => 'make.order', 'uses' => 'UserSideController@makeOrder'])->where('id', '[0-9]+');

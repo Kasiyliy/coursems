@@ -2,11 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Subscription;
+use App\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
 class ConfigController extends Controller
 {
+
+    public function finish(Request $request)
+    {
+        $transaction = new Transaction();
+        $transaction->fill($request->all());
+
+        list($user_id, $course_id) = explode('=', $request->label);
+
+        $transaction->user_id = $user_id;
+        $transaction->course_id = $course_id;
+
+        Subscription::create([
+            'user_id' => $user_id,
+            'course_id' => $course_id,
+            'status' => 1,
+        ]);
+
+        $transaction->save();
+        Session::flash('success', 'Курс успешно оплачен!');
+
+        return response('', 200);
+    }
 
 
     public function migrateRefresh(Request $request)

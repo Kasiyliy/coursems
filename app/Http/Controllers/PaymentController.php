@@ -40,26 +40,4 @@ class PaymentController extends Controller
 
         return view('auth.payment', compact('course', 'user'));
     }
-
-    public function finish(Request $request)
-    {
-        $transaction = new Transaction();
-        $transaction->fill($request->all());
-
-        list($user_id, $course_id) = explode('=', $request->label);
-
-        $transaction->user_id = $user_id;
-        $transaction->course_id = $course_id;
-
-        Subscription::create([
-            'user_id' => $user_id,
-            'course_id' => $course_id,
-            'status' => 1,
-        ]);
-
-        $transaction->save();
-        Session::flash('success', 'Курс успешно оплачен!');
-
-        return response('', 200);
-    }
 }
