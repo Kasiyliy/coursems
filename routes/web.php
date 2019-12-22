@@ -31,7 +31,7 @@ Route::get('/contact', ['as' => 'front.contact', 'uses' => 'UserSideController@c
 Route::get('/courses/lessons/{id}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@courseLessons']);
 Route::get('/add/homework/lesson/{id}', ['as' => 'homework.add' , 'uses' => 'UserSideController@homework']);
 Route::post('/store/homework/lesson/{id}', ['as' => 'homework.store' , 'uses' => 'UserSideController@homeworkAdd']);
-
+Route::post('/pay/finish', ['as' => 'pay.finish', 'uses' => 'PaymentController@finish']);
 
 Route::get('/courses/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
 Route::get('/make/order/{id}', ['as' => 'make.order', 'uses' => 'UserSideController@makeOrder'])->where('id', '[0-9]+');
@@ -42,7 +42,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/survey', ['as' => 'survey', 'uses' => 'SurveyController@survey']);
     Route::post('/survey/save', ['as' => 'survey.store', 'uses' => 'SurveyController@store']);
     Route::get('/pay/{id}', ['as' => 'pay.course', 'uses' => 'PaymentController@index'])->where('id', '[0-9]+');
-    Route::post('/pay/finish', ['as' => 'pay.finish', 'uses' => 'PaymentController@finish']);
 
     Route::get('/client/courses', ['as' => 'client.course.index', 'uses' => 'ClientController@courses']);
     Route::get('/client/courses/{id}', ['as' => 'client.course.details', 'uses' => 'ClientController@details'])->where('id', '[0-9]+');

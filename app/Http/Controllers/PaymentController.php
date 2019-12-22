@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Subscription;
 use Symfony\Component\HttpFoundation\Response;
 use App\Transaction;
 use Auth;
