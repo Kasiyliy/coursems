@@ -58,10 +58,10 @@
                                                  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                  data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                  data-responsive_offset="on" data-elementdelay="0.05">
-                                                <h3>Стоимость курса: {{$course->price}} тенге</h3>
+                                                <h1>Стоимость курса: {{$course->price}} тенге</h1>
                                             </div>
                                             @if($course->name != 'Разбор косметики')
-                                                <div class="tp-caption tp-resizeme" data-x="125" data-y="350"
+                                                <div class="tp-caption tp-resizeme mt-2" data-x="125" data-y="350"
                                                      data-width="['none','none','none','none']"
                                                      data-height="['none','none','none','none']"
                                                      data-transform_idle="o:1;"
@@ -82,9 +82,9 @@
                                                  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                  data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                  data-responsive_offset="on" data-elementdelay="0.05">
-                                                <a class="read-more btn btn-outline" style="border: solid 2px"
+                                                <a class="read-more btn btn-outline" style="border: solid 3px"
                                                    href="{{route('make.order' ,['id'=>$course->id ])}}">
-                                                    <span style="font-size: 22px"><b>Купить курс</b></span>
+                                                    <span style="font-size: 32px"><b>Купить курс</b></span>
                                                 </a>
                                             </div>
                                         </li>
