@@ -58,7 +58,7 @@
                                                  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                  data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                  data-responsive_offset="on" data-elementdelay="0.05">
-                                                <h3>Цена: {{$course->price}} тенге</h3>
+                                                <h3>Стоимость курса: {{$course->price}} тенге</h3>
                                             </div>
                                             @if($course->name != 'Разбор косметики')
                                                 <div class="tp-caption tp-resizeme" data-x="125" data-y="350"
@@ -82,9 +82,9 @@
                                                  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                  data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                  data-responsive_offset="on" data-elementdelay="0.05">
-                                                <a class="read-more btn btn-outline"
+                                                <a class="btn btn-outline"
                                                    href="{{route('make.order' ,['id'=>$course->id ])}}">
-                                                    <span class="text-muted">Купить</span>
+                                                    <span style="font-size: 18px">Купить курс</span>
                                                 </a>
                                             </div>
                                         </li>
@@ -136,7 +136,7 @@
                                 <div class="video-embed-shortcode mfp-hide">
                                     <div id="video-1" class="embed-wrap">
                                         <iframe width="1200" height="675"
-                                                src="https://www.youtube.com/embed/lj33nrF8QPg"
+                                                src="https://www.youtube.com/embed/icobCxORoM0"
                                                 allowfullscreen></iframe>
                                     </div>
                                 </div>
@@ -183,13 +183,13 @@
                                                         </div>
                                                         <div class="entry-meta">
                                                             <span class="meta-author">
-                                                                Цена:
+                                                                Стоимость курса:
                                                                 {{$course->price}} тенге
                                                             </span>
                                                         </div>
                                                         <a class="btn btn-outline"
                                                            href="{{route('make.order' ,['id'=>$course->id ])}}">
-                                                            <span class="text-muted">Купить</span>
+                                                            <span class="text-muted">Купить курс</span>
                                                         </a>
                                                         <a class="read-more ml-2"
                                                            href="{{route('single.course', ['id' => $course->id])}}">
