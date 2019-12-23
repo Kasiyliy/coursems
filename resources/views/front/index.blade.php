@@ -132,7 +132,7 @@
                         <div class="col-sm-3"></div>
                         <div class="col-sm-6">
                             <div class="video-embed-shortcode">
-                                <img src="front/images/video_screen.png" alt=""/>
+                                <img src="front/images/teaser_screen.png" alt=""/>
                                 <div class="video-embed-shortcode mfp-hide">
                                     <div id="video-1" class="embed-wrap">
                                         <iframe width="1200" height="675"
