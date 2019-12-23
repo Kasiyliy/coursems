@@ -84,7 +84,7 @@
                                                  data-responsive_offset="on" data-elementdelay="0.05">
                                                 <a class="read-more btn btn-outline" style="border: solid 2px"
                                                    href="{{route('make.order' ,['id'=>$course->id ])}}">
-                                                    <span style="font-size: 22px">Купить курс</span>
+                                                    <span style="font-size: 22px"><b>Купить курс</b></span>
                                                 </a>
                                             </div>
                                         </li>
@@ -181,10 +181,10 @@
                                                                 {!!$course->description!!}
                                                             </p>
                                                         </div>
-                                                        <div class="entry-meta">
+                                                        <div class="entry-content">
                                                             <span class="meta-author">
-                                                                Стоимость курса:
-                                                                {{$course->price}} тенге
+                                                                <b>Стоимость курса:
+                                                                {{$course->price}} тенге</b>
                                                             </span>
                                                         </div>
                                                         <a class="btn btn-outline"

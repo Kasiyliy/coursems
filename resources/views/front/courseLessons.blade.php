@@ -16,7 +16,7 @@
                                                         <div class="entry-featured">
                                                             <iframe class="embed-responsive-item"
                                                                     width="700" height="450"
-                                                                    src="https://www.youtube.com/embed/{{$lesson->video_path}}"
+                                                                    src="{{$lesson->video_path}}"
                                                                     frameborder="0"
                                                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                                     allowfullscreen></iframe>

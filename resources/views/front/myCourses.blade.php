@@ -42,8 +42,7 @@
                                         </td>
                                         <td class="product-name">
                                             <a href="{{route('single.course',['id' =>$myOrder->course->id])}}" class="btn btn-link" >
-                                                {{$myOrder->course->name}}:
-                                                <span class="text-muted">Читать далее...</span>
+                                                {{$myOrder->course->name}}
                                             </a>
                                         </td>
                                         <td class="product-add-to-cart">

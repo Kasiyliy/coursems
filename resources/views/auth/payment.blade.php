@@ -29,8 +29,8 @@
                                     onchange="onChangePayment()" required>
                                 <option value="" disabled selected>Выберите один из вариантов</option>
                                 <option value="kaspi">Kaspi bank</option>
-                                <option value="AC">Банковской картой</option>
-                                <option value="PC">Яндекс.Деньгами</option>
+{{--                                <option value="AC">Банковской картой</option>--}}
+{{--                                <option value="PC">Яндекс.Деньгами</option>--}}
                             </select>
                             <br>
                             <h3>Сумма к оплате: <span id="price">0</span> тенге или <span id="rub_price">0</span> рублей
