@@ -39,8 +39,9 @@
                         <div class="widget widget_product_categories">
                             <h2><span>{{$lesson->course->name}}</span></h2>
                             <ul class="product-categories">
-                                @foreach($visibleLessons as $visibleLesson)
-                                    <li><a href="/courses/lessons/{{$visibleLesson->id}}">{{$visibleLesson->name}}</a>
+                                @foreach($lessons as $lesson)
+                                    <li>
+                                        <a href="/courses/lessons/{{$lesson->id}}">- {{$lesson->name}}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -49,7 +50,8 @@
                                 @if($nextLesson)
 
                                     <li>
-                                        <a class="btn btn-outline-outline" href="/courses/lessons/{{$nextLesson->id}}">
+                                        <a class="btn btn-outline-outline"
+                                           href="{{route('single.course.lessons', ['id'=>$nextLesson->id ])}}">
                                             Перейти к следующему уроку
                                         </a>
                                     </li>

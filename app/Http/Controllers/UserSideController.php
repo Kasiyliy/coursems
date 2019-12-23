@@ -51,9 +51,10 @@ class UserSideController extends Controller
 
     public function courseLessons($id)
     {
-        $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->take(4)->get();
-        $lesson = Lesson::findOrFail($id);
-        $nextLesson = null;
+        $header_courses = Course::where('visible', 1)->orderBy('id', 'desc')->get();
+        $lesson = Lesson::find($id);
+        $nextLesson = Lesson::find($id+1);
+        $lessons = Lesson::where('course_id', $lesson->course_id)->get();
         if (!$lesson->course) {
             return abort(404);
         } else {
@@ -61,25 +62,8 @@ class UserSideController extends Controller
             $course = $lesson->course;
             $checkedHomeworks = Homework::where('user_id', $user->id)
                 ->where('status', 1)->get();
-            if ($checkedHomeworks->count() == 0) {
-                $visibleLessons[] = $lesson->course->lessons->where('next_lesson_id', 1)->first();
-            } else {
-                foreach ($checkedHomeworks as $checkedHomework) {
-                    $visibleLessons[] = $checkedHomework->lesson;
-                }
-            }
-            $lastHomework = Homework::where('lesson_id', $lesson->id)
-                ->where('user_id', $user->id)
-                ->orderBy('id', 'desc')
-                ->first();
-            if ($lastHomework) {
-                $lessonOrder = Lesson::findOrFail($lastHomework->lesson_id)->next_lesson_id;
-                $nextLesson = Lesson::where('course_id', $course->id)->where('next_lesson_id', $lessonOrder + 1)->first();
-            } else {
-                $nextLesson = Lesson::where('course_id', $course->id)->where('next_lesson_id', 1)->first();
 
-            }
-            return view('front.courseLessons', compact('lesson', 'header_courses', 'nextLesson', 'visibleLessons', 'lastHomework'));
+            return view('front.courseLessons', compact('lesson', 'lessons', 'header_courses', 'nextLesson'));
         }
     }
 
