@@ -178,7 +178,7 @@
                                                                 </a>
                                                             </h1>
                                                         </div>
-                                                        <div class="entry-content">
+                                                        <div class="entry-content" style="margin-left: 15px">
                                                             <p>
                                                                 {!!$course->description!!}
                                                             </p>
