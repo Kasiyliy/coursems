@@ -82,9 +82,9 @@
                                                  data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                  data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                  data-responsive_offset="on" data-elementdelay="0.05">
-                                                <a class="btn btn-outline"
+                                                <a class="read-more btn btn-outline" style="border: solid 2px"
                                                    href="{{route('make.order' ,['id'=>$course->id ])}}">
-                                                    <span style="font-size: 18px">Купить курс</span>
+                                                    <span style="font-size: 22px">Купить курс</span>
                                                 </a>
                                             </div>
                                         </li>
