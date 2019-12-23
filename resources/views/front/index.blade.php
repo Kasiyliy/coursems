@@ -313,7 +313,7 @@
                                         L. Raphael"</p>
                                 </li>
                                 <li>
-                                    <p><i class="fa fa-check-circle"></i> Я фанатик "Beauty"
+                                    <p><i class="fa fa-check-circle"></i> Я фанат "Beauty"
                                         мира. Самое главное в нашей сфере - это развитие,
                                         я всегда совершенствую свои навыки и слежу за всеми
                                         последними
