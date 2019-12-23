@@ -107,7 +107,7 @@
                                              data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                              data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                              data-responsive_offset="on" data-elementdelay="0.05">
-                                            Сделай подарок сестре, подруге или маме
+                                            <h2>Сделай подарок сестре, подруге или <br>маме</h2>
                                         </div>
                                         <div class="tp-caption home3-big-black tp-resizeme" data-x="125"
                                              data-y="188"
