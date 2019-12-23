@@ -29,15 +29,19 @@
                                     onchange="onChangePayment()" required>
                                 <option value="" disabled selected>Выберите один из вариантов</option>
                                 <option value="kaspi">Kaspi bank</option>
-{{--                                <option value="AC">Банковской картой</option>--}}
-{{--                                <option value="PC">Яндекс.Деньгами</option>--}}
+                                {{--                                <option value="AC">Банковской картой</option>--}}
+                                {{--                                <option value="PC">Яндекс.Деньгами</option>--}}
                             </select>
                             <br>
                             <h3>Сумма к оплате: <span id="price">0</span> тенге или <span id="rub_price">0</span> рублей
                             </h3><br>
 
-                            <h4 id="kaspi-id">Реквизиты для платежа:<br><br> 5169 4971 4165 4529</h4>
+                            <h4 id="kaspi-id" style="">Реквизиты для платежа:<br><br> 5169 4971 4165 4529 <br><br>
+                                +7701 194 33 46 <br><br>
+                                Ахметкали А.Е.
+                            </h4>
 
+                            <p id="comission">*после оплаты доступ к курсу будет открыт в ближающее время</p>
                             <p id="comission">*комиссия за счет GlamBlog</p>
                             <p id="currency">*курс рубля фиксированный 6.16 тенге</p>
                             @if($course->name != 'Разбор косметики')
@@ -59,6 +63,7 @@
             $('#price').html(price);
             $('#price_yandex').html(Math.floor(price / 6.16));
             $('#rub_price').html(Math.floor(price / 6.16));
+            $('#submit-btn').hide();
         });
 
         function onChangePayment() {
