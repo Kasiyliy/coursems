@@ -7,7 +7,7 @@
                 <div class="panel" style="padding: 10px;">
                     <div class="panel-header">
                         <h2>Заявки на разбор косметики</h2>
-                        <a class="btn btn-success btn-sm" href="{{route('order.create')}}">Добавить</a>
+{{--                        <a class="btn btn-success btn-sm" href="{{route('order.create')}}">Добавить</a>--}}
                     </div>
                     <div class="panel-body">
                         <table class="table table-hover table-responsive">
