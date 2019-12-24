@@ -18,26 +18,23 @@ class PaymentController extends Controller
         $course = Course::find($id);
         $user = Auth::user();
 
-//        $client = new Client();
-//        $request = $client->post('https://money.yandex.ru/quickpay/confirm.xml')
-//            ->addPostFiles(
-//                array(
-//                    'receiver' => '4100110291387351',
-//                    'formcomment' => "Покупка курса {{$course->name}}",
-//                    'short-dest' => "Покупка курса {{$course->name}}",
-//                    'label' => "$user->id=$course->id",
-//                    'quickpay-form' => 'shop',
-//                    'targets' => "транзакция за курс $course->name",
-//                    'sum' => $course->price,
-//                    'need-fio' => 'false',
-//                    'need-phone' => 'false',
-//                    'need-address' => 'false',
-//                    'payment-type' => 'AC',
-//                )
-//            );
-//
-//        $response = $request->send();
+        return view('auth.payment1', compact('course', 'user'));
+    }
 
-        return view('auth.payment', compact('course', 'user'));
+    public function step2(Request $request)
+    {
+        $price = $request->price;
+        $course = Course::find($request->id);
+        $user = Auth::user();
+
+        return view('auth.payment2', compact('course', 'user', 'price'));
+    }
+
+    public function step3(Request $request)
+    {
+        $user = Auth::user();
+        $course = Course::find($request->id);
+
+        return view('auth.payment3', compact('user', 'course'));
     }
 }

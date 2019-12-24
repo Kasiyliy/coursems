@@ -6,7 +6,7 @@
             <div class="col-sm-12">
                 <div class="panel" style="padding: 10px;">
                     <div class="panel-header">
-                        <h2>Заявки</h2>
+                        <h2>Заявки на разбор косметики</h2>
                         <a class="btn btn-success btn-sm" href="{{route('order.create')}}">Добавить</a>
                     </div>
                     <div class="panel-body">
@@ -16,6 +16,7 @@
                                 <th>ID</th>
                                 <th>Пользователь</th>
                                 <th>Курс</th>
+                                <th>Опрос</th>
                                 <th>Статус</th>
                                 <th>Дата покупки</th>
                             </tr>
@@ -27,9 +28,16 @@
                                     <td>{{$subscription->id}}</td>
                                     <td>{{$subscription->user->email}}</td>
                                     <td>{{$subscription->course->name}}</td>
+                                    <td>{{$subscription->user->survey ? 'Прошел опрос' : 'Не прошел'}}</td>
                                     <td>{{$subscription->status ? 'Оплачено' : 'Не оплачено'}}</td>
                                     <td>{{$subscription->created_at}}</td>
                                     <td class="d-flex">
+                                        <form action="{{route('survey.check', ['id' => $subscription->user->id])}}" method="get">
+                                            <button type="submit" class="btn-xs btn btn-primary" data-toggle="modal">
+                                                <span class="fa fa-eye"></span>Открыть опрос
+                                            </button>
+                                        </form>
+
                                         <button type="submit" class="btn-xs btn btn-warning" data-toggle="modal"
                                                 data-target="#editModal{{$subscription->id}}">
                                             <span class="fa fa-money"></span> {{$subscription->status ? 'Доступ открыт' : 'Закрыт'}}

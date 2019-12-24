@@ -3,6 +3,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
+use App\Subscription;
+use App\User;
 use Session;
 use Auth;
 use Validator;
@@ -14,6 +17,18 @@ class SurveyController extends Controller
     public function survey(Request $request)
     {
         return view('auth.survey');
+    }
+
+    public function index()
+    {
+        $subscriptions = Subscription::where('course_id', 2)->get();
+        return view('admin.surveys.index', compact("subscriptions"));
+    }
+
+    public function check($id)
+    {
+        $user = User::find($id);
+        return view('admin.surveys.survey', compact("user"));
     }
 
     public function store(Request $request)

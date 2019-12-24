@@ -9,7 +9,8 @@
 
                     <div class="card-body">
 
-                        <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+                        <form method="POST" action="{{route('pay.course.step3')}}">
+                            @csrf
                             <input type="hidden" name="receiver" value="4100110291387351">
                             <input type="hidden" name="formcomment" value="Покупка курса '{{$course->name}}'">
                             <input type="hidden" name="short-dest" value="Покупка курса '{{$course->name}}'">
@@ -28,27 +29,27 @@
                             <select class="form-control" name="paymentType" id="paymentType"
                                     onchange="onChangePayment()" required>
                                 <option value="" disabled selected>Выберите один из вариантов</option>
-                                <option value="kaspi">Kaspi bank</option>
+                                <option value="kaspi-id">по номеру счета</option>
+                                <option value="kaspi-phone">по номеру телефона</option>
                                 {{--                                <option value="AC">Банковской картой</option>--}}
                                 {{--                                <option value="PC">Яндекс.Деньгами</option>--}}
                             </select>
                             <br>
-                            <h3>Сумма к оплате: <span id="price">0</span> тенге или <span id="rub_price">0</span> рублей
+                            <h3>
+                                Сумма к оплате: <span id="price">{{$price}}</span> тенге
                             </h3><br>
 
-                            <h4 id="kaspi-id" style="">Реквизиты для платежа:<br><br> <b>5169 4971 4165 4529 </b><br><br>
-                                +7701 194 33 46 <br><br>
+                            <h4 id="kaspi-id" style="">Реквизиты для платежа:<br><br> <b id="pay-type">5169 4971 4165
+                                    4529 </b><br><br>
                                 Ахметкали А.Е.
                             </h4>
 
-                            <p id="comission">*после оплаты доступ к курсу будет открыт в ближающее время</p>
-                            <p id="comission">*комиссия за счет GlamBlog</p>
-                            <p id="currency">*курс рубля фиксированный 6.16 тенге</p>
-                            @if($course->name != 'Разбор косметики')
-                                <input type="checkbox" id="repost" onclick="checkboxClick()"> Я сделал репост <br>
-                            @endif
+                            <input type="hidden" name="id" value="{{$course->id}}">
+
+                            <input type="checkbox" id="paid" onclick="checkboxClick()" required> Я произвел оплату <br>
+
                             <br>
-                            <input id="submit-btn" class="btn btn-success" type="submit" value="Перейти к оплате">
+                            <input id="submit-btn" class="btn btn-success" type="submit" value="Далее">
                         </form>
                     </div>
                 </div>
@@ -60,37 +61,16 @@
         price = {{$course->price}};
 
         $(document).ready(function () {
-            $('#price').html(price);
-            $('#price_yandex').html(Math.floor(price / 6.16));
-            $('#rub_price').html(Math.floor(price / 6.16));
-            $('#submit-btn').hide();
+            $('#kaspi-id').hide();
         });
 
         function onChangePayment() {
-            if ($('#paymentType').val() == 'kaspi') {
-                $('#submit-btn').hide();
-                $('#kaspi-id').html('Реквизиты для платежа:<br><br> 5169 4971 4165 4529');
-                $('#comission').html('');
-                $('#currency').html('');
-            } else {
-                $('#submit-btn').show();
-                $('#kaspi-id').html('');
-                $('#comission').html('*комиссия за счет GlamBlog');
-                $('#currency').html('*курс рубля фиксированный 6.16 тенге');
-            }
-        }
-
-        function checkboxClick() {
-            checked = !checked;
-
-            if (checked === true) {
-                $('#price').html(price * 0.8);
-                $('#rub_price').html(Math.floor((price / 6.16) * 0.8));
-                $('#price_yandex').val(Math.floor((price / 6.16) * 0.8));
-            } else {
-                $('#price').html(price);
-                $('#rub_price').html(Math.floor(price / 6.16));
-                $('#price_yandex').val(Math.floor(price / 6.16));
+            if ($('#paymentType').val() === 'kaspi-id') {
+                $('#kaspi-id').show();
+                $('#pay-type').html('5169 4971 4165 4529');
+            } else if ($('#paymentType').val() === 'kaspi-phone') {
+                $('#kaspi-id').show();
+                $('#pay-type').html('+7701 194 33 46');
             }
         }
     </script>

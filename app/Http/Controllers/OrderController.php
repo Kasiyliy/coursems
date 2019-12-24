@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Stream;
 use App\Order;
+use App\Subscription;
 use App\User;
 use DateTime;
 use Illuminate\Http\Request;
@@ -16,9 +17,8 @@ class OrderController extends Controller
 {
     public function index()
     {
-//        $orders = Order::where('status', 0)->get(); // чет не понял зачем
-        $orders = Order::all();
-        return view('admin.orders.index', compact("orders"));
+        $subscriptions = Subscription::where('course_id', '!=', 2)->get();
+        return view('admin.orders.index', compact("subscriptions"));
     }
 
     public function create()
@@ -78,7 +78,7 @@ class OrderController extends Controller
 
     public function toggleStatus($id)
     {
-        $order = Order::find($id);
+        $order = Subscription::find($id);
         if (!$order) {
             Session::flash('error', ' Элемент не существует!');
             return redirect()->back();

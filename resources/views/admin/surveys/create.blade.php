@@ -7,11 +7,21 @@
                 <div class="panel">
                     <div class="panel-header">
                         <h2>Добавить</h2>
-                        <a class="btn btn-primary btn-sm" href="{{route('subscription.index')}}">Назад</a>
+                        <a class="btn btn-primary btn-sm" href="{{route('order.index')}}">Назад</a>
                     </div>
                     <div class="panel-body">
-                        <form enctype="multipart/form-data" action="{{route('subscription.store')}}" method="post">
+                        <form enctype="multipart/form-data" action="{{route('order.store')}}" method="post">
                             <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="stream_id">Поток</label>
+                                        <select class="form-control" name="stream_id" required>
+                                            @foreach($streams as $stream)
+                                                <option value="{{$stream->id}}">{{$stream->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="course_id">Пользователь</label>

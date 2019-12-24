@@ -117,20 +117,14 @@
                     </li>
 
                     <li>
-                        <a href="{{(route('stream.index'))}}">
-                            <i class="fa fa-tasks" aria-hidden="true"></i> <span>Потоки</span>
-                        </a>
-                    </li>
-
-                    <li>
                         <a href="{{(route('order.index'))}}">
-                            <i class="fa fa-first-order"></i> <span>Заявки</span>
+                            <i class="fa fa-first-order"></i> <span>Заявки на курс</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="{{(route('homeworks.index'))}}">
-                            <i class="fa fa-book"></i> <span>Домашние работы</span>
+                        <a href="{{(route('survey.index'))}}">
+                            <i class="fa fa-first-order"></i> <span>Заявки на косметику</span>
                         </a>
                     </li>
 
