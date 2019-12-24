@@ -20,6 +20,11 @@
         </div>
         <nav class="offcanvas-navbar">
             <ul class="offcanvas-nav">
+                @if(auth()->user() && auth()->user()->isAdmin())
+                    <li class="menu-item-has-children dropdown current-menu-ancestor">
+                        <a href="{{route('home')}}" class="dropdown-hover">Админская панель</a>
+                    </li>
+                @endif
                 <li class="menu-item-has-children dropdown current-menu-ancestor">
                     <a href="{{route('front')}}" class="dropdown-hover">Главная</a>
                 </li>

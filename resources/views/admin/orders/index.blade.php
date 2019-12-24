@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" style="overflow: scroll">
         <div class="row justify-content-center">
             <div class="col-sm-12">
                 <div class="panel" style="padding: 10px;">
@@ -10,7 +10,7 @@
 {{--                        <a class="btn btn-success btn-sm" href="{{route('order.create')}}">Добавить</a>--}}
                     </div>
                     <div class="panel-body">
-                        <table class="table table-hover table-responsive">
+                        <table class="table table-hover table-responsive" style="overflow-y: scroll">
                             <thead>
                             <tr>
                                 <th>ID</th>

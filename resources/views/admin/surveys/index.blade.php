@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container-fluid" style="overflow: scroll">
         <div class="row justify-content-center">
             <div class="col-sm-12">
                 <div class="panel" style="padding: 10px;">
