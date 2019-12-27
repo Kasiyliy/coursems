@@ -63,16 +63,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/roles/update/{id}', ['as' => 'role.update', 'uses' => 'RoleController@update'])->where('id', '[0-9]+');
 
 
-        Route::get('/courses/create', ['as' => 'course.create', 'uses' => 'CourseController@create']);
-        Route::post('/courses/store', ['as' => 'course.store', 'uses' => 'CourseController@store']);
-        Route::get('/courses', ['as' => 'course.index', 'uses' => 'CourseController@index']);
-        Route::get('/courses/{id}', ['as' => 'course.details', 'uses' => 'CourseController@details'])->where('id', '[0-9]+');
-        Route::get('/courses/edit/{id}', ['as' => 'course.edit', 'uses' => 'CourseController@edit'])->where('id', '[0-9]+');
-        Route::post('/courses/update/{id}', ['as' => 'course.update', 'uses' => 'CourseController@update'])->where('id', '[0-9]+');
-        Route::post('/courses/toggle/visible/{id}', ['as' => 'course.toggle.visible', 'uses' => 'CourseController@toggleVisibility'])->where('id', '[0-9]+');
-        Route::post('/courses/update/image/{id}', ['as' => 'course.update.image', 'uses' => 'CourseController@updateImage'])->where('id', '[0-9]+');
-        Route::post('/courses/delete/{id}', ['as' => 'course.delete', 'uses' => 'CourseController@delete'])->where('id', '[0-9]+');
-
         Route::get('/lessons/create/{id}', ['as' => 'lesson.create', 'uses' => 'LessonController@create'])->where('id', '[0-9]+');
         Route::post('/lessons/store', ['as' => 'lesson.store', 'uses' => 'LessonController@store']);
         Route::get('/lessons/edit/{id}', ['as' => 'lesson.edit', 'uses' => 'LessonController@edit'])->where('id', '[0-9]+');
