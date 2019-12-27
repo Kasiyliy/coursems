@@ -294,21 +294,21 @@
                         <div class="col-sm-12">
                             <ul class="mt-8 text-center" style="list-style-type:none; ">
                                 <li>
-                                    <p style="font-size: 2em;"><i class="fa fa-check-circle"></i> 1.
-                                        Заполнить АНКЕТУ</p>
+                                    <h4><i class="fa fa-check-circle"></i> 1.
+                                        Заполнить АНКЕТУ</h4>
                                 </li>
                                 <li>
-                                    <p style="font-size: 2em;"><i class="fa fa-check-circle"></i> 2. Оплатить 3000 KZT</p>
+                                    <h4><i class="fa fa-check-circle"></i> 2. Оплатить 3000 KZT</h4>
                                 </li>
                                 <li>
-                                    <p style="font-size: 2em;"><i class="fa fa-check-circle"></i> 3. В течение 24 часов вам будет выслан
+                                    <h4><i class="fa fa-check-circle"></i> 3. В течение 24 часов вам будет выслан
                                         развернутый разбор и рекомендации к покупке относительно вашей косметички в
                                         формате PDF.
-                                    </p>
+                                    </h4>
                                 </li>
                                 <li>
-                                    <p style="font-size: 2em;"><i class="fa fa-check-circle"></i> 4. Файл будет отправлен на электронный адрес
-                                        указанный при регистрации.</p>
+                                    <h4><i class="fa fa-check-circle"></i> 4. Файл будет отправлен на электронный адрес
+                                        указанный при регистрации.</h4>
                                 </li>
                             </ul>
                         </div>
