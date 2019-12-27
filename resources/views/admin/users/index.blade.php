@@ -78,3 +78,10 @@
         </div>
     </div>
 @endsection
+
+
+@section('datatable')
+
+    @include('layouts.datatable')
+
+@endsection
