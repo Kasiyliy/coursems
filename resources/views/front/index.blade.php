@@ -87,7 +87,7 @@
                                                    href="{{route('make.order', ['id'=>$course->id ])}}">
                                                     <h1 class="mb-2"
                                                         style="color: #ff7302; font-size: 52px; border: solid 2px; padding: 10px 15px">
-                                                        Купить курс</h1>
+                                                        Купить</h1>
                                                 </a>
                                             </div>
                                         </li>
@@ -192,7 +192,7 @@
                                                         </div>
                                                         <a class="btn btn-outline"
                                                            href="{{route('make.order' ,['id'=>$course->id ])}}">
-                                                            <span class="text-muted">Купить курс</span>
+                                                            <span class="text-muted">Купить</span>
                                                         </a>
                                                         <a class="read-more ml-2"
                                                            href="{{route('single.course', ['id' => $course->id])}}">
