@@ -152,40 +152,7 @@
                         </div>
                     </div>
                 </div>
-                {{--Разбор косметички--}}
-                <div class="container">
-                    <div class="row row-fluid">
-                        <div class="col-sm-12">
-                            <h3 class="text-center">
-                                Каким образом происходит РАЗБОР КОСМЕТИЧКИ?
-                            </h3>
-                        </div>
-                    </div>
 
-                    <div class="row row-fluid mb-5">
-                        <div class="col-sm-12">
-                            <ul class="text-center" style="list-style-type:none; ">
-                                <li>
-                                    <h4><i class="fa fa-check-circle"></i> 1.
-                                        Заполнить АНКЕТУ</h4>
-                                </li>
-                                <li>
-                                    <h4><i class="fa fa-check-circle"></i> 2. Оплатить 3000 KZT</h4>
-                                </li>
-                                <li>
-                                    <h4><i class="fa fa-check-circle"></i> 3. В течение 24 часов вам будет выслан
-                                        развернутый разбор и рекомендации к покупке относительно вашей косметички в
-                                        формате PDF.
-                                    </h4>
-                                </li>
-                                <li>
-                                    <h4><i class="fa fa-check-circle"></i> 4. Файл будет отправлен на электронный адрес
-                                        указанный при регистрации.</h4>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
                 {{--Курсы--}}
                 <div class="container-full">
                     <div class="row row-fluid mb-0 row-no-padding">
