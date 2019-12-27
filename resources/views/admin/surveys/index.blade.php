@@ -33,12 +33,15 @@
                                     <td>{{$subscription->status ? 'Оплачено' : 'Не оплачено'}}</td>
                                     <td>{{$subscription->created_at}}</td>
                                     <td class="d-flex">
-                                        <form action="{{route('survey.check', ['id' => $subscription->user->id])}}"
-                                              method="get">
-                                            <button type="submit" class="btn-xs btn btn-primary" data-toggle="modal">
-                                                <span class="fa fa-eye"></span>Открыть опрос
-                                            </button>
-                                        </form>
+                                        @if($subscription->user->survey)
+                                            <form action="{{route('survey.check', ['id' => $subscription->user->id])}}"
+                                                  method="get">
+                                                <button type="submit" class="btn-xs btn btn-primary"
+                                                        data-toggle="modal">
+                                                    <span class="fa fa-eye"></span>Открыть опрос
+                                                </button>
+                                            </form>
+                                        @endif
 
                                         <button type="submit" class="btn-xs btn btn-warning" data-toggle="modal"
                                                 data-target="#editModal{{$subscription->id}}">

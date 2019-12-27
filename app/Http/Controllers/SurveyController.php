@@ -21,13 +21,17 @@ class SurveyController extends Controller
 
     public function index()
     {
-        $subscriptions = Subscription::where('course_id', 2)->get();
+        $subscriptions = Subscription::all();
         return view('admin.surveys.index', compact("subscriptions"));
     }
 
     public function check($id)
     {
-        $user = User::find($id);
+        $user = User::with('survey')->find($id);
+        if (!$user->survey) {
+            \request()->session()->flash('warning', 'Ошибка!');
+            return redirect()->back();
+        }
         return view('admin.surveys.survey', compact("user"));
     }
 
