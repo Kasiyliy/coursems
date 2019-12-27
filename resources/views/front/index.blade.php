@@ -60,7 +60,7 @@
                                                  data-responsive_offset="on" data-elementdelay="0.05">
                                                 <h1>Стоимость курса: {{$course->price}} тенге</h1>
                                             </div>
-                                            @if($course->name != 'Разбор косметики')
+                                            @if($course->id != 2)
                                                 <div class="tp-caption tp-resizeme mt-2" data-x="125" data-y="350"
                                                      data-width="['none','none','none','none']"
                                                      data-height="['none','none','none','none']"
@@ -70,7 +70,8 @@
                                                      data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                      data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                      data-responsive_offset="on" data-elementdelay="0.05">
-                                                    <p style="font-size: 2em; font-weight: bolder">Скидка 20% при репосте <a href="#">видео</a> в Stories</p>
+                                                    <p style="font-size: 2em; font-weight: bolder">Скидка 20% при
+                                                        репосте <a href="#">видео</a> в Stories</p>
                                                 </div>
                                             @endif
                                             <div class="tp-caption tp-resizeme" data-x="125" data-y="430"
@@ -186,7 +187,7 @@
                                                         <div class="entry-content">
                                                             <span class="meta-author">
                                                                 <b>Стоимость курса:
-                                                                {{$course->price}} тенге</b>
+                                                                    {{$course->price}} тенге</b>
                                                             </span>
                                                         </div>
                                                         <a class="btn btn-outline"

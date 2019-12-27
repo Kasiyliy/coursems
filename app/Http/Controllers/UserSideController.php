@@ -100,7 +100,7 @@ class UserSideController extends Controller
 
             $course = Course::find($course_id);
 
-            if($course->name == 'Разбор косметики' && !$user->survey()->where('status', 1)->first()) {
+            if($course->id == 2 && !$user->survey()->where('status', 1)->first()) {
                 Session::flash('warning', 'Пройдите опрос для данного курса');
                 return redirect()->route('survey');
             }
