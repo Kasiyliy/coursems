@@ -7,10 +7,10 @@
                 <div class="panel" style="padding: 10px;">
                     <div class="panel-header">
                         <h2>Заявки на разбор косметики</h2>
-{{--                        <a class="btn btn-success btn-sm" href="{{route('order.create')}}">Добавить</a>--}}
+                        {{--                        <a class="btn btn-success btn-sm" href="{{route('order.create')}}">Добавить</a>--}}
                     </div>
                     <div class="panel-body">
-                        <table class="table table-hover table-responsive">
+                        <table class="table table-hover table-responsive" id="dataTable">
                             <thead>
                             <tr>
                                 <th>ID</th>
@@ -19,6 +19,7 @@
                                 <th>Опрос</th>
                                 <th>Статус</th>
                                 <th>Дата покупки</th>
+                                <th>Действия</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -32,7 +33,8 @@
                                     <td>{{$subscription->status ? 'Оплачено' : 'Не оплачено'}}</td>
                                     <td>{{$subscription->created_at}}</td>
                                     <td class="d-flex">
-                                        <form action="{{route('survey.check', ['id' => $subscription->user->id])}}" method="get">
+                                        <form action="{{route('survey.check', ['id' => $subscription->user->id])}}"
+                                              method="get">
                                             <button type="submit" class="btn-xs btn btn-primary" data-toggle="modal">
                                                 <span class="fa fa-eye"></span>Открыть опрос
                                             </button>
@@ -72,8 +74,8 @@
                                             </div>
                                         </div>
 
-{{--                                        <a href="{{route('order.edit' ,['id'=>$subscription->id ])}}"--}}
-{{--                                           class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>--}}
+                                        {{--                                        <a href="{{route('order.edit' ,['id'=>$subscription->id ])}}"--}}
+                                        {{--                                           class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>--}}
 
                                         <button type="button" class="btn btn-danger btn-xs mr-1" data-toggle="modal"
                                                 data-target="#exampleModal{{$subscription->id}}">
@@ -121,4 +123,10 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('datatable')
+
+    @include('layouts.datatable')
+
 @endsection

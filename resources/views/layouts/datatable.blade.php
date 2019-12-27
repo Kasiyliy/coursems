@@ -46,17 +46,6 @@
             "fixedHeader": true
         });
 
-        $('.divide').divide({
-
-            // current delimiter
-            delimiter: ' ',
-
-            // 1000 or 1,000
-            divideThousand: false
-
-        });
-
-        $('.divide').divide();
     });
 
 
