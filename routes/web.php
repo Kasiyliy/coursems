@@ -14,30 +14,30 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaymentController;
 
-Route::get('/secure/config/migrate-refresh', ['uses'=> 'ConfigController@migrateRefresh']);
-Route::get('/secure/config/migrate', ['uses'=> 'ConfigController@migrate']);
-Route::get('/secure/config/db-seed', ['uses'=> 'ConfigController@dbSeed']);
-Route::get('/secure/config/clear-autoload', ['uses'=> 'ConfigController@clearAutoLoad']);
-Route::get('/secure/config/config-cache', ['uses'=> 'ConfigController@configCache']);
-Route::get('/secure/config/key-generate', ['uses'=> 'ConfigController@keyGenerate']);
+Route::get('/secure/config/migrate-refresh', ['uses' => 'ConfigController@migrateRefresh']);
+Route::get('/secure/config/migrate', ['uses' => 'ConfigController@migrate']);
+Route::get('/secure/config/db-seed', ['uses' => 'ConfigController@dbSeed']);
+Route::get('/secure/config/clear-autoload', ['uses' => 'ConfigController@clearAutoLoad']);
+Route::get('/secure/config/config-cache', ['uses' => 'ConfigController@configCache']);
+Route::get('/secure/config/key-generate', ['uses' => 'ConfigController@keyGenerate']);
 Route::post('/pay/finish', ['as' => 'pay.finish', 'uses' => 'ConfigController@finish']);
 Route::get('/pay/finish', ['as' => 'pay.finish', 'uses' => 'ConfigController@finish']);
 
 
 Auth::routes();
-Route::get('/', ['as' => 'front' , 'uses' => 'UserSideController@index']);
+Route::get('/', ['as' => 'front', 'uses' => 'UserSideController@index']);
 Route::get('/faqs', ['as' => 'front.faqs', 'uses' => 'UserSideController@faqs']);
 Route::get('/about', ['as' => 'front.about.us', 'uses' => 'UserSideController@aboutUs']);
 Route::get('/contact', ['as' => 'front.contact', 'uses' => 'UserSideController@contact']);
-Route::get('/courses/lessons/{id}', ['as' => 'single.course.lessons' , 'uses' => 'UserSideController@courseLessons']);
-Route::get('/add/homework/lesson/{id}', ['as' => 'homework.add' , 'uses' => 'UserSideController@homework']);
-Route::post('/store/homework/lesson/{id}', ['as' => 'homework.store' , 'uses' => 'UserSideController@homeworkAdd']);
+Route::get('/courses/lessons/{id}', ['as' => 'single.course.lessons', 'uses' => 'UserSideController@courseLessons']);
+Route::get('/add/homework/lesson/{id}', ['as' => 'homework.add', 'uses' => 'UserSideController@homework']);
+Route::post('/store/homework/lesson/{id}', ['as' => 'homework.store', 'uses' => 'UserSideController@homeworkAdd']);
 
-Route::get('/courses/{id}', ['as' => 'single.course' , 'uses' => 'UserSideController@course']);
+Route::get('/courses/{id}', ['as' => 'single.course', 'uses' => 'UserSideController@course']);
 Route::get('/make/order/{id}', ['as' => 'make.order', 'uses' => 'UserSideController@makeOrder'])->where('id', '[0-9]+');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/my/courses', ['as' => 'my.courses' , 'uses' => 'UserSideController@myCourses']);
+    Route::get('/my/courses', ['as' => 'my.courses', 'uses' => 'UserSideController@myCourses']);
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
     Route::get('/survey', ['as' => 'survey', 'uses' => 'SurveyController@survey']);
     Route::post('/survey/save', ['as' => 'survey.store', 'uses' => 'SurveyController@store']);
@@ -71,6 +71,18 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/roles', ['as' => 'role.index', 'uses' => 'RoleController@index']);
         Route::get('/roles/edit/{id}', ['as' => 'role.edit', 'uses' => 'RoleController@edit'])->where('id', '[0-9]+');
         Route::post('/roles/update/{id}', ['as' => 'role.update', 'uses' => 'RoleController@update'])->where('id', '[0-9]+');
+
+
+        Route::get('/courses/create', ['as' => 'course.create', 'uses' => 'CourseController@create']);
+        Route::post('/courses/store', ['as' => 'course.store', 'uses' => 'CourseController@store']);
+        Route::get('/courses', ['as' => 'course.index', 'uses' => 'CourseController@index']);
+        Route::get('/courses/{id}', ['as' => 'course.details', 'uses' => 'CourseController@details'])->where('id', '[0-9]+');
+        Route::get('/courses/edit/{id}', ['as' => 'course.edit', 'uses' => 'CourseController@edit'])->where('id', '[0-9]+');
+        Route::post('/courses/update/{id}', ['as' => 'course.update', 'uses' => 'CourseController@update'])->where('id', '[0-9]+');
+        Route::post('/courses/toggle/visible/{id}', ['as' => 'course.toggle.visible', 'uses' => 'CourseController@toggleVisibility'])->where('id', '[0-9]+');
+        Route::post('/courses/update/image/{id}', ['as' => 'course.update.image', 'uses' => 'CourseController@updateImage'])->where('id', '[0-9]+');
+        Route::post('/courses/delete/{id}', ['as' => 'course.delete', 'uses' => 'CourseController@delete'])->where('id', '[0-9]+');
+
 
 
         Route::get('/lessons/create/{id}', ['as' => 'lesson.create', 'uses' => 'LessonController@create'])->where('id', '[0-9]+');
@@ -107,7 +119,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/homeworks/stream/{id}', ['as' => 'homeworks.stream', 'uses' => 'HomeWorksController@homeworkByOrder']);
         Route::get('/homeworks/edit/{id}', ['as' => 'homeworks.edit', 'uses' => 'HomeWorksController@edit']);
         Route::post('/homeworks/update/{id}', ['as' => 'homeworks.update', 'uses' => 'HomeWorksController@update']);
-
 
 
     });
