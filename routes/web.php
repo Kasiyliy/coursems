@@ -47,8 +47,18 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/client/courses', ['as' => 'client.course.index', 'uses' => 'ClientController@courses']);
     Route::get('/client/courses/{id}', ['as' => 'client.course.details', 'uses' => 'ClientController@details'])->where('id', '[0-9]+');
+    Route::get('/surveys/user/{id}', ['as' => 'survey.check', 'uses' => 'SurveyController@check'])->where('id', '[0-9]+');
+    Route::get('/surveys/create', ['as' => 'survey.create', 'uses' => 'SurveyController@create']);
+    Route::post('/surveys/store', ['as' => 'survey.store', 'uses' => 'SurveyController@store']);
+
+    Route::get('/orders/create', ['as' => 'order.create', 'uses' => 'OrderController@create']);
+    Route::post('/orders/store', ['as' => 'order.store', 'uses' => 'OrderController@store']);
 
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+
+        Route::get('/surveys', ['as' => 'survey.index', 'uses' => 'SurveyController@index']);
+
+        Route::get('/orders', ['as' => 'order.index', 'uses' => 'OrderController@index']);
 
         Route::get('/users', ['as' => 'user.index', 'uses' => 'UserController@index']);
         Route::get('/users/create', ['as' => 'user.create', 'uses' => 'UserController@create']);
@@ -69,14 +79,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/lessons/update/{id}', ['as' => 'lesson.update', 'uses' => 'LessonController@update'])->where('id', '[0-9]+');
         Route::post('/lessons/delete/{id}', ['as' => 'lesson.delete', 'uses' => 'LessonController@delete'])->where('id', '[0-9]+');
 
-        Route::get('/surveys/user/{id}', ['as' => 'survey.check', 'uses' => 'SurveyController@check'])->where('id', '[0-9]+');
-        Route::get('/surveys/create', ['as' => 'survey.create', 'uses' => 'SurveyController@create']);
-        Route::post('/surveys/store', ['as' => 'survey.store', 'uses' => 'SurveyController@store']);
-        Route::get('/surveys', ['as' => 'survey.index', 'uses' => 'SurveyController@index']);
 
-        Route::get('/orders/create', ['as' => 'order.create', 'uses' => 'OrderController@create']);
-        Route::post('/orders/store', ['as' => 'order.store', 'uses' => 'OrderController@store']);
-        Route::get('/orders', ['as' => 'order.index', 'uses' => 'OrderController@index']);
 //        Route::get('/orders/edit/{id}', ['as' => 'order.edit', 'uses' => 'OrderController@edit'])->where('id', '[0-9]+');
 //        Route::get('/orders/{id}', ['as' => 'order.details', 'uses' => 'OrderController@details'])->where('id', '[0-9]+');
 //        Route::post('/orders/update/{id}', ['as' => 'order.update', 'uses' => 'OrderController@update'])->where('id', '[0-9]+');

@@ -64,14 +64,14 @@
                                 <nav class="collapse navbar-collapse primary-navbar-collapse">
                                     <ul class="nav navbar-nav primary-nav">
                                         @if(auth()->user() && auth()->user()->isAdmin())
-                                            <li class=" menu-item-has-children dropdown">
-                                                <a href="{{route('home')}}" class="dropdown-hover">
-                                                    <span class="underline">Админская панель</span>
+                                            <li>
+                                                <a href="{{route('home')}}">
+                                                    <span class="underline">Админ панель</span>
                                                 </a>
                                             </li>
                                         @endif
-                                        <li class=" menu-item-has-children dropdown">
-                                            <a href="{{route('front')}}" class="dropdown-hover">
+                                        <li>
+                                            <a href="{{route('front')}}">
                                                 <span class="underline">Главная</span> <span class="caret"></span>
                                             </a>
                                         </li>
