@@ -29,8 +29,8 @@
                             <select class="form-control" name="paymentType" id="paymentType"
                                     onchange="onChangePayment()" required>
                                 <option value="" disabled selected>Выберите один из вариантов</option>
-                                <option value="kaspi-id">по номеру счета</option>
-                                <option value="kaspi-phone">по номеру телефона</option>
+                                <option value="kaspi-id">по номеру счета (KASPI)</option>
+                                <option value="kaspi-phone">по номеру телефона (KASPI)</option>
                                 {{--                                <option value="AC">Банковской картой</option>--}}
                                 {{--                                <option value="PC">Яндекс.Деньгами</option>--}}
                             </select>
