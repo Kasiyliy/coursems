@@ -70,7 +70,7 @@
                                                      data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
                                                      data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="500"
                                                      data-responsive_offset="on" data-elementdelay="0.05">
-                                                    <p style="font-size: 1.8em">Скидка 20% при репосте <a href="#">видео</a> в Stories</p>
+                                                    <p style="font-size: 2em; font-weight: bolder">Скидка 20% при репосте <a href="#">видео</a> в Stories</p>
                                                 </div>
                                             @endif
                                             <div class="tp-caption tp-resizeme" data-x="125" data-y="430"
