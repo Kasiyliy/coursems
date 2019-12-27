@@ -29,7 +29,7 @@ class ConfigController extends Controller
         ]);
 
         $transaction->save();
-        Session::flash('success', 'Курс успешно оплачен!');
+        Session::flash('success', 'Успешно!');
 
         return response('', 200);
     }
