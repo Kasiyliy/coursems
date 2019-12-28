@@ -50,7 +50,7 @@
                                 @if($nextLesson)
 
                                     <li>
-                                        <a class="btn btn-outline-outline"
+                                        <a class="btn btn-outline"
                                            href="{{route('single.course.lessons', ['id'=>$nextLesson->id ])}}">
                                             Перейти к следующему уроку
                                         </a>
