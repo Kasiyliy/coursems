@@ -9,16 +9,16 @@
         <div class="container-full">
             <div class="main-content">
 
-                <div class="container">
-                    <div class="row row-fluid mb-5 mt-5">
-                        <div class="col-sm-12">
-                            <ul class="mt-8">
-                                <h1 class="text-center">Извините на сайте ведуться технические работы, что может
-                                    привести к ошибкам!</h1>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                {{--<div class="container">--}}
+                    {{--<div class="row row-fluid mb-5 mt-5">--}}
+                        {{--<div class="col-sm-12">--}}
+                            {{--<ul class="mt-8">--}}
+                                {{--<h1 class="text-center">Извините на сайте ведуться технические работы, что может--}}
+                                    {{--привести к ошибкам!</h1>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
                 {{--Карусель--}}
                 <div class="row row-fluid">
                     <div class="col-sm-12">
