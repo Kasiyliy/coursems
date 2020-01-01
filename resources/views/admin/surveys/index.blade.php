@@ -43,39 +43,12 @@
                                             </form>
                                         @endif
 
-                                        <button type="submit" class="btn-xs btn btn-warning" data-toggle="modal"
-                                                data-target="#editModal{{$subscription->id}}">
-                                            <span class="fa fa-money"></span> {{$subscription->status ? 'Доступ открыт' : 'Закрыт'}}
-                                        </button>
-                                        <div class="modal fade" id="editModal{{$subscription->id}}" tabindex="-1"
-                                             role="dialog" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <form action="{{route('order.toggle.status' ,['id'=>$subscription->id ])}}"
-                                                          method="post">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">
-                                                                Предупреждение!</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                    aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Вы точно хотите изменить статус??
-                                                            {{csrf_field()}}
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary btn-sm"
-                                                                    data-dismiss="modal">Отмена
-                                                            </button>
-                                                            <input type="submit" value="Изменить"
-                                                                   class="btn btn-danger btn-sm mr-1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <form action="{{route('order.toggle.status' ,['id'=>$subscription->id ])}}" method="post">
+                                            {{csrf_field()}}
+                                            <button type="submit" class="btn-xs btn btn-warning">
+                                                <span class="fa fa-money"></span> {{$subscription->status ? 'Доступ открыт' : 'Закрыт'}}
+                                            </button>
+                                        </form>
 
                                         {{--                                        <a href="{{route('order.edit' ,['id'=>$subscription->id ])}}"--}}
                                         {{--                                           class="btn-xs btn btn-primary"><span class="fa fa-edit"></span> Изменить</a>--}}

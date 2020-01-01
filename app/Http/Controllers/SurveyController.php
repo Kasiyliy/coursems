@@ -3,14 +3,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
 use App\Subscription;
-use App\User;
-use Session;
-use Auth;
-use Validator;
 use App\Survey;
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
+use Session;
+use Validator;
 
 class SurveyController extends Controller
 {
@@ -40,7 +39,6 @@ class SurveyController extends Controller
         $validator = Validator::make($request->all(), Survey::$validatesAll);
 
         if ($validator->fails()) {
-            die('asd');
             return redirect()->back()->withErrors($validator);
         } else {
             $user = Auth::user();
