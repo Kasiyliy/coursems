@@ -35,6 +35,12 @@ class PaymentController extends Controller
         $user = Auth::user();
         $course = Course::find($request->id);
 
+        Subscription::create([
+            'user_id' => $user->id,
+            'course_id' => $course->id,
+            'status' => 0,
+        ]);
+
         return view('auth.payment3', compact('user', 'course'));
     }
 }
